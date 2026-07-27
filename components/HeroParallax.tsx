@@ -46,7 +46,7 @@ export default function HeroParallax() {
   }, { scope: heroRef });
 
   const scrollToCourses = () => {
-    const nextSection = document.getElementById("courses");
+    const nextSection = document.getElementById("service-cards") || document.getElementById("track-cards-grid") || document.getElementById("courses");
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: "smooth" });
     }

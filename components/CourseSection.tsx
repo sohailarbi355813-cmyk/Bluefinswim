@@ -548,8 +548,8 @@ export default function CourseSection() {
 
         </div>
 
-        {/* ── KINETIC BENTO TAB SWITCHER ───────────────────────── */}
-        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-12 sm:mb-16 justify-center md:justify-start">
+        {/* ── KINETIC BENTO TAB SWITCHER (DIRECT SERVICE CARDS ANCHOR) ── */}
+        <div id="service-cards" className="flex flex-wrap items-center gap-2 sm:gap-3 mb-12 sm:mb-16 justify-center md:justify-start scroll-mt-28">
           <button
             onClick={() => setActiveTab("all")}
             data-cursor-text="FILTER"
@@ -583,7 +583,7 @@ export default function CourseSection() {
         </div>
 
         {/* ── REFERENCE-STYLE INTERACTIVE PRICING DECK (Playing Card Stack Engine) ── */}
-        <div ref={cardsGridRef} className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7 sm:gap-8 items-stretch mb-16 [perspective:2000px]">
+        <div ref={cardsGridRef} id="track-cards-grid" className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7 sm:gap-8 items-stretch mb-16 [perspective:2000px] scroll-mt-28">
           {filteredCourses.map((c, i) => {
             return (
               <div
