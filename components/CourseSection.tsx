@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { motion, AnimatePresence } from "framer-motion";
 import MagneticButton from "@/components/kinetic/MagneticButton";
+import StaggeredText from "@/components/kinetic/StaggeredText";
 import { Check, CheckCircle2, ArrowRight, Sparkles, Trophy, Flame, Clock, MapPin, Waves, Camera, RefreshCw, ShieldCheck } from "lucide-react";
 
 if (typeof window !== "undefined") {
