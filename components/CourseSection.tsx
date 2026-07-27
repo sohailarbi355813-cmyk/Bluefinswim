@@ -198,6 +198,7 @@ export default function CourseSection() {
   const headerRef = useRef<HTMLDivElement>(null);
   const textColRef = useRef<HTMLDivElement>(null);
   const imageBoxRef = useRef<HTMLDivElement>(null);
+  const secondImageBoxRef = useRef<HTMLDivElement>(null);
   const titleLinesRef = useRef<(HTMLDivElement | null)[]>([]);
   const tagRef = useRef<HTMLDivElement>(null);
 
@@ -208,47 +209,39 @@ export default function CourseSection() {
   const vipCardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useGSAP(() => {
-    if (!headerRef.current || !imageBoxRef.current || !textColRef.current) return;
+    if (!headerRef.current || !imageBoxRef.current || !textColRef.current || !secondImageBoxRef.current) return;
 
     const mm = gsap.matchMedia();
 
-    // ── 1. HEADER KINETICS ─────────────────────────────────────────────
+    // ── 1. DIAGONAL BENTO HEADER KINETICS ──────────────────────────────
     mm.add("(min-width: 1024px)", () => {
-      gsap.set(tagRef.current, { opacity: 0, y: -40 });
-      gsap.set(titleLinesRef.current, { opacity: 0, y: 100, x: -40, scale: 1.04 });
-      gsap.set(imageBoxRef.current, { opacity: 0, x: "55%", scale: 0.88 });
+      gsap.set(tagRef.current, { opacity: 0, y: -35 });
+      gsap.set(titleLinesRef.current, { opacity: 0, y: 80, x: -30, scale: 1.03 });
+      gsap.set(imageBoxRef.current, { opacity: 0, x: "45%", y: -30, scale: 0.9 });
+      gsap.set(secondImageBoxRef.current, { opacity: 0, x: "-45%", y: 40, scale: 0.9 });
 
       const enterTl = gsap.timeline({
-        scrollTrigger: { trigger: headerRef.current, start: "top 95%", end: "top 20%", scrub: 2.8 },
+        scrollTrigger: { trigger: headerRef.current, start: "top 95%", end: "top 15%", scrub: 2.5 },
       });
-      enterTl.to(imageBoxRef.current, { x: "0%", opacity: 1, scale: 1, duration: 3.2, ease: "power2.out" }, 0);
-      enterTl.to(tagRef.current, { y: 0, opacity: 1, duration: 1.8, ease: "power2.out" }, 0.5);
-      enterTl.to(titleLinesRef.current, { y: 0, x: 0, opacity: 1, scale: 1, stagger: 0.45, duration: 2.4, ease: "power3.out" }, 0.7);
+      enterTl.to([imageBoxRef.current, secondImageBoxRef.current], { x: "0%", y: 0, opacity: 1, scale: 1, duration: 3, ease: "power2.out" }, 0);
+      enterTl.to(tagRef.current, { y: 0, opacity: 1, duration: 1.6, ease: "power2.out" }, 0.4);
+      enterTl.to(titleLinesRef.current, { y: 0, x: 0, opacity: 1, scale: 1, stagger: 0.35, duration: 2.2, ease: "power3.out" }, 0.5);
 
       const exitTl = gsap.timeline({
-        scrollTrigger: { trigger: headerRef.current, start: "top 10%", end: "bottom 45%", scrub: 2.5 },
+        scrollTrigger: { trigger: headerRef.current, start: "top 5%", end: "bottom 35%", scrub: 2.2 },
       });
-      exitTl.to(titleLinesRef.current, { y: -65, opacity: 0, scale: 0.94, stagger: 0.1, duration: 2, ease: "power2.inOut" }, 0);
-      exitTl.to([tagRef.current, imageBoxRef.current], { y: -65, opacity: 0, scale: 0.92, duration: 2, ease: "power2.inOut" }, 0.15);
+      exitTl.to(titleLinesRef.current, { y: -50, opacity: 0, scale: 0.95, stagger: 0.1, duration: 1.8, ease: "power2.inOut" }, 0);
+      exitTl.to([tagRef.current, imageBoxRef.current, secondImageBoxRef.current], { y: -60, opacity: 0, scale: 0.9, duration: 1.8, ease: "power2.inOut" }, 0.15);
     });
 
     mm.add("(max-width: 1023px)", () => {
-      gsap.set(tagRef.current, { opacity: 0, y: -25 });
-      gsap.set(titleLinesRef.current, { opacity: 0, y: 50, x: -20 });
-      gsap.set(imageBoxRef.current, { opacity: 0, x: "35%", scale: 0.9 });
+      gsap.set([imageBoxRef.current, secondImageBoxRef.current], { opacity: 0, y: 50, scale: 0.92 });
+      gsap.set(titleLinesRef.current, { opacity: 0, y: 40 });
 
-      const mobileTextTl = gsap.timeline({
-        scrollTrigger: { trigger: textColRef.current, start: "top 90%", end: "bottom 50%", scrub: 2 },
+      const mobileHeaderTl = gsap.timeline({
+        scrollTrigger: { trigger: headerRef.current, start: "top 92%", end: "bottom 25%", scrub: 2 },
       });
-      mobileTextTl.to(tagRef.current, { y: 0, opacity: 1, duration: 1.2, ease: "power2.out" }, 0);
-      mobileTextTl.to(titleLinesRef.current, { y: 0, x: 0, opacity: 1, stagger: 0.3, duration: 2, ease: "power2.out" }, 0.2);
-      mobileTextTl.to([tagRef.current, ...titleLinesRef.current], { y: -30, opacity: 0, stagger: 0.08, duration: 1.5, ease: "power2.in" }, 3);
-
-      const mobilePhotoTl = gsap.timeline({
-        scrollTrigger: { trigger: imageBoxRef.current, start: "top 88%", end: "bottom 30%", scrub: 2 },
-      });
-      mobilePhotoTl.to(imageBoxRef.current, { x: "0%", opacity: 1, scale: 1, duration: 2.5, ease: "power2.out" }, 0);
-      mobilePhotoTl.to(imageBoxRef.current, { y: -40, opacity: 0, scale: 0.93, duration: 1.8, ease: "power2.in" }, 2.8);
+      mobileHeaderTl.to([imageBoxRef.current, secondImageBoxRef.current, ...titleLinesRef.current], { y: 0, opacity: 1, scale: 1, stagger: 0.2, duration: 2, ease: "power2.out" }, 0);
     });
 
     // ── 2. PRICING DECK CHOREOGRAPHY (Stacked Dealing: Center on Desktop, Bottom on Mobile) ──
@@ -454,106 +447,131 @@ export default function CourseSection() {
       
       <div className="max-w-[1550px] mx-auto px-5 sm:px-10 lg:px-14">
         
-        {/* ── HIGH-PERFORMANCE AWWWARDS KINETIC HEADER ─────────────── */}
-        <div ref={headerRef} className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-14 lg:gap-16 items-center mb-16 sm:mb-20 pb-12 border-b border-[#0B0B0C]/12 min-h-[480px]">
+        {/* ── ASYMMETRICAL DIAGONAL GALLERY HEADER ─────────────────── */}
+        <div ref={headerRef} className="space-y-10 sm:space-y-14 lg:space-y-16 mb-20 sm:mb-24 pb-16 border-b border-[#0B0B0C]/12">
           
-          {/* Left Column: Cohesive Architectural Typography */}
-          <div ref={textColRef} className="lg:col-span-6 space-y-6 sm:space-y-8 z-10">
-            <div
-              ref={tagRef}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#003EFF] text-white text-[11px] sm:text-[12px] font-body font-800 tracking-[0.2em] uppercase shadow-[0_6px_20px_rgba(0,62,255,0.35)] opacity-0"
-            >
-              <Sparkles className="w-4 h-4 shrink-0 animate-pulse" />
-              <span>Architected Athletic Curriculars</span>
-            </div>
-            
-            <div className="space-y-2 sm:space-y-3 pt-1">
+          {/* Top Row: Left Title Intro & Top-Right Widescreen Photo 01 */}
+          <div ref={textColRef} className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
+            <div className="lg:col-span-5 space-y-5 z-10">
+              <div
+                ref={tagRef}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#003EFF] text-white text-[11px] sm:text-[12px] font-body font-800 tracking-[0.2em] uppercase shadow-[0_6px_20px_rgba(0,62,255,0.35)] opacity-0"
+              >
+                <Sparkles className="w-4 h-4 shrink-0 animate-pulse" />
+                <span>Architected Athletic Curriculars</span>
+              </div>
+              
               <div className="overflow-hidden p-1 -m-1">
-                <div
+                <h2
                   ref={(el) => { titleLinesRef.current[0] = el; }}
-                  className="font-display-syne font-900 text-[#001026] leading-[1.02] tracking-[-0.03em] text-[40px] sm:text-[56px] lg:text-[64px] select-none opacity-0"
+                  className="font-display-syne font-900 text-[#001026] leading-[1.02] tracking-[-0.03em] text-[44px] sm:text-[62px] lg:text-[72px] select-none opacity-0"
                 >
                   Select Your Aquatic
+                </h2>
+              </div>
+            </div>
+
+            {/* Top Right Corner Photo 01 Showcase */}
+            <div className="lg:col-span-7 flex justify-end z-10 w-full">
+              <div
+                ref={imageBoxRef}
+                className="relative w-full h-[320px] sm:h-[400px] lg:h-[440px] rounded-[2.6rem] overflow-hidden bg-[#001228] shadow-[0_30px_85px_rgba(0,15,38,0.3)] border border-cyan-400/35 flex flex-col justify-between p-7 sm:p-9 group opacity-0 select-none"
+              >
+                <div className="absolute inset-0">
+                  <img
+                    src="/images/underwater-lanes.jpg"
+                    alt="Toronto Olympic Underwater Telemetry Lanes"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 filter contrast-[1.08] saturate-[1.1]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#000d20]/90 via-[#000d20]/25 to-[#000d20]/20 pointer-events-none" />
+                </div>
+
+                {/* Giant Editorial Watermark Numeral 01 */}
+                <div className="relative z-10 font-editorial italic text-white/95 font-800 text-[80px] sm:text-[105px] leading-none tracking-tight drop-shadow-[0_8px_25px_rgba(0,10,35,0.85)]">
+                  01
+                </div>
+
+                <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 text-white">
+                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#001026]/85 backdrop-blur-md border border-white/20 text-[11px] sm:text-[12px] font-body font-800 uppercase tracking-widest shadow-lg">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#22bbee] animate-pulse shrink-0" />
+                    <span>4K Hydro-Optic Chamber</span>
+                  </span>
+                  <span className="font-body font-700 text-[13px] sm:text-[14px] text-white/90 drop-shadow-md">
+                    Synchronized 120fps Telemetry · Lane 4
+                  </span>
                 </div>
               </div>
+            </div>
+          </div>
 
+          {/* Bottom Row: Down-Left Widescreen Photo 02 & Right Stylish Accent Text */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center pt-2 sm:pt-4">
+            {/* Bottom Left Corner Photo 02 Showcase */}
+            <div className="lg:col-span-7 flex justify-start z-10 w-full order-2 lg:order-1">
+              <div
+                ref={secondImageBoxRef}
+                className="relative w-full h-[320px] sm:h-[400px] lg:h-[440px] rounded-[2.6rem] overflow-hidden bg-[#001228] shadow-[0_30px_85px_rgba(0,15,38,0.3)] border border-[#003EFF]/40 flex flex-col justify-between p-7 sm:p-9 group opacity-0 select-none"
+              >
+                <div className="absolute inset-0">
+                  <img
+                    src="/images/velocity-track.jpg"
+                    alt="Toronto Olympic Velocity Track Facility"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 filter contrast-[1.08] saturate-[1.1]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#000d20]/90 via-[#000d20]/25 to-[#000d20]/20 pointer-events-none" />
+                </div>
+
+                {/* Giant Editorial Watermark Numeral 02 */}
+                <div className="relative z-10 font-editorial italic text-white/95 font-800 text-[80px] sm:text-[105px] leading-none tracking-tight drop-shadow-[0_8px_25px_rgba(0,10,35,0.85)]">
+                  02
+                </div>
+
+                <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 text-white">
+                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#003EFF]/85 backdrop-blur-md border border-white/20 text-[11px] sm:text-[12px] font-body font-800 uppercase tracking-widest shadow-lg">
+                    <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse shrink-0" />
+                    <span>Olympic Velocity Flume</span>
+                  </span>
+                  <span className="font-body font-700 text-[13px] sm:text-[14px] text-white/90 drop-shadow-md">
+                    Toronto 50m Olympic Facility
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Stylish Accent Typography & Tactile Badges */}
+            <div className="lg:col-span-5 space-y-5 sm:space-y-6 z-10 order-1 lg:order-2">
               <div className="overflow-hidden p-1 -m-1">
                 <div
                   ref={(el) => { titleLinesRef.current[1] = el; }}
-                  className="font-display-syne font-900 text-[#003EFF] leading-[1.02] tracking-[-0.03em] text-[40px] sm:text-[56px] lg:text-[64px] select-none opacity-0"
+                  className="font-editorial font-700 italic text-[#003EFF] leading-[0.98] tracking-[-0.02em] text-[46px] sm:text-[66px] lg:text-[78px] select-none opacity-0"
                 >
                   Velocity Track.
                 </div>
               </div>
 
-              <div className="overflow-hidden p-1 -m-1 pt-3">
+              <div className="overflow-hidden p-1 -m-1">
                 <p
                   ref={(el) => { titleLinesRef.current[2] = el as unknown as HTMLDivElement; }}
-                  className="font-body font-500 text-[#4B5563] text-[16px] sm:text-[18px] leading-relaxed max-w-xl opacity-0 select-none"
+                  className="font-body font-500 text-[#4B5563] text-[16px] sm:text-[18px] leading-relaxed opacity-0 select-none"
                 >
                   Designed for champion cadences and complete water confidence. Every program operates within Toronto&apos;s Olympic hydro-chambers under rigorous small-group athletic ratios.
                 </p>
               </div>
-            </div>
 
-            {/* Tactile Athletic Telemetry Badges */}
-            <div className="pt-2 flex flex-wrap items-center gap-3 select-none">
-              <span className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white border border-slate-200 text-[#001026] font-body font-700 text-[12px] sm:text-[13px] shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-[#22bbee] shrink-0" />
-                <span>1:4 Max Coach Ratio</span>
-              </span>
-              <span className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white border border-slate-200 text-[#001026] font-body font-700 text-[12px] sm:text-[13px] shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-[#003EFF] shrink-0" />
-                <span>120fps Telemetry Labs</span>
-              </span>
-              <span className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white border border-slate-200 text-[#001026] font-body font-700 text-[12px] sm:text-[13px] shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-[#001026] shrink-0" />
-                <span>100% Tuition Guarantee</span>
-              </span>
-            </div>
-          </div>
-
-          {/* Right Column: Borderless Widescreen Aquatic Viewport */}
-          <div className="lg:col-span-6 flex flex-col justify-center z-10">
-            <div
-              ref={imageBoxRef}
-              className="relative w-full h-[420px] sm:h-[520px] lg:h-[550px] rounded-[2.6rem] overflow-hidden bg-[#001228] shadow-[0_30px_85px_rgba(0,15,38,0.28)] border border-cyan-400/30 flex flex-col justify-between group opacity-0 select-none"
-            >
-              {/* Cinematic Full-Bleed Pool Imagery */}
-              <div className="absolute inset-0">
-                <img
-                  src={currentPhoto}
-                  alt="Toronto Olympic Swimming Lanes Velocity Track"
-                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 filter contrast-[1.06] saturate-[1.08] select-none"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#000d20]/95 via-[#000d20]/30 to-transparent pointer-events-none" />
-              </div>
-
-              {/* Interactive Top HUD Viewport Controller */}
-              <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 p-6 sm:p-7">
-                <span className="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-[#001026]/85 backdrop-blur-md border border-white/20 text-white font-body text-[11px] sm:text-[12px] font-800 tracking-[0.16em] uppercase shadow-lg">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#22bbee] animate-pulse shrink-0" />
-                  <span className="truncate">Toronto Flume · Live Feed</span>
+              {/* Tactile Athletic Telemetry Badges */}
+              <div className="pt-2 flex flex-wrap items-center gap-3 select-none">
+                <span className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white border border-slate-200 text-[#001026] font-body font-700 text-[12px] sm:text-[13px] shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-[#22bbee] shrink-0" />
+                  <span>1:4 Max Coach Ratio</span>
                 </span>
-
-                <button
-                  onClick={() => setCurrentPhoto((p) => (p === "/images/underwater-lanes.jpg" ? "/images/velocity-track.jpg" : "/images/underwater-lanes.jpg"))}
-                  className="px-4.5 py-2.5 rounded-xl bg-[#003EFF] hover:bg-white text-white hover:text-[#001026] font-body text-[11px] sm:text-[12px] font-800 tracking-wider uppercase transition-all flex items-center gap-2 shadow-xl active:scale-95 shrink-0 cursor-pointer"
-                >
-                  <RefreshCw className="w-3.5 h-3.5" />
-                  <span>Switch Camera View</span>
-                </button>
-              </div>
-
-              {/* Bottom HUD Telemetry Overlay Panel */}
-              <div className="relative z-10 m-5 sm:m-7 p-5 sm:p-6 rounded-2xl bg-[#001026]/80 backdrop-blur-xl border border-cyan-400/35 text-white space-y-2 shadow-xl">
-                <div className="text-[11px] sm:text-[12px] font-body font-800 uppercase tracking-[0.2em] text-[#22bbee] flex items-center gap-2">
-                  <Camera className="w-4 h-4 shrink-0 text-[#22bbee]" />
-                  <span>4K Hydro-Optic Perspective</span>
-                </div>
-                <p className="font-body font-600 text-white/95 text-[14px] sm:text-[15px] leading-snug">
-                  Real-time underwater camera telemetry capturing your stroke cadence, flip-turn velocity, and glide efficiency in crystal-clear definition.
-                </p>
+                <span className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white border border-slate-200 text-[#001026] font-body font-700 text-[12px] sm:text-[13px] shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-[#003EFF] shrink-0" />
+                  <span>120fps Telemetry Labs</span>
+                </span>
+                <span className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white border border-slate-200 text-[#001026] font-body font-700 text-[12px] sm:text-[13px] shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-[#001026] shrink-0" />
+                  <span>100% Tuition Guarantee</span>
+                </span>
               </div>
             </div>
           </div>
