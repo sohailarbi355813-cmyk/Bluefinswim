@@ -213,35 +213,66 @@ export default function CourseSection() {
 
     const mm = gsap.matchMedia();
 
-    // ── 1. DIAGONAL BENTO HEADER KINETICS ──────────────────────────────
+    // ── 1. FUTURISTIC 3D HOLOGRAPHIC HEADER KINETICS ───────────────────
     mm.add("(min-width: 1024px)", () => {
-      gsap.set(tagRef.current, { opacity: 0, y: -35 });
-      gsap.set(titleLinesRef.current, { opacity: 0, y: 80, x: -30, scale: 1.03 });
-      gsap.set(imageBoxRef.current, { opacity: 0, x: "45%", y: -30, scale: 0.9 });
-      gsap.set(secondImageBoxRef.current, { opacity: 0, x: "-45%", y: 40, scale: 0.9 });
+      if (!headerRef.current || !imageBoxRef.current || !secondImageBoxRef.current) return;
+      gsap.set(headerRef.current, { perspective: 2200 });
 
-      const enterTl = gsap.timeline({
-        scrollTrigger: { trigger: headerRef.current, start: "top 95%", end: "top 15%", scrub: 2.5 },
-      });
-      enterTl.to([imageBoxRef.current, secondImageBoxRef.current], { x: "0%", y: 0, opacity: 1, scale: 1, duration: 3, ease: "power2.out" }, 0);
-      enterTl.to(tagRef.current, { y: 0, opacity: 1, duration: 1.6, ease: "power2.out" }, 0.4);
-      enterTl.to(titleLinesRef.current, { y: 0, x: 0, opacity: 1, scale: 1, stagger: 0.35, duration: 2.2, ease: "power3.out" }, 0.5);
+      gsap.fromTo(tagRef.current, 
+        { opacity: 0, y: -30, scale: 0.85 }, 
+        { opacity: 1, y: 0, scale: 1, duration: 1.4, ease: "power3.out", scrollTrigger: { trigger: headerRef.current, start: "top 85%", toggleActions: "play none none none" } }
+      );
 
-      const exitTl = gsap.timeline({
-        scrollTrigger: { trigger: headerRef.current, start: "top 5%", end: "bottom 35%", scrub: 2.2 },
+      titleLinesRef.current.forEach((el, i) => {
+        if (!el) return;
+        gsap.fromTo(el,
+          { opacity: 0, x: i === 0 ? -45 : i === 1 ? 45 : 0, y: 30 },
+          { opacity: 1, x: 0, y: 0, duration: 1.5, delay: i * 0.18, ease: "power4.out", scrollTrigger: { trigger: headerRef.current, start: "top 82%", toggleActions: "play none none none" } }
+        );
       });
-      exitTl.to(titleLinesRef.current, { y: -50, opacity: 0, scale: 0.95, stagger: 0.1, duration: 1.8, ease: "power2.inOut" }, 0);
-      exitTl.to([tagRef.current, imageBoxRef.current, secondImageBoxRef.current], { y: -60, opacity: 0, scale: 0.9, duration: 1.8, ease: "power2.inOut" }, 0.15);
+
+      // Photo 01 (Top-Right): 3D perspective swivel + perpetual holographic levitation
+      gsap.fromTo(imageBoxRef.current,
+        { opacity: 0, x: 160, rotateY: -20, rotateX: 12, scale: 0.82 },
+        { 
+          opacity: 1, x: 0, rotateY: 0, rotateX: 0, scale: 1, duration: 1.8, ease: "power3.out",
+          scrollTrigger: { trigger: headerRef.current, start: "top 85%", toggleActions: "play none none none" },
+          onComplete: () => {
+            gsap.to(imageBoxRef.current, { y: -12, duration: 3.2, repeat: -1, yoyo: true, ease: "sine.inOut" });
+          }
+        }
+      );
+
+      // Photo 02 (Bottom-Left): Reciprocal 3D perspective swivel + perpetual holographic levitation
+      gsap.fromTo(secondImageBoxRef.current,
+        { opacity: 0, x: -160, rotateY: 20, rotateX: -12, scale: 0.82 },
+        { 
+          opacity: 1, x: 0, rotateY: 0, rotateX: 0, scale: 1, duration: 1.8, delay: 0.2, ease: "power3.out",
+          scrollTrigger: { trigger: secondImageBoxRef.current, start: "top 88%", toggleActions: "play none none none" },
+          onComplete: () => {
+            gsap.to(secondImageBoxRef.current, { y: 12, duration: 3.8, repeat: -1, yoyo: true, ease: "sine.inOut" });
+          }
+        }
+      );
     });
 
     mm.add("(max-width: 1023px)", () => {
-      gsap.set([imageBoxRef.current, secondImageBoxRef.current], { opacity: 0, y: 50, scale: 0.92 });
-      gsap.set(titleLinesRef.current, { opacity: 0, y: 40 });
+      if (!headerRef.current || !imageBoxRef.current || !secondImageBoxRef.current) return;
 
-      const mobileHeaderTl = gsap.timeline({
-        scrollTrigger: { trigger: headerRef.current, start: "top 92%", end: "bottom 25%", scrub: 2 },
-      });
-      mobileHeaderTl.to([imageBoxRef.current, secondImageBoxRef.current, ...titleLinesRef.current], { y: 0, opacity: 1, scale: 1, stagger: 0.2, duration: 2, ease: "power2.out" }, 0);
+      gsap.fromTo([tagRef.current, ...titleLinesRef.current],
+        { opacity: 0, y: 45 },
+        { opacity: 1, y: 0, stagger: 0.15, duration: 1.3, ease: "power2.out", scrollTrigger: { trigger: headerRef.current, start: "top 90%", toggleActions: "play none none none" } }
+      );
+
+      gsap.fromTo(imageBoxRef.current,
+        { opacity: 0, y: 65, rotateX: 15, scale: 0.88 },
+        { opacity: 1, y: 0, rotateX: 0, scale: 1, duration: 1.5, ease: "power3.out", scrollTrigger: { trigger: imageBoxRef.current, start: "top 88%", toggleActions: "play none none none" } }
+      );
+
+      gsap.fromTo(secondImageBoxRef.current,
+        { opacity: 0, y: 65, rotateX: 15, scale: 0.88 },
+        { opacity: 1, y: 0, rotateX: 0, scale: 1, duration: 1.5, ease: "power3.out", scrollTrigger: { trigger: secondImageBoxRef.current, start: "top 88%", toggleActions: "play none none none" } }
+      );
     });
 
     // ── 2. PRICING DECK CHOREOGRAPHY (Stacked Dealing: Center on Desktop, Bottom on Mobile) ──
@@ -447,56 +478,56 @@ export default function CourseSection() {
       
       <div className="max-w-[1550px] mx-auto px-5 sm:px-10 lg:px-14">
         
-        {/* ── ASYMMETRICAL DIAGONAL GALLERY HEADER ─────────────────── */}
-        <div ref={headerRef} className="space-y-10 sm:space-y-14 lg:space-y-16 mb-20 sm:mb-24 pb-16 border-b border-[#0B0B0C]/12">
+        {/* ── FUTURISTIC HOLOGRAPHIC GALLERY MATRIX ────────────────── */}
+        <div ref={headerRef} className="space-y-10 sm:space-y-14 lg:space-y-16 mb-20 sm:mb-24 pb-16 border-b border-[#0B0B0C]/12 relative">
           
-          {/* Top Row: Left Title Intro & Top-Right Widescreen Photo 01 */}
+          {/* Top Row: Left Cyber-Title & Top-Right Holograph Showcase 01 */}
           <div ref={textColRef} className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
             <div className="lg:col-span-5 space-y-5 z-10">
               <div
                 ref={tagRef}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#003EFF] text-white text-[11px] sm:text-[12px] font-body font-800 tracking-[0.2em] uppercase shadow-[0_6px_20px_rgba(0,62,255,0.35)] opacity-0"
+                className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#003EFF] text-white text-[11px] sm:text-[12px] font-body font-800 tracking-[0.22em] uppercase shadow-[0_6px_25px_rgba(0,62,255,0.45)] border border-cyan-300/40 opacity-0"
               >
-                <Sparkles className="w-4 h-4 shrink-0 animate-pulse" />
+                <Sparkles className="w-4 h-4 shrink-0 animate-spin" style={{ animationDuration: "6s" }} />
                 <span>Architected Athletic Curriculars</span>
               </div>
               
-              <div className="overflow-hidden p-1 -m-1">
-                <h2
-                  ref={(el) => { titleLinesRef.current[0] = el; }}
-                  className="font-display-syne font-900 text-[#001026] leading-[1.02] tracking-[-0.03em] text-[44px] sm:text-[62px] lg:text-[72px] select-none opacity-0"
-                >
-                  Select Your Aquatic
-                </h2>
+              <div ref={(el) => { titleLinesRef.current[0] = el; }} className="overflow-hidden p-1 -m-1 opacity-0">
+                <StaggeredText
+                  text="SELECT YOUR AQUATIC"
+                  as="h2"
+                  stagger={0.035}
+                  className="font-display-syne font-900 text-[#001026] leading-[1.02] tracking-[-0.03em] text-[44px] sm:text-[62px] lg:text-[74px] drop-shadow-sm select-none"
+                />
               </div>
             </div>
 
-            {/* Top Right Corner Photo 01 Showcase */}
+            {/* Top Right Corner Showcase 01 */}
             <div className="lg:col-span-7 flex justify-end z-10 w-full">
               <div
                 ref={imageBoxRef}
-                className="relative w-full h-[320px] sm:h-[400px] lg:h-[440px] rounded-[2.6rem] overflow-hidden bg-[#001228] shadow-[0_30px_85px_rgba(0,15,38,0.3)] border border-cyan-400/35 flex flex-col justify-between p-7 sm:p-9 group opacity-0 select-none"
+                className="relative w-full h-[320px] sm:h-[420px] lg:h-[460px] rounded-[2.6rem] overflow-hidden bg-[#001228] shadow-[0_25px_80px_rgba(0,16,38,0.38)] hover:shadow-[0_0_80px_rgba(34,187,238,0.5)] border border-cyan-400/50 hover:border-cyan-300/90 flex flex-col justify-between p-7 sm:p-9 group transition-shadow duration-500 opacity-0 select-none"
               >
                 <div className="absolute inset-0">
                   <img
                     src="/images/underwater-lanes.jpg"
                     alt="Toronto Olympic Underwater Telemetry Lanes"
-                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 filter contrast-[1.08] saturate-[1.1]"
+                    className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-110 filter contrast-[1.1] saturate-[1.15]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#000d20]/90 via-[#000d20]/25 to-[#000d20]/20 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#000d20]/95 via-[#000d20]/30 to-[#000d20]/15 pointer-events-none" />
                 </div>
 
-                {/* Giant Editorial Watermark Numeral 01 */}
-                <div className="relative z-10 font-editorial italic text-white/95 font-800 text-[80px] sm:text-[105px] leading-none tracking-tight drop-shadow-[0_8px_25px_rgba(0,10,35,0.85)]">
+                {/* Cybernetic Numeral Watermark 01 */}
+                <div className="relative z-10 font-editorial italic bg-gradient-to-r from-white via-cyan-200 to-white/80 bg-clip-text text-transparent font-800 text-[82px] sm:text-[112px] leading-none tracking-tight filter drop-shadow-[0_8px_30px_rgba(34,187,238,0.5)]">
                   01
                 </div>
 
                 <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 text-white">
-                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#001026]/85 backdrop-blur-md border border-white/20 text-[11px] sm:text-[12px] font-body font-800 uppercase tracking-widest shadow-lg">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#22bbee] animate-pulse shrink-0" />
+                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#001026]/90 backdrop-blur-md border border-cyan-400/40 text-[11px] sm:text-[12px] font-body font-800 uppercase tracking-widest shadow-lg">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#22bbee] animate-ping shrink-0" />
                     <span>4K Hydro-Optic Chamber</span>
                   </span>
-                  <span className="font-body font-700 text-[13px] sm:text-[14px] text-white/90 drop-shadow-md">
+                  <span className="font-body font-700 text-[13px] sm:text-[14px] text-white/95 drop-shadow-md">
                     Synchronized 120fps Telemetry · Lane 4
                   </span>
                 </div>
@@ -504,49 +535,49 @@ export default function CourseSection() {
             </div>
           </div>
 
-          {/* Bottom Row: Down-Left Widescreen Photo 02 & Right Stylish Accent Text */}
+          {/* Bottom Row: Down-Left Holograph Showcase 02 & Right Cyber Accent Text */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center pt-2 sm:pt-4">
-            {/* Bottom Left Corner Photo 02 Showcase */}
+            {/* Bottom Left Corner Showcase 02 */}
             <div className="lg:col-span-7 flex justify-start z-10 w-full order-2 lg:order-1">
               <div
                 ref={secondImageBoxRef}
-                className="relative w-full h-[320px] sm:h-[400px] lg:h-[440px] rounded-[2.6rem] overflow-hidden bg-[#001228] shadow-[0_30px_85px_rgba(0,15,38,0.3)] border border-[#003EFF]/40 flex flex-col justify-between p-7 sm:p-9 group opacity-0 select-none"
+                className="relative w-full h-[320px] sm:h-[420px] lg:h-[460px] rounded-[2.6rem] overflow-hidden bg-[#001228] shadow-[0_25px_80px_rgba(0,16,38,0.38)] hover:shadow-[0_0_80px_rgba(0,62,255,0.6)] border border-[#003EFF]/50 hover:border-cyan-300/90 flex flex-col justify-between p-7 sm:p-9 group transition-shadow duration-500 opacity-0 select-none"
               >
                 <div className="absolute inset-0">
                   <img
                     src="/images/velocity-track.jpg"
                     alt="Toronto Olympic Velocity Track Facility"
-                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 filter contrast-[1.08] saturate-[1.1]"
+                    className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-110 filter contrast-[1.1] saturate-[1.15]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#000d20]/90 via-[#000d20]/25 to-[#000d20]/20 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#000d20]/95 via-[#000d20]/30 to-[#000d20]/15 pointer-events-none" />
                 </div>
 
-                {/* Giant Editorial Watermark Numeral 02 */}
-                <div className="relative z-10 font-editorial italic text-white/95 font-800 text-[80px] sm:text-[105px] leading-none tracking-tight drop-shadow-[0_8px_25px_rgba(0,10,35,0.85)]">
+                {/* Cybernetic Numeral Watermark 02 */}
+                <div className="relative z-10 font-editorial italic bg-gradient-to-r from-white via-[#70a5ff] to-white/80 bg-clip-text text-transparent font-800 text-[82px] sm:text-[112px] leading-none tracking-tight filter drop-shadow-[0_8px_30px_rgba(0,62,255,0.55)]">
                   02
                 </div>
 
                 <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 text-white">
-                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#003EFF]/85 backdrop-blur-md border border-white/20 text-[11px] sm:text-[12px] font-body font-800 uppercase tracking-widest shadow-lg">
+                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#003EFF]/90 backdrop-blur-md border border-white/30 text-[11px] sm:text-[12px] font-body font-800 uppercase tracking-widest shadow-lg">
                     <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse shrink-0" />
                     <span>Olympic Velocity Flume</span>
                   </span>
-                  <span className="font-body font-700 text-[13px] sm:text-[14px] text-white/90 drop-shadow-md">
+                  <span className="font-body font-700 text-[13px] sm:text-[14px] text-white/95 drop-shadow-md">
                     Toronto 50m Olympic Facility
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Right Column: Stylish Accent Typography & Tactile Badges */}
+            {/* Right Column: Stylish Accent Typography & Telemetry Chips */}
             <div className="lg:col-span-5 space-y-5 sm:space-y-6 z-10 order-1 lg:order-2">
-              <div className="overflow-hidden p-1 -m-1">
-                <div
-                  ref={(el) => { titleLinesRef.current[1] = el; }}
-                  className="font-editorial font-700 italic text-[#003EFF] leading-[0.98] tracking-[-0.02em] text-[46px] sm:text-[66px] lg:text-[78px] select-none opacity-0"
-                >
-                  Velocity Track.
-                </div>
+              <div ref={(el) => { titleLinesRef.current[1] = el; }} className="overflow-hidden p-1 -m-1 opacity-0">
+                <StaggeredText
+                  text="VELOCITY TRACK."
+                  as="div"
+                  stagger={0.04}
+                  className="font-editorial font-700 italic text-[#003EFF] leading-[0.98] tracking-[-0.02em] text-[48px] sm:text-[68px] lg:text-[80px] drop-shadow-[0_4px_25px_rgba(0,62,255,0.4)] select-none"
+                />
               </div>
 
               <div className="overflow-hidden p-1 -m-1">
@@ -558,18 +589,18 @@ export default function CourseSection() {
                 </p>
               </div>
 
-              {/* Tactile Athletic Telemetry Badges */}
+              {/* Tactile Telemetry Chip Badges */}
               <div className="pt-2 flex flex-wrap items-center gap-3 select-none">
-                <span className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white border border-slate-200 text-[#001026] font-body font-700 text-[12px] sm:text-[13px] shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-[#22bbee] shrink-0" />
+                <span className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white border border-slate-200 text-[#001026] font-body font-700 text-[12px] sm:text-[13px] shadow-[0_6px_20px_rgba(0,0,0,0.06)] hover:border-[#22bbee] transition-colors">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#22bbee] animate-pulse shrink-0" />
                   <span>1:4 Max Coach Ratio</span>
                 </span>
-                <span className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white border border-slate-200 text-[#001026] font-body font-700 text-[12px] sm:text-[13px] shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-[#003EFF] shrink-0" />
+                <span className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white border border-slate-200 text-[#001026] font-body font-700 text-[12px] sm:text-[13px] shadow-[0_6px_20px_rgba(0,0,0,0.06)] hover:border-[#003EFF] transition-colors">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#003EFF] animate-pulse shrink-0" />
                   <span>120fps Telemetry Labs</span>
                 </span>
-                <span className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white border border-slate-200 text-[#001026] font-body font-700 text-[12px] sm:text-[13px] shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-[#001026] shrink-0" />
+                <span className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white border border-slate-200 text-[#001026] font-body font-700 text-[12px] sm:text-[13px] shadow-[0_6px_20px_rgba(0,0,0,0.06)] hover:border-[#001026] transition-colors">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#001026] shrink-0" />
                   <span>100% Tuition Guarantee</span>
                 </span>
               </div>
