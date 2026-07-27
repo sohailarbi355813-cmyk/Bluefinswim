@@ -119,7 +119,6 @@ const courses = [
   }
 ];
 
-// 3-Card VIP Diagnostic Deck structured for chess-card stacking & dealing mechanics
 const diagnosticDeck = [
   {
     id: "telemetry",
@@ -197,12 +196,9 @@ export default function CourseSection() {
   const titleLinesRef = useRef<(HTMLDivElement | null)[]>([]);
   const tagRef = useRef<HTMLDivElement>(null);
 
-  // References for playing card stack gathering and sequential dealing engine
   const cardsGridRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const guaranteeRef = useRef<HTMLDivElement>(null);
-
-  // References for 1-on-1 VIP Underwater Telemetry stacked card deck dealing engine
   const vipGridRef = useRef<HTMLDivElement>(null);
   const vipCardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -250,9 +246,10 @@ export default function CourseSection() {
       mobilePhotoTl.to(imageBoxRef.current, { y: -40, opacity: 0, scale: 0.93, duration: 1.8, ease: "power2.in" }, 2.8);
     });
 
-    // ── 2. PRICING DECK: STAGED STACKING & ONE-BY-ONE DEALING CHOREOGRAPHY ──
+    // ── 2. PRICING DECK CHOREOGRAPHY (Desktop Stack Dealing vs Mobile Clean 3D) ──
     const activeCards = cardRefs.current.filter((c): c is HTMLDivElement => c !== null);
 
+    // Widescreen & Desktop (>=1280px): Horizontal center stack gathering & dealing
     mm.add("(min-width: 1280px)", () => {
       if (!cardsGridRef.current || activeCards.length === 0) return;
       gsap.set(cardsGridRef.current, { perspective: 2000 });
@@ -299,70 +296,72 @@ export default function CourseSection() {
       });
     });
 
+    // Mobile & Tablet (<1280px): Non-overlapping, independent 3D tilt & zoom per card
     mm.add("(max-width: 1279px)", () => {
-      if (!cardsGridRef.current || activeCards.length === 0) return;
-      gsap.set(cardsGridRef.current, { perspective: 1500 });
-
       activeCards.forEach((card, i) => {
         const isPopular = courses[i]?.popularTag;
-        const targetScale = isPopular ? 1.03 : 1;
-        card.dataset.targetScale = targetScale.toString();
+        const targetScale = isPopular ? 1.02 : 1;
 
-        const verticalStackOffset = -i * 105;
-        const fanAngle = i === 0 ? -7 : i === 1 ? -2 : i === 2 ? 3 : 8;
+        gsap.set(card.parentElement, { perspective: 1400 });
 
+        // Zero yPercent overlap so every single card is 100% visible and separate in DOM!
         gsap.set(card, {
-          yPercent: verticalStackOffset,
-          x: (i % 2 === 0 ? -1 : 1) * 15,
-          rotateZ: fanAngle,
-          rotateX: 16,
-          scale: 0.88 - i * 0.02,
           opacity: 0,
+          y: 90,
+          scale: 0.82,
+          rotateX: 16,
           transformOrigin: "center top",
-          zIndex: 10 - i,
         });
-      });
 
-      const mobileDeckTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: cardsGridRef.current,
-          start: "top 88%",
-          end: "bottom 40%",
-          scrub: 1.8,
-        },
-      });
+        // Each card smoothly pitches up from 3D space into sharp flat readability
+        gsap.to(card, {
+          opacity: 1,
+          y: 0,
+          scale: targetScale,
+          rotateX: 0,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 95%",
+            end: "top 55%",
+            scrub: 1.6,
+          },
+        });
 
-      mobileDeckTl.to(activeCards, {
-        opacity: 1, scale: 0.94, duration: 1.2, ease: "power2.out",
-      }, 0);
-
-      activeCards.forEach((card, i) => {
-        const tScale = parseFloat(card.dataset.targetScale || "1");
-        mobileDeckTl.to(card, {
-          yPercent: 0, x: 0, rotateZ: 0, rotateX: 0, scale: tScale, duration: 2.2, ease: "power2.out",
-        }, 0.8 + i * 0.6);
+        // Tilts backward and dissolves as you keep scrolling past it
+        gsap.to(card, {
+          opacity: 0,
+          y: -70,
+          scale: 0.86,
+          rotateX: -14,
+          ease: "power2.in",
+          scrollTrigger: {
+            trigger: card,
+            start: "bottom 40%",
+            end: "bottom 8%",
+            scrub: 1.6,
+          },
+        });
       });
     });
 
     // ── 3. GUARANTEE PILL BANNER KINETICS ─────────────────────────────
     if (guaranteeRef.current) {
-      gsap.set(guaranteeRef.current, { opacity: 0, y: 100, scale: 0.88 });
+      gsap.set(guaranteeRef.current, { opacity: 0, y: 80, scale: 0.9 });
       gsap.to(guaranteeRef.current, {
         opacity: 1, y: 0, scale: 1, ease: "power2.out",
-        scrollTrigger: { trigger: guaranteeRef.current, start: "top 92%", end: "top 65%", scrub: 1.8 },
+        scrollTrigger: { trigger: guaranteeRef.current, start: "top 94%", end: "top 65%", scrub: 1.6 },
       });
     }
 
-    // ── 4. VIP 1-ON-1 UNDERWATER TELEMETRY DECK: STACK & DEAL ENGINE ──
+    // ── 4. VIP UNDERWATER TELEMETRY DECK (Desktop Dealing vs Mobile Clean 3D) ──
     const activeVipCards = vipCardRefs.current.filter((c): c is HTMLDivElement => c !== null);
 
-    // Desktop: 3-Column VIP Cards gather into center fanned stack and deal out one by one
     mm.add("(min-width: 1024px)", () => {
       if (!vipGridRef.current || activeVipCards.length === 0) return;
       gsap.set(vipGridRef.current, { perspective: 2000 });
 
       activeVipCards.forEach((card, i) => {
-        // Offset horizontally to overlap directly onto center card (index 1)
         const xCenterOffset = i === 0 ? 108 : i === 1 ? 0 : -108;
         const fanAngle = i === 0 ? -10 : i === 1 ? 0 : 10;
         const yElevate = i === 0 ? 25 : i === 1 ? -10 : 25;
@@ -388,12 +387,10 @@ export default function CourseSection() {
         },
       });
 
-      // Stage 1: Fly up together into center fanned diagnostic stack
       vipDeckTl.to(activeVipCards, {
         opacity: 1, y: 0, scale: 0.95, duration: 1.4, ease: "power2.out",
       }, 0);
 
-      // Stage 2: Deal out one by one into pristine 3-column layout
       activeVipCards.forEach((card, i) => {
         vipDeckTl.to(card, {
           xPercent: 0, y: 0, rotateZ: 0, rotateX: 0, scale: 1, duration: 2, ease: "power3.out",
@@ -401,44 +398,46 @@ export default function CourseSection() {
       });
     });
 
-    // Mobile & Tablet (<1024px): Vertical VIP Stack gathering & downward sequential dealing
+    // Mobile & Tablet (<1024px): Non-overlapping, independent 3D tilt per VIP card
     mm.add("(max-width: 1023px)", () => {
-      if (!vipGridRef.current || activeVipCards.length === 0) return;
-      gsap.set(vipGridRef.current, { perspective: 1500 });
-
-      activeVipCards.forEach((card, i) => {
-        const yStackOffset = -i * 106;
-        const fanTilt = i === 0 ? -6 : i === 1 ? 2 : 8;
+      activeVipCards.forEach((card) => {
+        gsap.set(card.parentElement || card, { perspective: 1400 });
 
         gsap.set(card, {
-          yPercent: yStackOffset,
-          x: (i % 2 === 0 ? -1 : 1) * 12,
-          rotateZ: fanTilt,
-          rotateX: 18,
-          scale: 0.9 - i * 0.03,
           opacity: 0,
+          y: 85,
+          scale: 0.85,
+          rotateX: 16,
           transformOrigin: "center top",
-          zIndex: 10 - i,
         });
-      });
 
-      const mobileVipTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: vipGridRef.current,
-          start: "top 88%",
-          end: "bottom 35%",
-          scrub: 1.8,
-        },
-      });
+        gsap.to(card, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          rotateX: 0,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 95%",
+            end: "top 55%",
+            scrub: 1.6,
+          },
+        });
 
-      mobileVipTl.to(activeVipCards, {
-        opacity: 1, scale: 0.95, duration: 1.2, ease: "power2.out",
-      }, 0);
-
-      activeVipCards.forEach((card, i) => {
-        mobileVipTl.to(card, {
-          yPercent: 0, x: 0, rotateZ: 0, rotateX: 0, scale: 1, duration: 2.2, ease: "power2.out",
-        }, 0.8 + i * 0.65);
+        gsap.to(card, {
+          opacity: 0,
+          y: -70,
+          scale: 0.86,
+          rotateX: -14,
+          ease: "power2.in",
+          scrollTrigger: {
+            trigger: card,
+            start: "bottom 40%",
+            end: "bottom 8%",
+            scrub: 1.6,
+          },
+        });
       });
     });
 
@@ -664,7 +663,7 @@ export default function CourseSection() {
           </p>
         </div>
 
-        {/* ── 3-CARD VIP DIAGNOSTIC DECK (Stacked Card Dealing & Unfolding Engine) ── */}
+        {/* ── 3-CARD VIP DIAGNOSTIC DECK ───────────────────────────── */}
         <div className="mb-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B0B0C] text-white text-[11px] font-body font-800 uppercase tracking-[0.2em] mb-4">
