@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,700&family=Outfit:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --canvas-paper: #F9F8F5;
+  --ink-primary: #0B0B0C;
+  --ink-secondary: #3A3A3C;
+  --ink-muted: #737376;
+  --klein-blue: #003EFF;
+  --klein-blue-hover: #002ACC;
+  --rule-light: rgba(255, 255, 255, 0.7);
+  --rule-dark: rgba(11, 11, 12, 0.12);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: initial; /* Controlled by Lenis momentum engine */
+  background-color: var(--canvas-paper);
+  color: var(--ink-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+  background-color: transparent;
+  color: var(--ink-primary);
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Standard browser cursor enabled */
+
+/* ─── TYPOGRAPHY CLASSES ───────────────────────────────── */
+.font-ceremonial {
+  font-family: 'Cinzel', serif;
+}
+
+.font-editorial {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-body {
+  font-family: 'Outfit', system-ui, sans-serif;
+}
+
+.font-display-syne {
+  font-family: 'Syne', sans-serif;
+}
+
+/* ─── SCROLLBAR KINETICS (LIGHT MODE) ───────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #EEEAEA;
+}
+::-webkit-scrollbar-thumb {
+  background: #0B0B0C;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #003EFF;
+}
+
+/* ─── LUMINOUS WHITE GLASSMORPHISM (LIGHT MODE BENTO) ───── */
+.glass-light-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 20px 65px rgba(0, 0, 0, 0.06), 0 4px 15px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 1);
+  color: var(--ink-primary);
+}
+
+.glass-light-card-dark {
+  background: rgba(11, 11, 12, 0.88);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+  color: #F9F8F5;
+}
+
+.glass-light-pill {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px) saturate(170%);
+  -webkit-backdrop-filter: blur(20px) saturate(170%);
+  border: 1px solid rgba(255, 255, 255, 1);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+}
+
+/* ─── TEXT GRADIENTS & ARCHITECTURAL HIGHLIGHTS ─────────── */
+.text-electric {
+  color: #003EFF;
+}
+
+.text-ink {
+  color: #0B0B0C;
+}
+
+/* ─── BUOYANT FLOAT ANIMATIONS ───────────────────────────── */
+@keyframes buoy-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes buoy-fast {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-buoyant-slow {
+  animation: buoy-slow 7s ease-in-out infinite;
+}
+
+.animate-buoyant-fast {
+  animation: buoy-fast 4.5s ease-in-out infinite;
+}
