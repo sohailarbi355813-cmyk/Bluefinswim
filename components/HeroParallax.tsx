@@ -73,19 +73,8 @@ export default function HeroParallax() {
       {/* ── TYPOGRAPHY IN UPPER WATER CLEAR ZONE ────────────────── */}
       <div
         ref={textContainerRef}
-        className="relative z-10 text-center px-5 sm:px-8 max-w-[1500px] mx-auto mt-2 sm:mt-4 flex flex-col items-center"
+        className="relative z-10 text-center px-5 sm:px-8 max-w-[1500px] mx-auto mt-6 sm:mt-8 flex flex-col items-center"
       >
-        {/* Mobile HUD Status Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -15, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/15 border border-cyan-400/35 text-cyan-200 text-[10px] sm:text-[11px] font-body font-800 tracking-[0.2em] uppercase backdrop-blur-md mb-4 shadow-[0_4px_20px_rgba(0,0,0,0.35)]"
-        >
-          <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse shrink-0" />
-          <span>Toronto Olympic Training Chamber</span>
-        </motion.div>
-
         {/* Top Script Accent Line */}
         <motion.p
           initial={{ opacity: 0, y: -12 }}
@@ -103,7 +92,7 @@ export default function HeroParallax() {
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="font-editorial font-700 text-white text-[38px] leading-[1.05] sm:text-[50px] md:text-[62px] lg:text-[72px] xl:text-[80px] sm:whitespace-nowrap tracking-tight md:tracking-[0.01em] sm:leading-none drop-shadow-[0_6px_30px_rgba(0,10,28,0.98)] max-w-xl sm:max-w-none"
         >
-          World of Swimming Excellence.
+          World of Swimming Excellence
         </motion.h1>
 
         {/* Mobile & Tablet Interactive Action Button Block */}
