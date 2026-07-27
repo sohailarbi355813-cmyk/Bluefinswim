@@ -19,6 +19,11 @@ const tracks = [
   { id: "masters", label: "Adult & Masters", desc: "Ages 18+ · Open-Water Endurance & Triathlon Glide" },
 ];
 
+const getWhatsAppUrl = (trackName: string) => {
+  const text = encodeURIComponent(`Hello Bluefin Swim Academy, I am writing to Reserve Your Track for: ${trackName}`);
+  return `https://wa.me/14168002444?text=${text}`;
+};
+
 const courses = [
   {
     id: "foundation", num: "01", category: "youth",
@@ -42,7 +47,7 @@ const courses = [
     dividerStyle: "border-[#0B0B0C]/10",
     checkStyle: "text-[#003EFF] bg-[#003EFF]/10",
     buttonStyle: "bg-[#0B0B0C] hover:bg-[#003EFF] text-white shadow-[0_12px_28px_rgba(0,0,0,0.25)] hover:shadow-[0_15px_35px_rgba(0,62,255,0.4)]",
-    buttonText: "Get Started",
+    buttonText: "Reserve Your Track",
   },
   {
     id: "development", num: "02", category: "development",
@@ -66,7 +71,7 @@ const courses = [
     dividerStyle: "border-[#003EFF]/20",
     checkStyle: "text-[#003EFF] bg-[#003EFF]/15",
     buttonStyle: "bg-[#003EFF] hover:bg-[#0B0B0C] text-white shadow-[0_15px_35px_rgba(0,62,255,0.45)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.3)]",
-    buttonText: "Get Started",
+    buttonText: "Reserve Your Track",
     popularTag: true,
   },
   {
@@ -91,7 +96,7 @@ const courses = [
     dividerStyle: "border-white/15",
     checkStyle: "text-[#22bbee] bg-white/10",
     buttonStyle: "bg-[#003EFF] hover:bg-white text-white hover:text-[#0B0B0C] shadow-[0_15px_38px_rgba(0,62,255,0.5)] hover:shadow-[0_15px_35px_rgba(255,255,255,0.4)]",
-    buttonText: "Get Started",
+    buttonText: "Reserve Your Track",
   },
   {
     id: "masters", num: "04", category: "masters",
@@ -115,7 +120,7 @@ const courses = [
     dividerStyle: "border-[#0B0B0C]/10",
     checkStyle: "text-[#003EFF] bg-[#003EFF]/10",
     buttonStyle: "bg-[#0B0B0C] hover:bg-[#003EFF] text-white shadow-[0_12px_28px_rgba(0,0,0,0.25)] hover:shadow-[0_15px_35px_rgba(0,62,255,0.4)]",
-    buttonText: "Get Started",
+    buttonText: "Reserve Your Track",
   }
 ];
 
@@ -175,7 +180,7 @@ const diagnosticDeck = [
     dividerStyle: "border-[#0B0B0C]/10",
     price: "$480",
     period: "2-hour diagnostic sprint",
-    cta: "Schedule 1-on-1 Lab",
+    cta: "Reserve Your Track",
     buttonStyle: "bg-[#003EFF] hover:bg-[#0B0B0C] text-white shadow-[0_15px_35px_rgba(0,62,255,0.45)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.3)]",
   }
 ];
@@ -636,7 +641,9 @@ export default function CourseSection() {
 
                 <div>
                   <a
-                    href="#contact"
+                    href={getWhatsAppUrl(c.title)}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`w-full py-4 sm:py-4.5 px-6 rounded-[1.2rem] font-body font-800 text-[14px] uppercase tracking-[0.16em] transition-all flex items-center justify-center gap-2.5 select-none text-center active:scale-[0.97] ${c.buttonStyle}`}
                   >
                     <span>{c.buttonText}</span>
@@ -731,7 +738,9 @@ export default function CourseSection() {
                 <div>
                   {card.cta ? (
                     <a
-                      href="#contact"
+                      href={getWhatsAppUrl(card.title)}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`w-full py-5 px-8 rounded-[1.4rem] font-body font-800 text-[14px] uppercase tracking-[0.18em] transition-all flex items-center justify-center gap-3 active:scale-[0.98] select-none ${card.buttonStyle}`}
                     >
                       <span>{card.cta}</span>

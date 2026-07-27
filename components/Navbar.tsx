@@ -19,6 +19,9 @@ export default function Navbar() {
     { label: "About us", href: "#coaches" },
   ];
 
+  // Direct WhatsApp Reservation Link
+  const whatsappReserveUrl = "https://wa.me/14168002444?text=Hello%20Bluefin%20Swim%20Academy,%20I%20would%20like%20to%20reserve%20a%20spot%20in%20your%20swimming%20track.";
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-[5000] w-full transition-all duration-300 ${
@@ -72,10 +75,12 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* ── RIGHT: VIBRANT RESERVATION PILL BUTTON (DESKTOP) ─────── */}
+        {/* ── RIGHT: VIBRANT RESERVATION PILL BUTTON (DESKTOP TO WHATSAPP) ─────── */}
         <div className="hidden md:flex items-center">
           <a
-            href="#courses"
+            href={whatsappReserveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 px-8 py-2.5 rounded-full bg-[#22bbee] hover:bg-[#3ce1ff] text-white hover:text-[#001026] font-body font-700 text-[15px] tracking-wide transition-all duration-300 shadow-[0_6px_22px_rgba(34,187,238,0.4)] hover:shadow-[0_8px_28px_rgba(60,225,255,0.7)] hover:scale-[1.03] no-underline cursor-pointer select-none active:scale-95"
           >
             <span>Reserve Your Spot</span>
@@ -129,7 +134,9 @@ export default function Navbar() {
                 className="pt-4"
               >
                 <a
-                  href="#courses"
+                  href={whatsappReserveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full py-4 px-6 rounded-2xl bg-[#22bbee] hover:bg-[#3ce1ff] text-[#001026] font-body font-800 text-[15px] uppercase tracking-[0.15em] transition-all shadow-[0_10px_30px_rgba(34,187,238,0.45)] flex items-center justify-center gap-2.5 no-underline active:scale-95 cursor-pointer text-center"
                 >
