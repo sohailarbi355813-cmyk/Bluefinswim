@@ -75,24 +75,24 @@ export default function HeroParallax() {
         ref={textContainerRef}
         className="relative z-10 text-center px-5 sm:px-8 max-w-[1500px] mx-auto mt-6 sm:mt-8 flex flex-col items-center"
       >
-        {/* Top Script Accent Line */}
+        {/* Top Script Accent Line (Unified cyan-200 color across mobile and desktop) */}
         <motion.p
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="font-editorial italic font-400 text-cyan-200 sm:text-white text-[24px] sm:text-[36px] md:text-[44px] lg:text-[48px] tracking-wide mb-1 sm:mb-2 drop-shadow-[0_4px_16px_rgba(0,8,22,0.95)]"
+          className="font-editorial italic font-400 text-cyan-200 text-[24px] sm:text-[36px] md:text-[44px] lg:text-[48px] tracking-wide mb-1 sm:mb-2 drop-shadow-[0_4px_16px_rgba(0,8,22,0.95)]"
         >
           Dive into a
         </motion.p>
 
-        {/* Main Serif Display Headline */}
+        {/* Main Serif Display Headline (Zero space before exclamation mark) */}
         <motion.h1
           initial={{ opacity: 0, scale: 0.96, y: 14 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="font-editorial font-700 text-white text-[38px] leading-[1.05] sm:text-[50px] md:text-[62px] lg:text-[72px] xl:text-[80px] sm:whitespace-nowrap tracking-tight md:tracking-[0.01em] sm:leading-none drop-shadow-[0_6px_30px_rgba(0,10,28,0.98)] max-w-xl sm:max-w-none"
         >
-          World of Swimming Excellence
+          World of Swimming Excellence!
         </motion.h1>
 
         {/* Mobile & Tablet Interactive Action Button Block */}
