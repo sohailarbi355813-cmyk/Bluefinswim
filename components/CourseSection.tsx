@@ -450,97 +450,109 @@ export default function CourseSection() {
   }, { scope: sectionRef, dependencies: [activeTab] });
 
   return (
-    <section ref={sectionRef} id="courses" className="relative py-20 sm:py-28 lg:py-40 z-10 border-t border-[#0B0B0C]/10 overflow-hidden bg-[#EBE8E2]">
+    <section ref={sectionRef} id="courses" className="relative py-20 sm:py-28 lg:py-36 z-10 border-t border-[#0B0B0C]/10 overflow-hidden bg-[#F0F2F6]">
       
       <div className="max-w-[1550px] mx-auto px-5 sm:px-10 lg:px-14">
         
-        {/* ── HIGH-PERFORMANCE KINETIC HEADER ──────────────────── */}
-        <div ref={headerRef} className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-14 items-center mb-20 sm:mb-24 pb-16 border-b border-[#0B0B0C]/15 min-h-[500px]">
+        {/* ── HIGH-PERFORMANCE AWWWARDS KINETIC HEADER ─────────────── */}
+        <div ref={headerRef} className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-14 lg:gap-16 items-center mb-16 sm:mb-20 pb-12 border-b border-[#0B0B0C]/12 min-h-[480px]">
           
-          <div ref={textColRef} className="lg:col-span-6 space-y-3 sm:space-y-4 lg:pr-4 z-10">
+          {/* Left Column: Cohesive Architectural Typography */}
+          <div ref={textColRef} className="lg:col-span-6 space-y-6 sm:space-y-8 z-10">
             <div
               ref={tagRef}
-              className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 rounded-md bg-[#003EFF]/10 border border-[#003EFF]/25 text-[#003EFF] text-[10px] sm:text-[11px] font-body font-800 tracking-[0.22em] uppercase w-fit opacity-0"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#003EFF] text-white text-[11px] sm:text-[12px] font-body font-800 tracking-[0.2em] uppercase shadow-[0_6px_20px_rgba(0,62,255,0.35)] opacity-0"
             >
-              <Sparkles className="w-3.5 h-3.5 shrink-0" />
+              <Sparkles className="w-4 h-4 shrink-0 animate-pulse" />
               <span>Architected Athletic Curriculars</span>
             </div>
             
-            <div className="space-y-1 sm:space-y-2 pt-2">
+            <div className="space-y-2 sm:space-y-3 pt-1">
               <div className="overflow-hidden p-1 -m-1">
                 <div
                   ref={(el) => { titleLinesRef.current[0] = el; }}
-                  className="font-display-syne font-900 text-[#0B0B0C] leading-[0.9] tracking-[-0.04em] text-[3.2rem] sm:text-[5.5rem] md:text-[6.3rem] select-none opacity-0"
+                  className="font-display-syne font-900 text-[#001026] leading-[1.02] tracking-[-0.03em] text-[40px] sm:text-[56px] lg:text-[64px] select-none opacity-0"
                 >
-                  SELECT
+                  Select Your Aquatic
                 </div>
               </div>
 
               <div className="overflow-hidden p-1 -m-1">
                 <div
                   ref={(el) => { titleLinesRef.current[1] = el; }}
-                  className="font-display-syne font-900 text-[#0B0B0C] leading-[0.9] tracking-[-0.04em] text-[3.2rem] sm:text-[5.5rem] md:text-[6.3rem] select-none opacity-0"
-                >
-                  YOUR
-                </div>
-              </div>
-
-              <div className="overflow-hidden p-1 -m-1">
-                <div
-                  ref={(el) => { titleLinesRef.current[2] = el; }}
-                  className="font-display-syne font-900 text-[#0B0B0C] leading-[0.9] tracking-[-0.04em] text-[3.2rem] sm:text-[5.5rem] md:text-[6.3rem] select-none opacity-0"
-                >
-                  AQUATIC
-                </div>
-              </div>
-
-              <div className="overflow-hidden p-1 -m-1 pt-1.5">
-                <div
-                  ref={(el) => { titleLinesRef.current[3] = el; }}
-                  className="font-editorial text-[#003EFF] leading-[0.95] tracking-[-0.02em] text-[2.8rem] sm:text-[4.8rem] md:text-[5.6rem] italic font-700 select-none opacity-0"
+                  className="font-display-syne font-900 text-[#003EFF] leading-[1.02] tracking-[-0.03em] text-[40px] sm:text-[56px] lg:text-[64px] select-none opacity-0"
                 >
                   Velocity Track.
                 </div>
               </div>
+
+              <div className="overflow-hidden p-1 -m-1 pt-3">
+                <p
+                  ref={(el) => { titleLinesRef.current[2] = el as unknown as HTMLDivElement; }}
+                  className="font-body font-500 text-[#4B5563] text-[16px] sm:text-[18px] leading-relaxed max-w-xl opacity-0 select-none"
+                >
+                  Designed for champion cadences and complete water confidence. Every program operates within Toronto&apos;s Olympic hydro-chambers under rigorous small-group athletic ratios.
+                </p>
+              </div>
+            </div>
+
+            {/* Tactile Athletic Telemetry Badges */}
+            <div className="pt-2 flex flex-wrap items-center gap-3 select-none">
+              <span className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white border border-slate-200 text-[#001026] font-body font-700 text-[12px] sm:text-[13px] shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-[#22bbee] shrink-0" />
+                <span>1:4 Max Coach Ratio</span>
+              </span>
+              <span className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white border border-slate-200 text-[#001026] font-body font-700 text-[12px] sm:text-[13px] shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-[#003EFF] shrink-0" />
+                <span>120fps Telemetry Labs</span>
+              </span>
+              <span className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white border border-slate-200 text-[#001026] font-body font-700 text-[12px] sm:text-[13px] shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-[#001026] shrink-0" />
+                <span>100% Tuition Guarantee</span>
+              </span>
             </div>
           </div>
 
+          {/* Right Column: Borderless Widescreen Aquatic Viewport */}
           <div className="lg:col-span-6 flex flex-col justify-center z-10">
             <div
               ref={imageBoxRef}
-              className="relative w-full h-[450px] sm:h-[600px] md:h-[660px] rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden glass-light-card p-3 sm:p-5 shadow-[0_30px_90px_rgba(0,10,35,0.18)] border border-[#003EFF]/25 flex flex-col justify-between group opacity-0"
+              className="relative w-full h-[420px] sm:h-[520px] lg:h-[550px] rounded-[2.6rem] overflow-hidden bg-[#001228] shadow-[0_30px_85px_rgba(0,15,38,0.28)] border border-cyan-400/30 flex flex-col justify-between group opacity-0 select-none"
             >
-              <div className="absolute inset-3 sm:inset-5 rounded-[1.6rem] sm:rounded-[2rem] overflow-hidden bg-[#00142c]">
+              {/* Cinematic Full-Bleed Pool Imagery */}
+              <div className="absolute inset-0">
                 <img
                   src={currentPhoto}
                   alt="Toronto Olympic Swimming Lanes Velocity Track"
-                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 filter contrast-[1.05] saturate-[1.05] select-none"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 filter contrast-[1.06] saturate-[1.08] select-none"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#000d20]/95 via-[#000d20]/35 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#000d20]/95 via-[#000d20]/30 to-transparent pointer-events-none" />
               </div>
 
-              <div className="relative z-10 flex flex-wrap items-center justify-between gap-2 p-3 sm:p-4">
-                <span className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl bg-black/65 backdrop-blur-md border border-white/20 text-white font-body text-[10px] sm:text-[11px] font-800 tracking-[0.16em] uppercase shadow-lg">
-                  <span className="w-2 h-2 rounded-full bg-[#22bbee] animate-pulse shrink-0" />
-                  <span className="truncate">Toronto Chamber · Lane 4</span>
+              {/* Interactive Top HUD Viewport Controller */}
+              <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 p-6 sm:p-7">
+                <span className="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-[#001026]/85 backdrop-blur-md border border-white/20 text-white font-body text-[11px] sm:text-[12px] font-800 tracking-[0.16em] uppercase shadow-lg">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#22bbee] animate-pulse shrink-0" />
+                  <span className="truncate">Toronto Flume · Live Feed</span>
                 </span>
 
                 <button
                   onClick={() => setCurrentPhoto((p) => (p === "/images/underwater-lanes.jpg" ? "/images/velocity-track.jpg" : "/images/underwater-lanes.jpg"))}
-                  className="px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-xl bg-[#003EFF] hover:bg-white text-white hover:text-[#0B0B0C] font-body text-[10px] sm:text-[11px] font-800 tracking-wider uppercase transition-all flex items-center gap-1.5 shadow-lg active:scale-95 shrink-0"
+                  className="px-4.5 py-2.5 rounded-xl bg-[#003EFF] hover:bg-white text-white hover:text-[#001026] font-body text-[11px] sm:text-[12px] font-800 tracking-wider uppercase transition-all flex items-center gap-2 shadow-xl active:scale-95 shrink-0 cursor-pointer"
                 >
-                  <RefreshCw className="w-3 sm:w-3.5 h-3 sm:h-3.5" />
-                  <span>Switch Cam</span>
+                  <RefreshCw className="w-3.5 h-3.5" />
+                  <span>Switch Camera View</span>
                 </button>
               </div>
 
-              <div className="relative z-10 p-4 sm:p-7 text-white space-y-1.5 sm:space-y-2">
-                <div className="text-[10px] sm:text-[11px] font-body font-800 uppercase tracking-[0.22em] text-[#22bbee] flex items-center gap-1.5">
-                  <Camera className="w-3.5 h-3.5 shrink-0" />
+              {/* Bottom HUD Telemetry Overlay Panel */}
+              <div className="relative z-10 m-5 sm:m-7 p-5 sm:p-6 rounded-2xl bg-[#001026]/80 backdrop-blur-xl border border-cyan-400/35 text-white space-y-2 shadow-xl">
+                <div className="text-[11px] sm:text-[12px] font-body font-800 uppercase tracking-[0.2em] text-[#22bbee] flex items-center gap-2">
+                  <Camera className="w-4 h-4 shrink-0 text-[#22bbee]" />
                   <span>4K Hydro-Optic Perspective</span>
                 </div>
-                <p className="font-body font-500 text-white/95 text-[14px] sm:text-[17px] leading-relaxed max-w-lg drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
-                  Choose your swimming stage below. Every track operates in our light-flooded Toronto Olympic training pools with strict small-group athlete ratios.
+                <p className="font-body font-600 text-white/95 text-[14px] sm:text-[15px] leading-snug">
+                  Real-time underwater camera telemetry capturing your stroke cadence, flip-turn velocity, and glide efficiency in crystal-clear definition.
                 </p>
               </div>
             </div>
