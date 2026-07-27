@@ -1,10 +1,16 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import { motion } from "framer-motion";
 import StaggeredText from "@/components/kinetic/StaggeredText";
-import MagneticButton from "@/components/kinetic/MagneticButton";
-import { Star, ShieldCheck, Award, Sparkles, Trophy, CheckCircle } from "lucide-react";
+import { Star, ShieldCheck, Award, Sparkles, Trophy, CheckCircle, MapPin, Quote } from "lucide-react";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const coaches = [
   {
@@ -39,36 +45,173 @@ const coaches = [
   },
 ];
 
-const testimonials = [
+const wheelReviews = [
   {
+    initials: "DH",
     quote: "Within 6 months of Marcus's 4K 120fps video analysis, my 13-year-old daughter shaved 4.2 seconds off her 100m freestyle personal best and qualified directly for Ontario Provincials. The scientific precision here is incomparable.",
     name: "David Harrison & Family",
-    sub: "Parent of Provincial Qualifier (Age 13)",
+    sub: "Parent of Provincial Qualifier · Age 13",
     loc: "Toronto Olympic Chamber",
-    span: "lg:col-span-7",
     stars: 5,
+    cardTheme: "bg-[#003EFF] text-white border-2 border-white/25 shadow-[0_25px_70px_rgba(0,62,255,0.38)]",
+    avatarTheme: "bg-white text-[#001026] shadow-[0_6px_20px_rgba(0,0,0,0.2)]",
+    starBadge: "bg-white/20 text-white border border-white/30 backdrop-blur-md",
+    subColor: "text-white/90",
+    dividerColor: "border-white/20",
+    locBadge: "bg-[#001026]/70 text-white border border-white/25",
+    tiltDesktop: -3.5,
+    tiltMobile: -2,
   },
   {
+    initials: "RT",
     quote: "Coach Elena entirely solved my panic attacks around deep water turns. I swam my last half-Ironman distance with pristine heart rate control and passed 48 swimmers on the back stretch.",
     name: "Dr. Rachel Thorne",
     sub: "Masters Athlete · Half-Ironman Competitor",
     loc: "Toronto Harbourfront Studio",
-    span: "lg:col-span-5",
     stars: 5,
+    cardTheme: "bg-white text-[#001026] border border-slate-200/80 shadow-[0_25px_80px_rgba(0,0,0,0.08)]",
+    avatarTheme: "bg-[#003EFF] text-white shadow-[0_6px_20px_rgba(0,62,255,0.35)]",
+    starBadge: "bg-[#F0F2F6] text-[#D97706] border border-slate-200",
+    subColor: "text-[#003EFF]",
+    dividerColor: "border-slate-200",
+    locBadge: "bg-slate-100 text-[#001026] border border-slate-200",
+    tiltDesktop: 3.5,
+    tiltMobile: 2,
   },
   {
+    initials: "MK",
     quote: "At 44 years old, I was genuinely terrified of deep water. The private diagnostic sessions were empowering, calm, and deeply rooted in physics rather than brute shouting. Today I easily swim 1,500m continuously.",
     name: "Michael K.",
-    sub: "Adult Learner · Age 44",
+    sub: "Adult Foundation Learner · Age 44",
     loc: "Downtown Toronto Studio",
-    span: "lg:col-span-12",
     stars: 5,
+    cardTheme: "bg-[#001026] text-white border border-cyan-400/35 shadow-[0_30px_90px_rgba(0,16,38,0.45)]",
+    avatarTheme: "bg-[#22bbee] text-[#001026] font-900 shadow-[0_6px_20px_rgba(34,187,238,0.4)]",
+    starBadge: "bg-white/10 text-[#22bbee] border border-cyan-400/30 backdrop-blur-md",
+    subColor: "text-[#22bbee]",
+    dividerColor: "border-white/15",
+    locBadge: "bg-white/10 text-white border border-white/15",
+    tiltDesktop: -3,
+    tiltMobile: -1.5,
+  },
+  {
+    initials: "CL",
+    quote: "The hydro-flume drag analysis spotted an elbow drop in my recovery stroke that three other clubs completely missed. Fixing that one movement gave me effortless sprint glide and zero shoulder fatigue.",
+    name: "Claire Lin",
+    sub: "University Varsity Sprinter",
+    loc: "High Velocity Flume Lab",
+    stars: 5,
+    cardTheme: "bg-[#F2F4F8] text-[#001026] border border-slate-300 shadow-[0_20px_70px_rgba(0,0,0,0.07)]",
+    avatarTheme: "bg-[#001026] text-white shadow-md",
+    starBadge: "bg-white text-[#003EFF] border border-slate-200 shadow-sm",
+    subColor: "text-[#003EFF]",
+    dividerColor: "border-slate-200/80",
+    locBadge: "bg-white text-[#001026] border border-slate-200",
+    tiltDesktop: 3,
+    tiltMobile: 2,
+  },
+  {
+    initials: "BM",
+    quote: "Enrolling our 6-year-old in the Youth Foundation track was the smartest decision we made this summer. Zero water anxiety after session two, and now he explains float mechanics to us at the beach.",
+    name: "Brandon & Maya S.",
+    sub: "Parents of Foundation Swimmer · Age 6",
+    loc: "Toronto Olympic Chamber",
+    stars: 5,
+    cardTheme: "bg-[#003EFF] text-white border-2 border-white/25 shadow-[0_25px_70px_rgba(0,62,255,0.38)]",
+    avatarTheme: "bg-white text-[#001026] shadow-[0_6px_20px_rgba(0,0,0,0.2)]",
+    starBadge: "bg-white/20 text-white border border-white/30 backdrop-blur-md",
+    subColor: "text-white/90",
+    dividerColor: "border-white/20",
+    locBadge: "bg-[#001026]/70 text-white border border-white/25",
+    tiltDesktop: -2.5,
+    tiltMobile: -1.5,
   },
 ];
 
 export default function CoachesSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const wheelContainerRef = useRef<HTMLDivElement>(null);
+  const reviewCardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useGSAP(() => {
+    if (!wheelContainerRef.current) return;
+    const cards = reviewCardRefs.current.filter((c): c is HTMLDivElement => c !== null);
+    if (cards.length === 0) return;
+
+    const mm = gsap.matchMedia();
+
+    // Widescreen & Desktop Wheel Physics (>=1024px)
+    mm.add("(min-width: 1024px)", () => {
+      gsap.set(wheelContainerRef.current, { perspective: 1800 });
+
+      cards.forEach((card, i) => {
+        const targetTilt = wheelReviews[i]?.tiltDesktop || 0;
+        gsap.set(card, {
+          y: 130 + i * 25,
+          rotateX: 25,
+          rotateZ: i % 2 === 0 ? -12 : 12,
+          opacity: i === 0 ? 0.35 : 0,
+          scale: 0.88,
+          transformOrigin: "center center",
+        });
+
+        gsap.to(card, {
+          y: 0,
+          rotateX: 0,
+          rotateZ: targetTilt,
+          opacity: 1,
+          scale: 1,
+          duration: 1.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 90%",
+            end: "top 45%",
+            scrub: 1.5,
+          },
+        });
+      });
+    });
+
+    // Mobile & Tablet Wheel Dealing Physics (<1024px)
+    mm.add("(max-width: 1023px)", () => {
+      gsap.set(wheelContainerRef.current, { perspective: 1400 });
+
+      cards.forEach((card, i) => {
+        const targetTilt = wheelReviews[i]?.tiltMobile || 0;
+        gsap.set(card, {
+          y: 80,
+          rotateX: 18,
+          rotateZ: i % 2 === 0 ? -8 : 8,
+          opacity: 0.15,
+          scale: 0.9,
+          transformOrigin: "center bottom",
+        });
+
+        gsap.to(card, {
+          y: 0,
+          rotateX: 0,
+          rotateZ: targetTilt,
+          opacity: 1,
+          scale: 1,
+          duration: 1.6,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 92%",
+            end: "top 55%",
+            scrub: 1.4,
+          },
+        });
+      });
+    });
+
+    ScrollTrigger.refresh();
+    return () => mm.revert();
+  }, { scope: sectionRef });
+
   return (
-    <section id="coaches" className="relative py-28 lg:py-36 z-10 border-t border-[#0B0B0C]/10">
+    <section ref={sectionRef} id="coaches" className="relative py-28 lg:py-36 z-10 border-t border-[#0B0B0C]/10 overflow-hidden bg-[#EBE8E2]">
       
       {/* ── FACULTY MASTER SECTION ───────────────────────────── */}
       <div className="max-w-[1450px] mx-auto px-6 sm:px-10 lg:px-16 mb-32">
@@ -151,21 +294,21 @@ export default function CoachesSection() {
 
       </div>
 
-      {/* ── CHAMPIONSHIP STORIES BENTO SECTION ─────────────────── */}
-      <div id="testimonials" className="max-w-[1450px] mx-auto px-6 sm:px-10 lg:px-16">
+      {/* ── 3D ROTATING REVIEWS WHEEL DECK SECTION ─────────────── */}
+      <div id="testimonials" className="max-w-[1450px] mx-auto px-5 sm:px-10 lg:px-16 pt-8">
         
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-16 pb-12 border-b border-[#0B0B0C]/15">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-16 sm:mb-20 pb-12 border-b border-[#0B0B0C]/15">
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-[#003EFF]/10 border border-[#003EFF]/25 text-[#003EFF] text-[11px] font-body font-800 tracking-[0.25em] uppercase">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#003EFF] text-white text-[11px] sm:text-[12px] font-body font-800 tracking-[0.22em] uppercase shadow-[0_6px_20px_rgba(0,62,255,0.35)]">
+              <Sparkles className="w-3.5 h-3.5 animate-pulse" />
               <span>Verified Podium Logs</span>
             </div>
             
             <StaggeredText
-              text="PROVINCIAL WINNERS &"
+              text="REAL REVIEWS &"
               as="h2"
               stagger={0.035}
-              className="font-display-syne font-900 text-[#0B0B0C] leading-none tracking-[-0.04em]"
+              className="font-display-syne font-900 text-[#001026] leading-none tracking-[-0.04em]"
               style={{ fontSize: "clamp(2.8rem, 6.5vw, 5.8rem)" }}
             />
             
@@ -174,61 +317,76 @@ export default function CoachesSection() {
             </div>
           </div>
 
-          <p className="font-body font-500 text-[#3A3A3C] text-[16px] max-w-sm leading-relaxed">
-            Read authentic evaluation logs from parents of provincial podium champions, competitive triathletes, and adult learners across Greater Toronto.
-          </p>
+          <div className="max-w-md space-y-3">
+            <div className="flex items-center gap-2 text-[#001026] font-body text-[13px] font-800 uppercase tracking-wider">
+              <CheckCircle className="w-4 h-4 text-[#003EFF]" />
+              <span>100% Authentic Athlete Evaluations</span>
+            </div>
+            <p className="font-body font-500 text-[#4B5563] text-[15px] sm:text-[16px] leading-relaxed">
+              Scroll through our rotating feed of athlete reviews from provincial podium qualifiers, Ironman triathletes, and Toronto families.
+            </p>
+          </div>
         </div>
 
-        {/* Testimonials Asymmetrical Bento Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 items-stretch">
-          {testimonials.map((t, idx) => (
-            <motion.div
+        {/* Interactive Tilted Wheel Review Feed */}
+        <div
+          ref={wheelContainerRef}
+          className="max-w-4xl mx-auto space-y-6 sm:space-y-8 lg:space-y-10 py-6"
+        >
+          {wheelReviews.map((rev, idx) => (
+            <div
               key={idx}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-10%" }}
-              transition={{ duration: 0.65, delay: idx * 0.12, type: "spring", stiffness: 130, damping: 18 }}
-              whileHover={{ y: -6 }}
+              ref={(el) => { reviewCardRefs.current[idx] = el; }}
               data-cursor-text="LOG ENTRY"
-              className={`${t.span} glass-light-card p-8 sm:p-12 rounded-3xl flex flex-col justify-between relative overflow-hidden bento-card group hover:border-[#003EFF] transition-all duration-300`}
+              className={`${rev.cardTheme} p-7 sm:p-10 lg:p-11 rounded-[2.2rem] sm:rounded-[2.8rem] transition-all duration-500 relative overflow-hidden group hover:scale-[1.02] hover:z-20`}
             >
-              <div>
-                <div className="flex items-center justify-between mb-6 pb-6 border-b border-[#0B0B0C]/10">
+              {/* Top Bar: Athlete Avatar & Star Rating Pill */}
+              <div className="flex flex-wrap items-center justify-between gap-4 mb-6 sm:mb-8 pb-6 border-b border-current/15">
+                <div className="flex items-center gap-4">
+                  <div className={`w-13 h-13 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center font-display-syne font-900 text-xl sm:text-2xl tracking-tight shrink-0 select-none ${rev.avatarTheme}`}>
+                    {rev.initials}
+                  </div>
+                  <div>
+                    <h3 className="font-display-syne font-800 text-[20px] sm:text-[23px] tracking-tight leading-tight">
+                      {rev.name}
+                    </h3>
+                    <div className={`font-body text-[12px] sm:text-[13px] font-700 mt-1 uppercase tracking-wide flex items-center gap-1.5 ${rev.subColor}`}>
+                      <span>{rev.sub}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className={`px-4 py-2 sm:py-2.5 rounded-full font-body font-800 text-[11px] sm:text-[12px] uppercase tracking-wider flex items-center gap-1.5 shadow-sm ${rev.starBadge}`}>
                   <div className="flex gap-1">
-                    {[...Array(t.stars)].map((_, sIndex) => (
-                      <Star key={sIndex} className="w-4 h-4 text-[#003EFF] fill-[#003EFF]" />
+                    {[...Array(rev.stars)].map((_, sIndex) => (
+                      <Star key={sIndex} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current text-amber-400 stroke-0" />
                     ))}
                   </div>
-                  <span className="font-body text-[11px] font-800 text-[#0B0B0C] uppercase tracking-widest flex items-center gap-1.5">
-                    <CheckCircle className="w-3.5 h-3.5 text-[#003EFF]" />
-                    Verified Athlete Log
-                  </span>
+                  <span className="ml-1 opacity-90 select-none">5.0 Rating</span>
                 </div>
+              </div>
 
-                <div className="font-editorial text-[#0B0B0C]/10 text-[85px] leading-none -mt-4 mb-2 select-none font-900">
-                  &ldquo;
-                </div>
-
-                <p className="font-body text-[16px] sm:text-[18px] text-[#0B0B0C] font-600 leading-relaxed mb-10 -mt-8">
-                  {t.quote}
+              {/* Main Testimonial Quote */}
+              <div className="relative mb-8 sm:mb-10">
+                <Quote className="w-10 h-10 sm:w-14 sm:h-14 opacity-15 mb-3 select-none" />
+                <p className="font-body text-[16px] sm:text-[19px] font-600 leading-relaxed sm:leading-relaxed tracking-tight -mt-4 sm:-mt-6 pl-1 sm:pl-2">
+                  &ldquo;{rev.quote}&rdquo;
                 </p>
               </div>
 
-              <div className="pt-6 border-t border-[#0B0B0C]/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div>
-                  <div className="font-display-syne font-800 text-[#0B0B0C] text-[18px] sm:text-[20px] tracking-tight">
-                    {t.name}
-                  </div>
-                  <div className="font-body text-[12px] font-800 text-[#003EFF] mt-0.5 uppercase tracking-wider">
-                    {t.sub}
-                  </div>
+              {/* Footer Bar: Verification & Location Tag */}
+              <div className={`pt-6 border-t flex flex-wrap items-center justify-between gap-4 ${rev.dividerColor}`}>
+                <div className="flex items-center gap-2 font-body text-[11px] sm:text-[12px] font-800 uppercase tracking-widest opacity-85">
+                  <CheckCircle className="w-4 h-4 text-[#22bbee]" />
+                  <span>Verified Bluefin Member Log</span>
                 </div>
-                
-                <span className="px-3.5 py-1.5 rounded-xl bg-white border border-[#D8D5CF] text-[#0B0B0C] text-[11px] font-body font-700 shadow-xs">
-                  📍 {t.loc}
-                </span>
+
+                <div className={`px-4 py-1.5 rounded-xl text-[11px] sm:text-[12px] font-body font-800 uppercase tracking-wider flex items-center gap-2 shadow-xs ${rev.locBadge}`}>
+                  <MapPin className="w-3.5 h-3.5 shrink-0" />
+                  <span className="truncate">{rev.loc}</span>
+                </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
