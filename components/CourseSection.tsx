@@ -230,16 +230,16 @@ export default function CourseSection() {
       const scrollTl = gsap.timeline({
         scrollTrigger: {
           trigger: headerRef.current,
-          start: "top 88%",
-          end: "center 35%",
-          scrub: 1.2,
+          start: "top 92%",
+          end: "center 55%",
+          scrub: 0.4,
         },
       });
 
-      scrollTl.to(imageBoxRef.current, { x: "0%", rotateY: 0, opacity: 1, scale: 1, duration: 2.5, ease: "power2.out" }, 0);
-      scrollTl.to(secondImageBoxRef.current, { x: "0%", rotateY: 0, opacity: 1, scale: 1, duration: 2.5, ease: "power2.out" }, 1.2);
-      scrollTl.to(textColRef.current, { y: "0%", opacity: 1, scale: 1, duration: 2.5, ease: "power2.out" }, 2.4);
-      scrollTl.to([tagRef.current, ...titleLinesRef.current], { opacity: 1, y: 0, stagger: 0.18, duration: 1.5, ease: "power2.out" }, 2.8);
+      scrollTl.to(imageBoxRef.current, { x: "0%", rotateY: 0, opacity: 1, scale: 1, duration: 1.2, ease: "power3.out" }, 0);
+      scrollTl.to(secondImageBoxRef.current, { x: "0%", rotateY: 0, opacity: 1, scale: 1, duration: 1.2, ease: "power3.out" }, 0.35);
+      scrollTl.to(textColRef.current, { y: "0%", opacity: 1, scale: 1, duration: 1.2, ease: "power3.out" }, 0.7);
+      scrollTl.to([tagRef.current, ...titleLinesRef.current], { opacity: 1, y: 0, stagger: 0.1, duration: 0.8, ease: "power2.out" }, 0.85);
     });
 
     mm.add("(max-width: 1023px)", () => {
@@ -252,16 +252,16 @@ export default function CourseSection() {
       const mobileScrollTl = gsap.timeline({
         scrollTrigger: {
           trigger: headerRef.current,
-          start: "top 90%",
-          end: "center 45%",
-          scrub: 1.2,
+          start: "top 92%",
+          end: "center 60%",
+          scrub: 0.4,
         },
       });
 
-      mobileScrollTl.to(imageBoxRef.current, { x: "0%", rotateY: 0, opacity: 1, scale: 1, duration: 2.2, ease: "power2.out" }, 0);
-      mobileScrollTl.to(secondImageBoxRef.current, { x: "0%", rotateY: 0, opacity: 1, scale: 1, duration: 2.2, ease: "power2.out" }, 1.0);
-      mobileScrollTl.to(textColRef.current, { y: "0%", opacity: 1, scale: 1, duration: 2.2, ease: "power2.out" }, 2.0);
-      mobileScrollTl.to([tagRef.current, ...titleLinesRef.current], { opacity: 1, y: 0, stagger: 0.15, duration: 1.2, ease: "power2.out" }, 2.3);
+      mobileScrollTl.to(imageBoxRef.current, { x: "0%", rotateY: 0, opacity: 1, scale: 1, duration: 1.1, ease: "power3.out" }, 0);
+      mobileScrollTl.to(secondImageBoxRef.current, { x: "0%", rotateY: 0, opacity: 1, scale: 1, duration: 1.1, ease: "power3.out" }, 0.3);
+      mobileScrollTl.to(textColRef.current, { y: "0%", opacity: 1, scale: 1, duration: 1.1, ease: "power3.out" }, 0.6);
+      mobileScrollTl.to([tagRef.current, ...titleLinesRef.current], { opacity: 1, y: 0, stagger: 0.08, duration: 0.7, ease: "power2.out" }, 0.75);
     });
 
     // Perpetual holographic floating levitation
