@@ -246,7 +246,7 @@ export default function CourseSection() {
       mobilePhotoTl.to(imageBoxRef.current, { y: -40, opacity: 0, scale: 0.93, duration: 1.8, ease: "power2.in" }, 2.8);
     });
 
-    // ── 2. PRICING DECK CHOREOGRAPHY (Desktop Stack Dealing vs Mobile Clean 3D) ──
+    // ── 2. PRICING DECK CHOREOGRAPHY (Stacked Dealing: Center on Desktop, Bottom on Mobile) ──
     const activeCards = cardRefs.current.filter((c): c is HTMLDivElement => c !== null);
 
     // Widescreen & Desktop (>=1280px): Horizontal center stack gathering & dealing
@@ -296,52 +296,53 @@ export default function CourseSection() {
       });
     });
 
-    // Mobile & Tablet (<1280px): Non-overlapping, independent 3D tilt & zoom per card
+    // Mobile & Tablet (<1280px): Bottom-Up Stacked Card Dealing (100% full view per card without top overlapping)
     mm.add("(max-width: 1279px)", () => {
+      if (!cardsGridRef.current || activeCards.length === 0) return;
+      gsap.set(cardsGridRef.current, { perspective: 1600 });
+
       activeCards.forEach((card, i) => {
         const isPopular = courses[i]?.popularTag;
         const targetScale = isPopular ? 1.02 : 1;
+        card.dataset.targetScale = targetScale.toString();
 
-        gsap.set(card.parentElement, { perspective: 1400 });
+        // Alternating fanned rotation mimicking a physical deck emerging from the bottom of the screen
+        const fanTilt = i === 0 ? 0 : i === 1 ? -6 : i === 2 ? 5 : -8;
+        // Shift downwards into the bottom deck space rather than upwards, preventing ANY clipping of the active card
+        const emergeY = i === 0 ? 60 : 160 + i * 50;
 
-        // Zero yPercent overlap so every single card is 100% visible and separate in DOM!
         gsap.set(card, {
-          opacity: 0,
-          y: 90,
-          scale: 0.82,
-          rotateX: 16,
-          transformOrigin: "center top",
+          y: emergeY,
+          rotateZ: fanTilt,
+          rotateX: 22,
+          scale: 0.88 - i * 0.03,
+          opacity: i === 0 ? 0.2 : 0,
+          transformOrigin: "center bottom",
+          zIndex: i + 1, // Ascending zIndex ensures cards emerge cleanly from underneath without hiding earlier content
         });
+      });
 
-        // Each card smoothly pitches up from 3D space into sharp flat readability
-        gsap.to(card, {
-          opacity: 1,
-          y: 0,
-          scale: targetScale,
-          rotateX: 0,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 95%",
-            end: "top 55%",
-            scrub: 1.6,
-          },
-        });
+      const mobileBottomDeckTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: cardsGridRef.current,
+          start: "top 92%",
+          end: "bottom 35%",
+          scrub: 1.8,
+        },
+      });
 
-        // Tilts backward and dissolves as you keep scrolling past it
-        gsap.to(card, {
-          opacity: 0,
-          y: -70,
-          scale: 0.86,
-          rotateX: -14,
-          ease: "power2.in",
-          scrollTrigger: {
-            trigger: card,
-            start: "bottom 40%",
-            end: "bottom 8%",
-            scrub: 1.6,
-          },
-        });
+      // Card 0 locks into complete alignment immediately upon arriving at the section
+      const tScale0 = parseFloat(activeCards[0].dataset.targetScale || "1");
+      mobileBottomDeckTl.to(activeCards[0], {
+        opacity: 1, y: 0, rotateZ: 0, rotateX: 0, scale: tScale0, duration: 1.5, ease: "power2.out",
+      }, 0);
+
+      // Subsequent cards rise out of the bottom fanned deck one by one as the user scrolls down to them
+      activeCards.slice(1).forEach((card, i) => {
+        const tScale = parseFloat(card.dataset.targetScale || "1");
+        mobileBottomDeckTl.to(card, {
+          opacity: 1, y: 0, rotateZ: 0, rotateX: 0, scale: tScale, duration: 2.5, ease: "power3.out",
+        }, 0.8 + i * 1.3); // Widened delay ensures user views each card in 100% full height before next one emerges from below
       });
     });
 
@@ -354,7 +355,7 @@ export default function CourseSection() {
       });
     }
 
-    // ── 4. VIP UNDERWATER TELEMETRY DECK (Desktop Dealing vs Mobile Clean 3D) ──
+    // ── 4. VIP UNDERWATER TELEMETRY DECK (Stacked Dealing: Center on Desktop, Bottom on Mobile) ──
     const activeVipCards = vipCardRefs.current.filter((c): c is HTMLDivElement => c !== null);
 
     mm.add("(min-width: 1024px)", () => {
@@ -398,46 +399,43 @@ export default function CourseSection() {
       });
     });
 
-    // Mobile & Tablet (<1024px): Non-overlapping, independent 3D tilt per VIP card
+    // Mobile & Tablet (<1024px): Bottom-Up Stacked Telemetry Card Dealing
     mm.add("(max-width: 1023px)", () => {
-      activeVipCards.forEach((card) => {
-        gsap.set(card.parentElement || card, { perspective: 1400 });
+      if (!vipGridRef.current || activeVipCards.length === 0) return;
+      gsap.set(vipGridRef.current, { perspective: 1600 });
+
+      activeVipCards.forEach((card, i) => {
+        const fanAngle = i === 0 ? 0 : i === 1 ? 5 : -7;
+        const emergeOffset = i === 0 ? 50 : 150 + i * 60;
 
         gsap.set(card, {
-          opacity: 0,
-          y: 85,
-          scale: 0.85,
-          rotateX: 16,
-          transformOrigin: "center top",
+          y: emergeOffset,
+          rotateZ: fanAngle,
+          rotateX: 20,
+          scale: 0.88 - i * 0.03,
+          opacity: i === 0 ? 0.2 : 0,
+          transformOrigin: "center bottom",
+          zIndex: i + 1,
         });
+      });
 
-        gsap.to(card, {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          rotateX: 0,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 95%",
-            end: "top 55%",
-            scrub: 1.6,
-          },
-        });
+      const mobileVipBottomTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: vipGridRef.current,
+          start: "top 90%",
+          end: "bottom 30%",
+          scrub: 1.8,
+        },
+      });
 
-        gsap.to(card, {
-          opacity: 0,
-          y: -70,
-          scale: 0.86,
-          rotateX: -14,
-          ease: "power2.in",
-          scrollTrigger: {
-            trigger: card,
-            start: "bottom 40%",
-            end: "bottom 8%",
-            scrub: 1.6,
-          },
-        });
+      mobileVipBottomTl.to(activeVipCards[0], {
+        opacity: 1, y: 0, rotateZ: 0, rotateX: 0, scale: 1, duration: 1.4, ease: "power2.out",
+      }, 0);
+
+      activeVipCards.slice(1).forEach((card, i) => {
+        mobileVipBottomTl.to(card, {
+          opacity: 1, y: 0, rotateZ: 0, rotateX: 0, scale: 1, duration: 2.5, ease: "power3.out",
+        }, 0.9 + i * 1.4);
       });
     });
 
