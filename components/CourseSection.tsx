@@ -259,20 +259,43 @@ export default function CourseSection() {
 
     mm.add("(max-width: 1023px)", () => {
       if (!headerRef.current || !imageBoxRef.current || !secondImageBoxRef.current) return;
+      gsap.set(headerRef.current, { perspective: 1800 });
 
-      gsap.fromTo([tagRef.current, ...titleLinesRef.current],
-        { opacity: 0, y: 45 },
-        { opacity: 1, y: 0, stagger: 0.15, duration: 1.3, ease: "power2.out", scrollTrigger: { trigger: headerRef.current, start: "top 90%", toggleActions: "play none none none" } }
+      gsap.fromTo(tagRef.current, 
+        { opacity: 0, y: -25, scale: 0.85 }, 
+        { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: "power3.out", scrollTrigger: { trigger: headerRef.current, start: "top 90%", toggleActions: "play none none none" } }
       );
 
+      titleLinesRef.current.forEach((el, i) => {
+        if (!el) return;
+        gsap.fromTo(el,
+          { opacity: 0, y: 35, rotateX: 8 },
+          { opacity: 1, y: 0, rotateX: 0, duration: 1.3, delay: i * 0.15, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 90%", toggleActions: "play none none none" } }
+        );
+      });
+
+      // Photo 01 on Mobile: 3D perspective tilt + continuous floating levitation
       gsap.fromTo(imageBoxRef.current,
-        { opacity: 0, y: 65, rotateX: 15, scale: 0.88 },
-        { opacity: 1, y: 0, rotateX: 0, scale: 1, duration: 1.5, ease: "power3.out", scrollTrigger: { trigger: imageBoxRef.current, start: "top 88%", toggleActions: "play none none none" } }
+        { opacity: 0, rotateY: -16, rotateX: 14, scale: 0.82, y: 50 },
+        { 
+          opacity: 1, rotateY: 0, rotateX: 0, scale: 1, y: 0, duration: 1.6, ease: "power3.out", 
+          scrollTrigger: { trigger: imageBoxRef.current, start: "top 88%", toggleActions: "play none none none" },
+          onComplete: () => {
+            gsap.to(imageBoxRef.current, { y: -10, duration: 3.2, repeat: -1, yoyo: true, ease: "sine.inOut" });
+          }
+        }
       );
 
+      // Photo 02 on Mobile: Reciprocal 3D perspective tilt + continuous floating levitation
       gsap.fromTo(secondImageBoxRef.current,
-        { opacity: 0, y: 65, rotateX: 15, scale: 0.88 },
-        { opacity: 1, y: 0, rotateX: 0, scale: 1, duration: 1.5, ease: "power3.out", scrollTrigger: { trigger: secondImageBoxRef.current, start: "top 88%", toggleActions: "play none none none" } }
+        { opacity: 0, rotateY: 16, rotateX: -14, scale: 0.82, y: 50 },
+        { 
+          opacity: 1, rotateY: 0, rotateX: 0, scale: 1, y: 0, duration: 1.6, ease: "power3.out", 
+          scrollTrigger: { trigger: secondImageBoxRef.current, start: "top 88%", toggleActions: "play none none none" },
+          onComplete: () => {
+            gsap.to(secondImageBoxRef.current, { y: 10, duration: 3.6, repeat: -1, yoyo: true, ease: "sine.inOut" });
+          }
+        }
       );
     });
 
@@ -507,7 +530,7 @@ export default function CourseSection() {
             <div className="lg:col-span-7 flex justify-end z-10 w-full">
               <div
                 ref={imageBoxRef}
-                className="relative w-full h-[320px] sm:h-[420px] lg:h-[460px] rounded-[2.6rem] overflow-hidden bg-[#001228] shadow-[0_25px_80px_rgba(0,16,38,0.38)] hover:shadow-[0_0_80px_rgba(34,187,238,0.5)] border border-cyan-400/50 hover:border-cyan-300/90 flex flex-col justify-between p-7 sm:p-9 group transition-shadow duration-500 opacity-0 select-none"
+                className="relative w-full h-[320px] sm:h-[420px] lg:h-[460px] rounded-[2.6rem] overflow-hidden bg-[#001228] shadow-[0_25px_80px_rgba(0,16,38,0.38)] hover:shadow-[0_0_80px_rgba(34,187,238,0.5)] active:shadow-[0_0_70px_rgba(34,187,238,0.65)] border border-cyan-400/50 hover:border-cyan-300/90 active:border-cyan-300 flex flex-col justify-between p-7 sm:p-9 group transition-all duration-500 opacity-0 select-none cursor-pointer"
               >
                 <div className="absolute inset-0">
                   <img
@@ -542,7 +565,7 @@ export default function CourseSection() {
             <div className="lg:col-span-7 flex justify-start z-10 w-full order-2 lg:order-1">
               <div
                 ref={secondImageBoxRef}
-                className="relative w-full h-[320px] sm:h-[420px] lg:h-[460px] rounded-[2.6rem] overflow-hidden bg-[#001228] shadow-[0_25px_80px_rgba(0,16,38,0.38)] hover:shadow-[0_0_80px_rgba(0,62,255,0.6)] border border-[#003EFF]/50 hover:border-cyan-300/90 flex flex-col justify-between p-7 sm:p-9 group transition-shadow duration-500 opacity-0 select-none"
+                className="relative w-full h-[320px] sm:h-[420px] lg:h-[460px] rounded-[2.6rem] overflow-hidden bg-[#001228] shadow-[0_25px_80px_rgba(0,16,38,0.38)] hover:shadow-[0_0_80px_rgba(0,62,255,0.6)] active:shadow-[0_0_75px_rgba(0,62,255,0.7)] border border-[#003EFF]/50 hover:border-cyan-300/90 active:border-cyan-300 flex flex-col justify-between p-7 sm:p-9 group transition-all duration-500 opacity-0 select-none cursor-pointer"
               >
                 <div className="absolute inset-0">
                   <img
