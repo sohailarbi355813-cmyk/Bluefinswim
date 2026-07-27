@@ -20,8 +20,13 @@ const coaches = [
     spec: "Olympic Trialist · Sprint Velocity Optimization",
     exp: "14 yrs National Faculty",
     bio: "Former Canadian National Team sprint representative. Specializes in biomechanical stroke efficiency, micro-turbulence hand entry analysis, and competitive race cadence for high-performance athletes.",
-    span: "lg:col-span-6",
     acclaim: "Coached 42 Provincial Gold Medalists",
+    watermark: "MARCUS V.",
+    orbGradient: "from-[#003EFF] via-[#1E88E5] to-[#001026]",
+    auraShadow: "shadow-[0_15px_80px_rgba(0,62,255,0.38)] hover:shadow-[0_0_95px_rgba(0,62,255,0.65)]",
+    layoutDirection: "flex-col lg:flex-row",
+    textAlign: "text-left",
+    alignItems: "items-start",
   },
   {
     initials: "SJ",
@@ -30,8 +35,13 @@ const coaches = [
     spec: "Certified Child Aquatics & Safety Specialist",
     exp: "10 yrs Youth Lead",
     bio: "Pioneered our zero-anxiety aquatic foundation method. Her scientifically structured drills systematically eliminate water fear, transforming hesitant beginners into fluent, podium-ready swimmers within months.",
-    span: "lg:col-span-6",
     acclaim: "Red Cross National Safety Award",
+    watermark: "SARAH J.",
+    orbGradient: "from-[#00E5FF] via-[#003EFF] to-[#0B1D3A]",
+    auraShadow: "shadow-[0_15px_80px_rgba(34,187,238,0.38)] hover:shadow-[0_0_95px_rgba(34,187,238,0.65)]",
+    layoutDirection: "flex-col lg:flex-row-reverse",
+    textAlign: "text-left lg:text-right",
+    alignItems: "items-start lg:items-end",
   },
   {
     initials: "ER",
@@ -40,8 +50,13 @@ const coaches = [
     spec: "3× Ironman Champion & Distance Specialist",
     exp: "12 yrs Endurance Lead",
     bio: "Three-time Ironman finisher and national distance swimming record holder. Her Total Immersion instruction unlocks frictionless glide mechanics, cutting oxygen consumption and eliminating open-water panic.",
-    span: "lg:col-span-12",
     acclaim: "Ironman Open-Water Course Record Holder",
+    watermark: "ELENA R.",
+    orbGradient: "from-[#2563EB] via-[#60A5FA] to-[#001026]",
+    auraShadow: "shadow-[0_15px_80px_rgba(37,99,235,0.38)] hover:shadow-[0_0_95px_rgba(37,99,235,0.65)]",
+    layoutDirection: "flex-col lg:flex-row",
+    textAlign: "text-left",
+    alignItems: "items-start",
   },
 ];
 
@@ -211,82 +226,107 @@ export default function CoachesSection() {
   }, { scope: sectionRef });
 
   return (
-    <section ref={sectionRef} id="coaches" className="relative py-28 lg:py-36 z-10 border-t border-[#0B0B0C]/10 overflow-hidden bg-[#EBE8E2]">
+    <section ref={sectionRef} id="coaches" className="relative py-28 lg:py-40 z-10 border-t border-[#0B0B0C]/10 overflow-hidden bg-[#EBE8E2]">
       
-      {/* ── FACULTY MASTER SECTION ───────────────────────────── */}
-      <div className="max-w-[1450px] mx-auto px-6 sm:px-10 lg:px-16 mb-32">
+      {/* ── ORGANIC FLUID ABOUT US & FACULTY SHOWCASE (ZERO BOXES) ───────── */}
+      <div className="max-w-[1450px] mx-auto px-6 sm:px-10 lg:px-16 mb-36 relative">
         
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-16 pb-12 border-b border-[#0B0B0C]/15">
-          <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-[#003EFF]/10 border border-[#003EFF]/25 text-[#003EFF] text-[11px] font-body font-800 tracking-[0.25em] uppercase">
-              <Award className="w-3.5 h-3.5" />
-              <span>Vetted Championship Faculty</span>
+        {/* Ambient background glow sculptures without rigid borders */}
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#003EFF]/10 blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-1/3 right-1/4 w-[600px] h-[600px] rounded-full bg-[#22bbee]/12 blur-[160px] pointer-events-none" />
+
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-24 pb-12 border-b border-[#0B0B0C]/15 relative z-10">
+          <div className="space-y-5">
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#003EFF] text-white text-[11px] font-body font-800 tracking-[0.25em] uppercase shadow-[0_4px_20px_rgba(0,62,255,0.4)]">
+              <Award className="w-3.5 h-3.5 shrink-0 animate-pulse" />
+              <span>About Us & Championship Faculty</span>
             </div>
             
             <StaggeredText
-              text="COACHED BY THE"
+              text="ARCHITECTS OF"
               as="h2"
-              stagger={0.04}
+              stagger={0.035}
               className="font-display-syne font-900 text-[#0B0B0C] leading-none tracking-[-0.04em]"
-              style={{ fontSize: "clamp(2.8rem, 6.5vw, 6rem)" }}
+              style={{ fontSize: "clamp(3rem, 7vw, 6.5rem)" }}
             />
             
-            <div className="font-editorial text-[#003EFF] leading-none tracking-[-0.02em] text-[2.5rem] sm:text-[4.5rem] italic font-700">
-              National Hydro-Masters.
+            <div className="font-editorial text-[#003EFF] leading-none tracking-[-0.02em] text-[2.8rem] sm:text-[5rem] italic font-700 drop-shadow-sm">
+              Pure Fluid Velocity.
             </div>
           </div>
 
-          <p className="font-body font-500 text-[#3A3A3C] text-[16px] max-w-sm leading-relaxed">
-            Every director across our Toronto training facilities holds National Red Cross accreditation, competitive meet pedigrees, and deep training in human biomechanics.
-          </p>
+          <div className="max-w-md space-y-4 text-left">
+            <p className="font-body font-600 text-[#0B0B0C] text-[18px] leading-relaxed">
+              We eliminated rigid swimming dogmas and outdated athletic training boxes to create Toronto&apos;s premier hydrodynamic sanctuary.
+            </p>
+            <p className="font-body font-500 text-[#3A3A3C] text-[15px] leading-relaxed">
+              Every director across our hydro-labs holds National Red Cross accreditation, Olympic meet pedigrees, and advanced degrees in biomechanical movement physics.
+            </p>
+          </div>
         </div>
 
-        {/* Modular Asymmetrical Faculty Bento Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 items-stretch">
+        {/* Organic Fluid River Walkway (No Rectangular Cards or Rigid Boxes) */}
+        <div className="space-y-28 sm:space-y-36 relative z-10">
           {coaches.map((c, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 45 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
-              transition={{ duration: 0.7, delay: i * 0.15, type: "spring", stiffness: 130, damping: 18 }}
-              whileHover={{ y: -6 }}
-              data-cursor-text="INSPECT BIO"
-              className={`${c.span} glass-light-card p-8 sm:p-12 rounded-3xl flex flex-col justify-between relative overflow-hidden bento-card group hover:border-[#003EFF] transition-all duration-300`}
+              transition={{ duration: 0.9, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+              className={`flex ${c.layoutDirection} items-center gap-10 sm:gap-16 lg:gap-24 relative group select-none`}
             >
-              <div>
-                <div className="flex items-center gap-6 mb-8 pb-8 border-b border-[#0B0B0C]/10">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#003EFF] text-white flex items-center justify-center font-display-syne font-800 text-2xl shadow-[0_10px_30px_rgba(0,62,255,0.25)] shrink-0">
-                    {c.initials}
-                  </div>
-                  <div>
-                    <div className="font-display-syne font-800 text-[24px] sm:text-[28px] text-[#0B0B0C] tracking-tight leading-tight">
-                      {c.name}
-                    </div>
-                    <div className="font-body text-[12px] font-800 text-[#003EFF] tracking-wider uppercase mt-1">
-                      {c.role}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-[#D8D5CF] font-body text-[12px] font-700 text-[#0B0B0C] mb-6 shadow-xs">
-                  <Trophy className="w-4 h-4 text-[#003EFF]" />
-                  <span>{c.acclaim}</span>
-                </div>
-
-                <p className="font-body text-[15px] sm:text-[16px] text-[#3A3A3C] font-500 leading-relaxed mb-10">
-                  &ldquo;{c.bio}&rdquo;
-                </p>
+              {/* Giant Background Watermark Typography Floating in Open Air */}
+              <div className={`absolute -top-12 ${i % 2 === 1 ? 'right-0 text-right' : 'left-0 text-left'} text-[58px] sm:text-[94px] lg:text-[135px] font-editorial italic font-800 text-[#003EFF]/10 tracking-tighter select-none pointer-events-none whitespace-nowrap z-0 transition-opacity duration-700 group-hover:opacity-25`}>
+                {c.watermark}
               </div>
 
-              <div className="pt-6 border-t border-[#0B0B0C]/10 flex flex-wrap items-center justify-between gap-4">
-                <span className="flex items-center gap-2 font-body text-[11px] font-800 tracking-wider uppercase text-[#0B0B0C]">
-                  <ShieldCheck className="w-4 h-4 text-[#003EFF]" />
-                  <span>Red Cross Biomechanical Vetted</span>
-                </span>
-                <span className="px-3 py-1 rounded-full bg-[#003EFF]/10 text-[#003EFF] font-body text-[11px] font-800 uppercase tracking-widest">
-                  {c.exp}
-                </span>
+              {/* Liquid Morphing Hydro-Orb Portrait (No Squares or Boxes) */}
+              <div className="relative shrink-0 z-10 flex items-center justify-center">
+                <div
+                  className={`w-36 h-36 sm:w-48 sm:h-48 lg:w-56 lg:h-56 bg-gradient-to-br ${c.orbGradient} text-white font-display-syne font-800 text-3xl sm:text-5xl lg:text-6xl flex items-center justify-center transition-all duration-1000 ease-out cursor-pointer ${c.auraShadow}`}
+                  style={{
+                    borderRadius: i === 0 ? "52% 48% 60% 40% / 45% 55% 45% 55%" : i === 1 ? "40% 60% 50% 50% / 55% 45% 60% 40%" : "60% 40% 45% 55% / 50% 50% 55% 45%",
+                  }}
+                  data-cursor-text="FACULTY BIO"
+                >
+                  <span className="relative z-10 drop-shadow-[0_4px_15px_rgba(0,0,0,0.5)] tracking-tight">
+                    {c.initials}
+                  </span>
+                  <div className="absolute inset-2 border border-white/25 rounded-full pointer-events-none animate-pulse" style={{ animationDuration: "4s" }} />
+                </div>
+              </div>
+
+              {/* Open-Air Architectural Narrative (Zero Enclosing Walls or Card Borders) */}
+              <div className={`flex flex-col ${c.alignItems} ${c.textAlign} max-w-3xl z-10 space-y-6`}>
+                <div>
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#003EFF]/10 text-[#003EFF] font-body text-[12px] sm:text-[13px] font-800 tracking-wider uppercase mb-3">
+                    <Trophy className="w-4 h-4 shrink-0 text-[#003EFF]" />
+                    <span>{c.acclaim}</span>
+                  </div>
+                  
+                  <h3 className="font-display-syne font-900 text-[32px] sm:text-[44px] lg:text-[52px] text-[#0B0B0C] tracking-tight leading-[1.05]">
+                    {c.name}
+                  </h3>
+                  
+                  <div className="font-editorial font-700 italic text-[20px] sm:text-[26px] text-[#003EFF] mt-1.5 drop-shadow-xs">
+                    {c.role}
+                  </div>
+                </div>
+
+                <p className="font-body text-[16px] sm:text-[20px] text-[#3A3A3C] font-500 leading-relaxed max-w-2xl">
+                  &ldquo;{c.bio}&rdquo;
+                </p>
+
+                <div className={`flex flex-wrap items-center ${i % 2 === 1 ? 'justify-end' : 'justify-start'} gap-4 sm:gap-6 pt-2`}>
+                  <span className="inline-flex items-center gap-2 font-body text-[12px] sm:text-[13px] font-800 tracking-wider uppercase text-[#0B0B0C]">
+                    <ShieldCheck className="w-4.5 h-4.5 text-[#003EFF] shrink-0" />
+                    <span>Red Cross Biomechanical Vetted</span>
+                  </span>
+                  <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#001026] text-white font-body text-[11px] sm:text-[12px] font-800 uppercase tracking-widest shadow-md">
+                    <span>{c.exp}</span>
+                  </span>
+                </div>
               </div>
             </motion.div>
           ))}
