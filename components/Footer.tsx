@@ -5,9 +5,9 @@ import MagneticButton from "@/components/kinetic/MagneticButton";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="relative z-10 border-t border-[#0B0B0C]">
+    <footer id="contact" className="relative z-10 border-t border-white/10">
       {/* ── HIGH-DENSITY INK BLACK EXECUTIVE SITE DIRECTORY ───── */}
-      <div className="bg-[#0B0B0C] text-[#F9F8F5] py-20 sm:py-24 px-6 sm:px-10 lg:px-16">
+      <div className="bg-[#06080B] text-white py-20 sm:py-24 px-6 sm:px-10 lg:px-16">
         <div className="max-w-[1450px] mx-auto">
           
           <div id="locations" className="grid grid-cols-1 md:grid-cols-4 gap-12 pb-16 border-b border-white/15">

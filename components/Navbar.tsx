@@ -26,8 +26,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-[5000] w-full transition-all duration-300 ${
         scrolled || mobileMenuOpen
-          ? "bg-[#001226]/95 backdrop-blur-md py-4 shadow-[0_10px_35px_rgba(0,10,30,0.35)] border-b border-white/10"
-          : "bg-gradient-to-b from-[#000e20]/80 via-[#000e20]/40 to-transparent py-5 sm:py-6"
+          ? "bg-[#0B0E11]/90 backdrop-blur-2xl py-4 shadow-[0_15px_40px_rgba(0,0,0,0.7)] border-b border-white/10"
+          : "bg-gradient-to-b from-[#0B0E11]/80 via-[#0B0E11]/40 to-transparent py-5 sm:py-6"
       }`}
     >
       <nav className="max-w-[1500px] mx-auto px-5 sm:px-10 md:px-16 flex items-center justify-between">
@@ -109,7 +109,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="md:hidden overflow-hidden bg-[#001226]/98 backdrop-blur-2xl border-t border-white/10 px-6 pt-6 pb-8 shadow-[0_25px_60px_rgba(0,0,0,0.85)]"
+            className="md:hidden overflow-hidden bg-[#0B0E11]/98 backdrop-blur-2xl border-t border-white/10 px-6 pt-6 pb-8 shadow-[0_25px_70px_rgba(0,0,0,0.9)]"
           >
             <div className="flex flex-col gap-5 max-w-sm mx-auto">
               {navItems.map((item, index) => (

@@ -42,12 +42,12 @@ const courses = [
       "Unlimited technique revisions",
       "Pause or transfer training anytime"
     ],
-    cardBg: "bg-white text-[#0B0B0C] border border-[#D8D5CF]/70 shadow-[0_20px_60px_rgba(0,0,0,0.08)] hover:shadow-[0_25px_80px_rgba(0,0,0,0.16)]",
-    badgeStyle: "bg-[#0B0B0C] text-white shadow-[0_4px_15px_rgba(0,0,0,0.2)]",
-    taglineStyle: "text-[#737376]",
-    dividerStyle: "border-[#0B0B0C]/10",
-    checkStyle: "text-[#003EFF] bg-[#003EFF]/10",
-    buttonStyle: "bg-[#0B0B0C] hover:bg-[#003EFF] text-white shadow-[0_12px_28px_rgba(0,0,0,0.25)] hover:shadow-[0_15px_35px_rgba(0,62,255,0.4)]",
+    cardBg: "bg-white/[0.04] backdrop-blur-xl text-white border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] hover:border-cyan-400/60 hover:bg-white/[0.07] hover:shadow-[0_0_70px_rgba(0,229,255,0.25)]",
+    badgeStyle: "bg-white/10 text-cyan-300 border border-white/15 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.3)]",
+    taglineStyle: "text-white/70",
+    dividerStyle: "border-white/15",
+    checkStyle: "text-cyan-400 bg-white/10",
+    buttonStyle: "bg-white/[0.08] hover:bg-cyan-400 text-white hover:text-[#0B0E11] border border-white/20 hover:border-cyan-400 shadow-[0_12px_28px_rgba(0,0,0,0.35)] hover:shadow-[0_0_40px_rgba(0,229,255,0.55)]",
     buttonText: "Reserve Your Track",
   },
   {
@@ -66,12 +66,12 @@ const courses = [
       "Unlimited stroke video feedback",
       "Pause or transfer training anytime"
     ],
-    cardBg: "bg-white text-[#0B0B0C] border-2 border-[#003EFF]/45 shadow-[0_25px_70px_rgba(0,62,255,0.18)] hover:shadow-[0_30px_90px_rgba(0,62,255,0.28)] relative z-10",
-    badgeStyle: "bg-[#003EFF] text-white shadow-[0_6px_20px_rgba(0,62,255,0.45)]",
-    taglineStyle: "text-[#0B0B0C]/80 font-700",
-    dividerStyle: "border-[#003EFF]/20",
-    checkStyle: "text-[#003EFF] bg-[#003EFF]/15",
-    buttonStyle: "bg-[#003EFF] hover:bg-[#0B0B0C] text-white shadow-[0_15px_35px_rgba(0,62,255,0.45)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.3)]",
+    cardBg: "bg-gradient-to-b from-white/[0.09] to-white/[0.03] backdrop-blur-2xl text-white border border-cyan-400/50 shadow-[0_30px_90px_rgba(0,229,255,0.18)] hover:border-cyan-400 hover:shadow-[0_0_95px_rgba(0,229,255,0.4)] relative z-10",
+    badgeStyle: "bg-cyan-400/20 text-cyan-300 border border-cyan-400/50 backdrop-blur-md shadow-[0_0_25px_rgba(0,229,255,0.35)]",
+    taglineStyle: "text-white/90 font-700",
+    dividerStyle: "border-cyan-400/30",
+    checkStyle: "text-cyan-300 bg-cyan-400/20",
+    buttonStyle: "bg-cyan-400 hover:bg-white text-[#0B0E11] font-900 shadow-[0_15px_40px_rgba(0,229,255,0.5)] hover:shadow-[0_0_60px_rgba(255,255,255,0.8)]",
     buttonText: "Reserve Your Track",
     popularTag: true,
   },
@@ -91,12 +91,12 @@ const courses = [
       "Unlimited diagnostic trials & revisions",
       "Pause or transfer training anytime"
     ],
-    cardBg: "bg-[#0B0B0C] text-white border border-white/15 shadow-[0_30px_80px_rgba(0,10,35,0.35)] hover:shadow-[0_35px_95px_rgba(0,62,255,0.25)]",
-    badgeStyle: "bg-white/15 text-white backdrop-blur-md border border-white/20 shadow-[0_6px_20px_rgba(0,0,0,0.4)]",
-    taglineStyle: "text-[#EBE8E2]/80",
+    cardBg: "bg-white/[0.05] backdrop-blur-xl text-white border border-white/15 shadow-[0_30px_85px_rgba(0,0,0,0.6)] hover:border-[#003EFF] hover:shadow-[0_0_85px_rgba(0,62,255,0.4)]",
+    badgeStyle: "bg-[#003EFF]/30 text-white backdrop-blur-md border border-[#003EFF]/50 shadow-[0_6px_20px_rgba(0,62,255,0.35)]",
+    taglineStyle: "text-white/70",
     dividerStyle: "border-white/15",
-    checkStyle: "text-[#22bbee] bg-white/10",
-    buttonStyle: "bg-[#003EFF] hover:bg-white text-white hover:text-[#0B0B0C] shadow-[0_15px_38px_rgba(0,62,255,0.5)] hover:shadow-[0_15px_35px_rgba(255,255,255,0.4)]",
+    checkStyle: "text-cyan-300 bg-white/10",
+    buttonStyle: "bg-[#003EFF] hover:bg-cyan-400 text-white hover:text-[#0B0E11] shadow-[0_15px_38px_rgba(0,62,255,0.5)] hover:shadow-[0_0_50px_rgba(0,229,255,0.65)]",
     buttonText: "Reserve Your Track",
   },
   {
@@ -115,12 +115,12 @@ const courses = [
       "Unlimited pacing feedback & revisions",
       "Pause or transfer training anytime"
     ],
-    cardBg: "bg-[#F5F4F0] text-[#0B0B0C] border border-[#D8D5CF] shadow-[0_20px_60px_rgba(0,0,0,0.08)] hover:shadow-[0_25px_80px_rgba(0,0,0,0.16)]",
-    badgeStyle: "bg-[#0B0B0C] text-white shadow-[0_4px_15px_rgba(0,0,0,0.2)]",
-    taglineStyle: "text-[#737376]",
-    dividerStyle: "border-[#0B0B0C]/10",
-    checkStyle: "text-[#003EFF] bg-[#003EFF]/10",
-    buttonStyle: "bg-[#0B0B0C] hover:bg-[#003EFF] text-white shadow-[0_12px_28px_rgba(0,0,0,0.25)] hover:shadow-[0_15px_35px_rgba(0,62,255,0.4)]",
+    cardBg: "bg-white/[0.04] backdrop-blur-xl text-white border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] hover:border-cyan-400/60 hover:bg-white/[0.07] hover:shadow-[0_0_70px_rgba(0,229,255,0.25)]",
+    badgeStyle: "bg-white/10 text-cyan-300 border border-white/15 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.3)]",
+    taglineStyle: "text-white/70",
+    dividerStyle: "border-white/15",
+    checkStyle: "text-cyan-400 bg-white/10",
+    buttonStyle: "bg-white/[0.08] hover:bg-cyan-400 text-white hover:text-[#0B0E11] border border-white/20 hover:border-cyan-400 shadow-[0_12px_28px_rgba(0,0,0,0.35)] hover:shadow-[0_0_40px_rgba(0,229,255,0.55)]",
     buttonText: "Reserve Your Track",
   }
 ];
@@ -138,10 +138,10 @@ const diagnosticDeck = [
       "Millisecond pull & kick analysis",
       "Digital export of raw video footage"
     ],
-    cardStyle: "bg-[#0B0B0C] text-white border border-white/15 shadow-[0_30px_90px_rgba(0,10,35,0.3)]",
-    badgeStyle: "bg-white/15 text-white border border-white/20",
-    taglineStyle: "text-[#EBE8E2]/80",
-    checkStyle: "bg-white/10 text-[#22bbee]",
+    cardStyle: "bg-white/[0.05] backdrop-blur-xl text-white border border-white/15 shadow-[0_30px_90px_rgba(0,0,0,0.6)] hover:border-cyan-400/60 hover:shadow-[0_0_80px_rgba(0,229,255,0.3)]",
+    badgeStyle: "bg-white/15 text-white border border-white/25 backdrop-blur-md",
+    taglineStyle: "text-white/70",
+    checkStyle: "bg-white/10 text-cyan-300",
     dividerStyle: "border-white/15",
   },
   {
@@ -156,11 +156,11 @@ const diagnosticDeck = [
       "Water turbulence & posture mapping",
       "Customized drag-coefficient deck"
     ],
-    cardStyle: "bg-[#003EFF] text-white border border-white/20 shadow-[0_30px_90px_rgba(0,62,255,0.35)]",
-    badgeStyle: "bg-white/20 text-white border border-white/30",
+    cardStyle: "bg-gradient-to-b from-[#003EFF]/80 to-white/[0.05] backdrop-blur-2xl text-white border border-cyan-400/40 shadow-[0_30px_90px_rgba(0,62,255,0.45)] hover:border-cyan-300 hover:shadow-[0_0_95px_rgba(0,229,255,0.5)]",
+    badgeStyle: "bg-cyan-400/20 text-cyan-200 border border-cyan-300/40 backdrop-blur-md",
     taglineStyle: "text-white/90 font-700",
-    checkStyle: "bg-white/20 text-white",
-    dividerStyle: "border-white/25",
+    checkStyle: "bg-cyan-400/20 text-cyan-200",
+    dividerStyle: "border-white/20",
   },
   {
     id: "consultation",
@@ -174,15 +174,15 @@ const diagnosticDeck = [
       "Custom drill & technique prescription",
       "Zero recurring membership needed"
     ],
-    cardStyle: "bg-white text-[#0B0B0C] border border-[#D8D5CF] shadow-[0_25px_80px_rgba(0,0,0,0.12)]",
-    badgeStyle: "bg-[#0B0B0C] text-white",
-    taglineStyle: "text-[#737376]",
-    checkStyle: "bg-[#003EFF]/10 text-[#003EFF]",
-    dividerStyle: "border-[#0B0B0C]/10",
+    cardStyle: "bg-gradient-to-br from-white/[0.09] to-white/[0.03] backdrop-blur-2xl text-white border border-cyan-400/50 shadow-[0_30px_90px_rgba(0,0,0,0.6)] hover:border-cyan-300 hover:shadow-[0_0_95px_rgba(0,229,255,0.4)]",
+    badgeStyle: "bg-white/15 text-cyan-300 border border-cyan-400/40 backdrop-blur-md",
+    taglineStyle: "text-white/70",
+    checkStyle: "bg-cyan-400/20 text-cyan-300",
+    dividerStyle: "border-white/15",
     price: "$480",
     period: "2-hour diagnostic sprint",
     cta: "Reserve Your Track",
-    buttonStyle: "bg-[#003EFF] hover:bg-[#0B0B0C] text-white shadow-[0_15px_35px_rgba(0,62,255,0.45)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.3)]",
+    buttonStyle: "bg-[#003EFF] hover:bg-cyan-400 text-white hover:text-[#0B0E11] font-900 shadow-[0_15px_35px_rgba(0,62,255,0.45)] hover:shadow-[0_0_50px_rgba(0,229,255,0.7)]",
   }
 ];
 
@@ -467,35 +467,35 @@ export default function CourseSection() {
   }, { scope: sectionRef, dependencies: [activeTab] });
 
   return (
-    <section ref={sectionRef} id="courses" className="relative py-20 sm:py-28 lg:py-36 z-10 border-t border-[#0B0B0C]/10 overflow-hidden bg-[#F0F2F6]">
+    <section ref={sectionRef} id="courses" className="relative py-20 sm:py-28 lg:py-36 z-10 border-t border-white/10 overflow-hidden bg-[#0B0E11] text-white">
       
       <div className="max-w-[1550px] mx-auto px-5 sm:px-10 lg:px-14">
         
         {/* ── 3-STEP SEQUENTIAL DIAGONAL INTERLOCK SHOWCASE ────────── */}
-        <div ref={headerRef} className="space-y-6 sm:space-y-8 mb-24 sm:mb-32 pb-16 border-b border-[#0B0B0C]/12 relative">
+        <div ref={headerRef} className="space-y-6 sm:space-y-8 mb-24 sm:mb-32 pb-16 border-b border-white/15 relative">
           
           {/* STEP 1: Top-Left Widescreen Photo 01 (Arrives from Left - Arrow 1) */}
           <div className="w-full lg:w-[60%] mr-auto z-10 relative">
             <div
               ref={imageBoxRef}
-              className="relative w-full h-[320px] sm:h-[420px] lg:h-[480px] rounded-[2.8rem] overflow-hidden bg-[#001228] shadow-[0_25px_80px_rgba(0,16,38,0.38)] hover:shadow-[0_0_85px_rgba(34,187,238,0.55)] active:shadow-[0_0_75px_rgba(34,187,238,0.65)] border border-cyan-400/50 hover:border-cyan-300/90 active:border-cyan-300 flex flex-col justify-between p-7 sm:p-10 group transition-all duration-500 select-none cursor-pointer"
+              className="relative w-full h-[320px] sm:h-[420px] lg:h-[480px] rounded-[2.8rem] overflow-hidden bg-[#001228] shadow-[0_25px_80px_rgba(0,0,0,0.6)] hover:shadow-[0_0_85px_rgba(0,229,255,0.45)] border border-cyan-400/50 hover:border-cyan-300 flex flex-col justify-between p-7 sm:p-10 group transition-all duration-500 select-none cursor-pointer"
             >
               <div className="absolute inset-0">
                 <img
                   src="/images/underwater-lanes.jpg"
                   alt="Toronto Olympic Underwater Telemetry Lanes"
-                  className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-110 filter contrast-[1.1] saturate-[1.15]"
+                  className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-110 filter contrast-[1.15] saturate-[1.2]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#000d20]/95 via-[#000d20]/30 to-[#000d20]/15 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E11]/95 via-[#0B0E11]/35 to-[#0B0E11]/15 pointer-events-none" />
               </div>
 
-              <div className="relative z-10 font-editorial italic bg-gradient-to-r from-white via-cyan-200 to-white/80 bg-clip-text text-transparent font-800 text-[85px] sm:text-[118px] leading-none tracking-tight filter drop-shadow-[0_8px_30px_rgba(34,187,238,0.5)]">
+              <div className="relative z-10 font-editorial italic bg-gradient-to-r from-white via-cyan-300 to-white/80 bg-clip-text text-transparent font-800 text-[85px] sm:text-[118px] leading-none tracking-tight filter drop-shadow-[0_8px_30px_rgba(0,229,255,0.5)]">
                 01
               </div>
 
               <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 text-white">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#001026]/90 backdrop-blur-md border border-cyan-400/40 text-[11px] sm:text-[12px] font-body font-800 uppercase tracking-widest shadow-lg">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#22bbee] animate-ping shrink-0" />
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 backdrop-blur-xl border border-cyan-400/50 text-[11px] sm:text-[12px] font-body font-800 uppercase tracking-widest shadow-lg">
+                  <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping shrink-0" />
                   <span>4K Hydro-Optic Chamber</span>
                 </span>
                 <span className="font-body font-700 text-[13px] sm:text-[15px] text-white/95 drop-shadow-md">
@@ -508,11 +508,11 @@ export default function CourseSection() {
           {/* STEP 3: Centered Core Text & Badges (Arrives from Above - Arrow 3) */}
           <div
             ref={textColRef}
-            className="w-full max-w-[920px] mx-auto text-center my-8 sm:my-4 lg:-my-20 z-30 relative px-6 sm:px-12 py-10 sm:py-14 rounded-[3.2rem] bg-white/90 backdrop-blur-2xl border border-white/80 shadow-[0_35px_100px_rgba(0,16,38,0.15)] flex flex-col items-center space-y-6 sm:space-y-7"
+            className="w-full max-w-[920px] mx-auto text-center my-8 sm:my-4 lg:-my-20 z-30 relative px-6 sm:px-12 py-10 sm:py-14 rounded-[3.2rem] bg-white/[0.04] backdrop-blur-2xl border border-white/15 shadow-[0_35px_110px_rgba(0,0,0,0.7)] hover:border-cyan-400/40 flex flex-col items-center space-y-6 sm:space-y-7 transition-colors duration-500"
           >
             <div
               ref={tagRef}
-              className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-[#003EFF] text-white text-[11px] sm:text-[13px] font-body font-800 tracking-[0.22em] uppercase shadow-[0_6px_25px_rgba(0,62,255,0.45)] border border-cyan-300/40"
+              className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-[#003EFF] text-white text-[11px] sm:text-[13px] font-body font-800 tracking-[0.22em] uppercase shadow-[0_0_30px_rgba(0,62,255,0.55)] border border-cyan-300/40"
             >
               <Sparkles className="w-4 h-4 sm:w-4.5 sm:h-4.5 shrink-0 animate-spin" style={{ animationDuration: "6s" }} />
               <span>Architected Athletic Curriculars</span>
@@ -524,7 +524,7 @@ export default function CourseSection() {
                   text="SELECT YOUR AQUATIC"
                   as="h2"
                   stagger={0.035}
-                  className="font-display-syne font-900 text-[#001026] leading-[1.02] tracking-[-0.03em] text-[38px] sm:text-[58px] lg:text-[68px] drop-shadow-sm select-none"
+                  className="font-display-syne font-900 text-white leading-[1.02] tracking-[-0.03em] text-[38px] sm:text-[58px] lg:text-[68px] drop-shadow-sm select-none"
                 />
               </div>
               <div ref={(el) => { titleLinesRef.current[1] = el; }} className="overflow-hidden">
@@ -532,7 +532,7 @@ export default function CourseSection() {
                   text="VELOCITY TRACK."
                   as="div"
                   stagger={0.04}
-                  className="font-editorial font-700 italic text-[#003EFF] leading-[1] tracking-[-0.02em] text-[42px] sm:text-[64px] lg:text-[74px] drop-shadow-[0_4px_25px_rgba(0,62,255,0.4)] select-none"
+                  className="font-editorial font-700 italic text-cyan-400 leading-[1] tracking-[-0.02em] text-[42px] sm:text-[64px] lg:text-[74px] drop-shadow-[0_0_35px_rgba(0,229,255,0.45)] select-none"
                 />
               </div>
             </div>
@@ -540,23 +540,23 @@ export default function CourseSection() {
             <div className="overflow-hidden max-w-[760px]">
               <p
                 ref={(el) => { titleLinesRef.current[2] = el as unknown as HTMLDivElement; }}
-                className="font-body font-600 text-[#4B5563] text-[16px] sm:text-[19px] leading-relaxed select-none"
+                className="font-body font-500 text-white/70 text-[16px] sm:text-[19px] leading-relaxed select-none"
               >
                 Designed for champion cadences and complete water confidence. Every program operates within Toronto&apos;s Olympic hydro-chambers under rigorous small-group athletic ratios.
               </p>
             </div>
 
             <div className="pt-3 flex flex-wrap items-center justify-center gap-3 sm:gap-4 select-none w-full">
-              <span className="inline-flex items-center gap-2.5 px-5 py-3 rounded-2xl bg-[#F4F6FB] border border-slate-200/80 text-[#001026] font-body font-800 text-[12px] sm:text-[14px] shadow-xs hover:border-[#22bbee] transition-all">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#22bbee] animate-pulse shrink-0" />
+              <span className="inline-flex items-center gap-2.5 px-5 py-3 rounded-2xl bg-white/[0.06] border border-white/15 text-white/90 font-body font-800 text-[12px] sm:text-[14px] shadow-md hover:border-cyan-400/80 hover:bg-white/[0.1] hover:shadow-[0_0_25px_rgba(0,229,255,0.25)] transition-all duration-300">
+                <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse shrink-0" />
                 <span>1:4 Max Coach Ratio</span>
               </span>
-              <span className="inline-flex items-center gap-2.5 px-5 py-3 rounded-2xl bg-[#F4F6FB] border border-slate-200/80 text-[#001026] font-body font-800 text-[12px] sm:text-[14px] shadow-xs hover:border-[#003EFF] transition-all">
+              <span className="inline-flex items-center gap-2.5 px-5 py-3 rounded-2xl bg-white/[0.06] border border-white/15 text-white/90 font-body font-800 text-[12px] sm:text-[14px] shadow-md hover:border-[#003EFF] hover:bg-white/[0.1] hover:shadow-[0_0_25px_rgba(0,62,255,0.4)] transition-all duration-300">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#003EFF] animate-pulse shrink-0" />
                 <span>120fps Telemetry Labs</span>
               </span>
-              <span className="inline-flex items-center gap-2.5 px-5 py-3 rounded-2xl bg-[#F4F6FB] border border-slate-200/80 text-[#001026] font-body font-800 text-[12px] sm:text-[14px] shadow-xs hover:border-[#001026] transition-all">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#001026] shrink-0" />
+              <span className="inline-flex items-center gap-2.5 px-5 py-3 rounded-2xl bg-white/[0.06] border border-white/15 text-white/90 font-body font-800 text-[12px] sm:text-[14px] shadow-md hover:border-cyan-300 hover:bg-white/[0.1] transition-all duration-300">
+                <span className="w-2.5 h-2.5 rounded-full bg-cyan-300 shrink-0" />
                 <span>100% Tuition Guarantee</span>
               </span>
             </div>
@@ -596,14 +596,14 @@ export default function CourseSection() {
         </div>
 
         {/* ── KINETIC BENTO TAB SWITCHER (DIRECT SERVICE CARDS ANCHOR) ── */}
-        <div id="service-cards" className="flex flex-wrap items-center gap-2 sm:gap-3 mb-12 sm:mb-16 justify-center md:justify-start scroll-mt-28">
+        <div id="service-cards" className="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-12 sm:mb-16 justify-center md:justify-start scroll-mt-28">
           <button
             onClick={() => setActiveTab("all")}
             data-cursor-text="FILTER"
             className={`px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl font-body text-[11px] sm:text-[12px] font-800 tracking-[0.16em] uppercase transition-all relative ${
               activeTab === "all"
-                ? "bg-[#0B0B0C] text-white shadow-[0_8px_25px_rgba(0,0,0,0.18)] scale-105"
-                : "bg-white/80 border border-[#D8D5CF] text-[#3A3A3C] hover:text-[#003EFF] hover:border-[#003EFF]"
+                ? "bg-gradient-to-r from-[#003EFF] to-cyan-500 text-white shadow-[0_0_30px_rgba(0,229,255,0.45)] scale-105 border border-cyan-300/40"
+                : "bg-white/[0.05] backdrop-blur-md border border-white/15 text-white/70 hover:text-cyan-300 hover:border-cyan-400/60"
             }`}
           >
             All Tracks (04)
@@ -618,24 +618,25 @@ export default function CourseSection() {
                 data-cursor-text="TRACK"
                 className={`px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl font-body text-[11px] sm:text-[12px] font-800 tracking-[0.16em] uppercase transition-all relative flex items-center gap-2 ${
                   isActive
-                    ? "bg-[#003EFF] text-white shadow-[0_10px_30px_rgba(0,62,255,0.35)] scale-105"
-                    : "bg-white/80 border border-[#D8D5CF] text-[#3A3A3C] hover:text-[#003EFF] hover:border-[#003EFF]"
+                    ? "bg-[#003EFF] text-white shadow-[0_0_25px_rgba(0,62,255,0.5)] scale-105 border border-white/20"
+                    : "bg-white/[0.05] backdrop-blur-md border border-white/15 text-white/70 hover:text-cyan-300 hover:border-cyan-400/60"
                 }`}
               >
                 <span>{t.label}</span>
-                {isActive && <motion.span layoutId="dot" className="w-2 h-2 rounded-full bg-white" />}
+                {isActive && <motion.span layoutId="dot" className="w-2 h-2 rounded-full bg-cyan-300 animate-pulse" />}
               </button>
             );
           })}
         </div>
 
-        {/* ── REFERENCE-STYLE INTERACTIVE PRICING DECK (Playing Card Stack Engine) ── */}
-        <div ref={cardsGridRef} id="track-cards-grid" className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7 sm:gap-8 items-stretch mb-16 [perspective:2000px] scroll-mt-28">
+        {/* ── REFERENCE-STYLE INTERACTIVE PRICING DECK (Playing Card Stack Engine + Spring Physics) ── */}
+        <div ref={cardsGridRef} id="track-cards-grid" className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7 sm:gap-8 items-stretch mb-20 [perspective:2000px] scroll-mt-28">
           {filteredCourses.map((c, i) => {
             return (
-              <div
+              <motion.div
                 key={c.id}
                 ref={(el) => { cardRefs.current[i] = el; }}
+                whileHover={{ y: -10, scale: 1.02, transition: { type: "spring", stiffness: 220, damping: 15 } }}
                 data-cursor-text="SELECT"
                 className={`${c.cardBg} p-7 sm:p-9 rounded-[2.2rem] sm:rounded-[2.6rem] flex flex-col justify-between relative overflow-hidden transition-shadow duration-300 opacity-0`}
               >
@@ -645,38 +646,38 @@ export default function CourseSection() {
                       {c.badgeTitle}
                     </span>
                     {c.popularTag && (
-                      <span className="text-[10px] font-body font-800 text-[#003EFF] bg-[#003EFF]/10 px-2.5 py-1 rounded-md uppercase tracking-widest border border-[#003EFF]/20 shrink-0">
+                      <span className="text-[10px] font-body font-800 text-cyan-300 bg-cyan-400/20 px-2.5 py-1 rounded-md uppercase tracking-widest border border-cyan-400/40 shrink-0 shadow-[0_0_15px_rgba(0,229,255,0.3)]">
                         High Velocity
                       </span>
                     )}
                   </div>
 
                   <div className={`text-[14px] sm:text-[15px] font-body font-600 tracking-tight flex items-center gap-2.5 mb-7 ${c.taglineStyle}`}>
-                    <span className="w-1 h-4 bg-[#003EFF] rounded-full inline-block shrink-0" />
+                    <span className="w-1.5 h-4 bg-cyan-400 rounded-full inline-block shrink-0 animate-pulse" />
                     <span>{c.tagline}</span>
                   </div>
 
                   <div className={`pb-7 mb-8 border-b ${c.dividerStyle}`}>
-                    <h3 className="font-display-syne font-800 text-[20px] sm:text-[22px] tracking-tight mb-3 leading-snug">
+                    <h3 className="font-display-syne font-800 text-white text-[20px] sm:text-[22px] tracking-tight mb-3 leading-snug">
                       {c.title}
                     </h3>
                     <div className="flex items-baseline gap-1.5">
-                      <span className="font-display-syne font-900 text-[44px] sm:text-[52px] tracking-tight leading-none">
+                      <span className="font-display-syne font-900 text-white text-[44px] sm:text-[52px] tracking-tight leading-none drop-shadow-xs">
                         {c.price}
                       </span>
-                      <span className="font-body text-[12px] sm:text-[13px] font-600 text-[#737376]">
+                      <span className="font-body text-[12px] sm:text-[13px] font-600 text-white/60">
                         / {c.period}
                       </span>
                     </div>
-                    <div className="mt-3.5 flex items-center gap-2 font-body text-[12px] font-700 text-[#737376]">
-                      <MapPin className="w-3.5 h-3.5 text-[#003EFF] shrink-0" />
+                    <div className="mt-3.5 flex items-center gap-2 font-body text-[12px] font-700 text-cyan-300/90">
+                      <MapPin className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
                       <span className="truncate">{c.pool} · {c.schedule}</span>
                     </div>
                   </div>
 
                   <div className="space-y-3.5 mb-10">
                     {c.bullets.map((b, bi) => (
-                      <div key={bi} className="flex items-start gap-3 text-[14px] sm:text-[15px] font-body font-600 leading-snug">
+                      <div key={bi} className="flex items-start gap-3 text-[14px] sm:text-[15px] font-body font-500 text-white/85 leading-snug">
                         <span className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${c.checkStyle}`}>
                           <Check className="w-3 h-3 stroke-[3]" />
                         </span>
@@ -697,7 +698,7 @@ export default function CourseSection() {
                     <ArrowRight className="w-4 h-4 shrink-0" />
                   </a>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
@@ -705,65 +706,66 @@ export default function CourseSection() {
         {/* ── REFERENCE-STYLE BOTTOM GUARANTEE BANNER PILL ──────── */}
         <div
           ref={guaranteeRef}
-          className="max-w-4xl mx-auto py-5 px-6 sm:px-10 rounded-full bg-white/95 border border-[#D8D5CF] shadow-[0_15px_45px_rgba(0,0,0,0.09)] backdrop-blur-md flex flex-col sm:flex-row items-center justify-center gap-3 text-center sm:text-left mb-20 opacity-0"
+          className="max-w-4xl mx-auto py-5 px-6 sm:px-10 rounded-full bg-white/[0.06] border border-cyan-400/40 shadow-[0_15px_60px_rgba(0,0,0,0.5)] backdrop-blur-2xl flex flex-col sm:flex-row items-center justify-center gap-3.5 text-center sm:text-left mb-24 opacity-0 hover:border-cyan-400/80 hover:shadow-[0_0_50px_rgba(0,229,255,0.25)] transition-all duration-500"
         >
-          <span className="w-8 h-8 rounded-full bg-[#003EFF]/15 text-[#003EFF] flex items-center justify-center shrink-0">
-            <ShieldCheck className="w-5 h-5 text-[#003EFF]" />
+          <span className="w-8 h-8 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center shrink-0 border border-cyan-400/40 shadow-[0_0_15px_rgba(0,229,255,0.3)]">
+            <ShieldCheck className="w-5 h-5 text-cyan-300" />
           </span>
-          <p className="font-body font-600 text-[#0B0B0C] text-[13px] sm:text-[15px]">
-            <span className="font-800 text-[#003EFF]">1st-Block Guarantee —</span> If your swimmer is not 100% satisfied with technique improvement and buoyancy after their initial training sprint, tuition is fully reimbursed!
+          <p className="font-body font-500 text-white/90 text-[13px] sm:text-[15px]">
+            <span className="font-800 text-cyan-300">1st-Block Guarantee —</span> If your swimmer is not 100% satisfied with technique improvement and buoyancy after their initial training sprint, tuition is fully reimbursed!
           </p>
         </div>
 
-        {/* ── 3-CARD VIP DIAGNOSTIC DECK ───────────────────────────── */}
+        {/* ── 3-CARD VIP DIAGNOSTIC DECK WITH SPRING PHYSICS ───────────────────────────── */}
         <div className="mb-8">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B0B0C] text-white text-[11px] font-body font-800 uppercase tracking-[0.2em] mb-4">
-              <Camera className="w-3.5 h-3.5 text-[#22bbee]" />
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.08] border border-white/20 text-cyan-300 text-[11px] font-body font-800 uppercase tracking-[0.22em] mb-4 shadow-[0_0_20px_rgba(0,229,255,0.2)]">
+              <Camera className="w-3.5 h-3.5 text-cyan-300 animate-pulse" />
               <span>Toronto Hydraulic Telemetry</span>
             </div>
-            <h2 className="font-display-syne font-800 text-[32px] sm:text-[46px] text-[#0B0B0C] tracking-tight leading-none">
+            <h2 className="font-display-syne font-900 text-[32px] sm:text-[46px] text-white tracking-tight leading-none drop-shadow-sm">
               1-on-1 Underwater Video Telemetry
             </h2>
           </div>
 
           <div ref={vipGridRef} className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch [perspective:2000px]">
             {diagnosticDeck.map((card, i) => (
-              <div
+              <motion.div
                 key={card.id}
                 ref={(el) => { vipCardRefs.current[i] = el; }}
+                whileHover={{ y: -12, scale: 1.025, transition: { type: "spring", stiffness: 220, damping: 16 } }}
                 data-cursor-text="VIP LAB"
                 className={`${card.cardStyle} p-8 sm:p-10 rounded-[2.4rem] sm:rounded-[2.8rem] flex flex-col justify-between relative overflow-hidden transition-shadow duration-300 opacity-0`}
               >
                 <div>
                   <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
-                    <span className={`${card.badgeStyle} px-5 py-2 sm:py-2.5 rounded-full font-body font-800 text-[13px] tracking-wide inline-block select-none shadow-[0_4px_15px_rgba(0,0,0,0.25)]`}>
+                    <span className={`${card.badgeStyle} px-5 py-2 sm:py-2.5 rounded-full font-body font-800 text-[13px] tracking-wide inline-block select-none shadow-[0_4px_15px_rgba(0,0,0,0.35)]`}>
                       {card.badge}
                     </span>
-                    <span className="font-body font-800 text-[11px] uppercase tracking-widest opacity-80 px-3 py-1 rounded-full border border-current/20">
+                    <span className="font-body font-800 text-[11px] uppercase tracking-widest text-cyan-300/90 px-3 py-1 rounded-full border border-cyan-400/30 bg-white/[0.04]">
                       {card.facility}
                     </span>
                   </div>
 
                   <div className={`text-[14px] font-body font-600 tracking-tight flex items-center gap-2.5 mb-7 ${card.taglineStyle}`}>
-                    <span className="w-1 h-4 bg-current opacity-60 rounded-full inline-block shrink-0" />
+                    <span className="w-1.5 h-4 bg-cyan-400 rounded-full inline-block shrink-0 animate-pulse" />
                     <span>{card.tagline}</span>
                   </div>
 
                   <div className={`pb-7 mb-8 border-b ${card.dividerStyle}`}>
-                    <h3 className="font-display-syne font-800 text-[24px] sm:text-[28px] tracking-tight mb-4 leading-[1.1]">
+                    <h3 className="font-display-syne font-800 text-white text-[24px] sm:text-[28px] tracking-tight mb-4 leading-[1.1]">
                       {card.title}
                     </h3>
-                    <p className="font-body text-[15px] sm:text-[16px] leading-relaxed font-500 opacity-90">
+                    <p className="font-body text-[15px] sm:text-[16px] leading-relaxed font-500 text-white/75">
                       {card.desc}
                     </p>
                     
                     {card.price && (
-                      <div className="mt-6 pt-6 border-t border-[#0B0B0C]/10 flex flex-wrap items-baseline gap-2">
-                        <span className="font-display-syne font-900 text-[40px] sm:text-[48px] tracking-tight leading-none text-[#0B0B0C]">
+                      <div className="mt-6 pt-6 border-t border-white/15 flex flex-wrap items-baseline gap-2">
+                        <span className="font-display-syne font-900 text-[40px] sm:text-[48px] tracking-tight leading-none text-white drop-shadow-xs">
                           {card.price}
                         </span>
-                        <span className="font-body text-[13px] font-700 text-[#737376]">
+                        <span className="font-body text-[13px] font-700 text-white/60">
                           / {card.period}
                         </span>
                       </div>
@@ -772,7 +774,7 @@ export default function CourseSection() {
 
                   <div className="space-y-4 mb-10">
                     {card.bullets.map((b, bi) => (
-                      <div key={bi} className="flex items-start gap-3.5 text-[15px] font-body font-600 leading-snug opacity-95">
+                      <div key={bi} className="flex items-start gap-3.5 text-[15px] font-body font-500 text-white/85 leading-snug">
                         <span className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${card.checkStyle}`}>
                           <Check className="w-3 h-3 stroke-[3]" />
                         </span>
@@ -794,13 +796,13 @@ export default function CourseSection() {
                       <ArrowRight className="w-4.5 h-4.5 shrink-0" />
                     </a>
                   ) : (
-                    <div className="w-full py-4 px-6 rounded-[1.2rem] bg-current/5 border border-current/15 text-center font-body font-700 text-[12px] uppercase tracking-[0.15em] opacity-80 flex items-center justify-center gap-2 select-none">
-                      <Clock className="w-4 h-4" />
+                    <div className="w-full py-4 px-6 rounded-[1.2rem] bg-white/[0.04] border border-white/15 text-center font-body font-700 text-[12px] uppercase tracking-[0.15em] text-white/70 flex items-center justify-center gap-2 select-none">
+                      <Clock className="w-4 h-4 text-cyan-300" />
                       <span>Available for all athletic skill tiers</span>
                     </div>
                   )}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

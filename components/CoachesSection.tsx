@@ -68,12 +68,12 @@ const wheelReviews = [
     sub: "Parent of Provincial Qualifier · Age 13",
     loc: "Toronto Olympic Chamber",
     stars: 5,
-    cardTheme: "bg-[#003EFF] text-white border-2 border-white/25 shadow-[0_25px_70px_rgba(0,62,255,0.38)]",
-    avatarTheme: "bg-white text-[#001026] shadow-[0_6px_20px_rgba(0,0,0,0.2)]",
-    starBadge: "bg-white/20 text-white border border-white/30 backdrop-blur-md",
-    subColor: "text-white/90",
+    cardTheme: "bg-gradient-to-b from-[#003EFF]/90 to-[#001c75]/90 backdrop-blur-2xl text-white border border-cyan-400/50 shadow-[0_30px_80px_rgba(0,62,255,0.45)] hover:shadow-[0_0_95px_rgba(0,229,255,0.6)]",
+    avatarTheme: "bg-white text-[#0B0E11] shadow-[0_6px_20px_rgba(0,0,0,0.3)] font-900",
+    starBadge: "bg-white/20 text-cyan-200 border border-white/30 backdrop-blur-md",
+    subColor: "text-cyan-200",
     dividerColor: "border-white/20",
-    locBadge: "bg-[#001026]/70 text-white border border-white/25",
+    locBadge: "bg-white/10 text-white border border-white/25",
     tiltDesktop: -3.5,
     tiltMobile: -2,
   },
@@ -84,12 +84,12 @@ const wheelReviews = [
     sub: "Masters Athlete · Half-Ironman Competitor",
     loc: "Toronto Harbourfront Studio",
     stars: 5,
-    cardTheme: "bg-white text-[#001026] border border-slate-200/80 shadow-[0_25px_80px_rgba(0,0,0,0.08)]",
-    avatarTheme: "bg-[#003EFF] text-white shadow-[0_6px_20px_rgba(0,62,255,0.35)]",
-    starBadge: "bg-[#F0F2F6] text-[#D97706] border border-slate-200",
-    subColor: "text-[#003EFF]",
-    dividerColor: "border-slate-200",
-    locBadge: "bg-slate-100 text-[#001026] border border-slate-200",
+    cardTheme: "bg-white/[0.04] backdrop-blur-xl text-white border border-white/15 shadow-[0_25px_80px_rgba(0,0,0,0.6)] hover:border-cyan-400/60 hover:shadow-[0_0_80px_rgba(0,229,255,0.3)]",
+    avatarTheme: "bg-[#003EFF] text-white shadow-[0_0_20px_rgba(0,62,255,0.6)] font-900",
+    starBadge: "bg-white/10 text-cyan-300 border border-white/20 backdrop-blur-md",
+    subColor: "text-cyan-300",
+    dividerColor: "border-white/15",
+    locBadge: "bg-white/10 text-white/90 border border-white/20",
     tiltDesktop: 3.5,
     tiltMobile: 2,
   },
@@ -100,12 +100,12 @@ const wheelReviews = [
     sub: "Adult Foundation Learner · Age 44",
     loc: "Downtown Toronto Studio",
     stars: 5,
-    cardTheme: "bg-[#001026] text-white border border-cyan-400/35 shadow-[0_30px_90px_rgba(0,16,38,0.45)]",
-    avatarTheme: "bg-[#22bbee] text-[#001026] font-900 shadow-[0_6px_20px_rgba(34,187,238,0.4)]",
-    starBadge: "bg-white/10 text-[#22bbee] border border-cyan-400/30 backdrop-blur-md",
-    subColor: "text-[#22bbee]",
+    cardTheme: "bg-white/[0.06] backdrop-blur-2xl text-white border border-cyan-400/40 shadow-[0_30px_90px_rgba(0,16,38,0.6)] hover:border-cyan-400 hover:shadow-[0_0_90px_rgba(0,229,255,0.45)]",
+    avatarTheme: "bg-cyan-400 text-[#0B0E11] font-900 shadow-[0_0_25px_rgba(0,229,255,0.6)]",
+    starBadge: "bg-cyan-400/20 text-cyan-300 border border-cyan-400/40 backdrop-blur-md",
+    subColor: "text-cyan-300",
     dividerColor: "border-white/15",
-    locBadge: "bg-white/10 text-white border border-white/15",
+    locBadge: "bg-cyan-400/10 text-white border border-cyan-400/30",
     tiltDesktop: -3,
     tiltMobile: -1.5,
   },
@@ -116,12 +116,12 @@ const wheelReviews = [
     sub: "University Varsity Sprinter",
     loc: "High Velocity Flume Lab",
     stars: 5,
-    cardTheme: "bg-[#F2F4F8] text-[#001026] border border-slate-300 shadow-[0_20px_70px_rgba(0,0,0,0.07)]",
-    avatarTheme: "bg-[#001026] text-white shadow-md",
-    starBadge: "bg-white text-[#003EFF] border border-slate-200 shadow-sm",
-    subColor: "text-[#003EFF]",
-    dividerColor: "border-slate-200/80",
-    locBadge: "bg-white text-[#001026] border border-slate-200",
+    cardTheme: "bg-white/[0.04] backdrop-blur-xl text-white border border-white/15 shadow-[0_25px_80px_rgba(0,0,0,0.6)] hover:border-cyan-400/60 hover:shadow-[0_0_80px_rgba(0,229,255,0.3)]",
+    avatarTheme: "bg-gradient-to-br from-cyan-400 to-[#003EFF] text-white shadow-lg font-900",
+    starBadge: "bg-white/10 text-white/90 border border-white/20 shadow-sm",
+    subColor: "text-white/80",
+    dividerColor: "border-white/15",
+    locBadge: "bg-white/10 text-white/90 border border-white/20",
     tiltDesktop: 3,
     tiltMobile: 2,
   },
@@ -132,12 +132,12 @@ const wheelReviews = [
     sub: "Parents of Foundation Swimmer · Age 6",
     loc: "Toronto Olympic Chamber",
     stars: 5,
-    cardTheme: "bg-[#003EFF] text-white border-2 border-white/25 shadow-[0_25px_70px_rgba(0,62,255,0.38)]",
-    avatarTheme: "bg-white text-[#001026] shadow-[0_6px_20px_rgba(0,0,0,0.2)]",
-    starBadge: "bg-white/20 text-white border border-white/30 backdrop-blur-md",
-    subColor: "text-white/90",
+    cardTheme: "bg-gradient-to-b from-[#003EFF]/90 to-[#001c75]/90 backdrop-blur-2xl text-white border border-cyan-400/50 shadow-[0_30px_80px_rgba(0,62,255,0.45)] hover:shadow-[0_0_95px_rgba(0,229,255,0.6)]",
+    avatarTheme: "bg-white text-[#0B0E11] shadow-[0_6px_20px_rgba(0,0,0,0.3)] font-900",
+    starBadge: "bg-white/20 text-cyan-200 border border-white/30 backdrop-blur-md",
+    subColor: "text-cyan-200",
     dividerColor: "border-white/20",
-    locBadge: "bg-[#001026]/70 text-white border border-white/25",
+    locBadge: "bg-white/10 text-white border border-white/25",
     tiltDesktop: -2.5,
     tiltMobile: -1.5,
   },
@@ -226,19 +226,19 @@ export default function CoachesSection() {
   }, { scope: sectionRef });
 
   return (
-    <section ref={sectionRef} id="coaches" className="relative py-28 lg:py-40 z-10 border-t border-[#0B0B0C]/10 overflow-hidden bg-[#EBE8E2]">
+    <section ref={sectionRef} id="coaches" className="relative py-28 lg:py-40 z-10 border-t border-white/10 overflow-hidden bg-[#0A0D10] text-white">
       
       {/* ── ORGANIC FLUID ABOUT US & FACULTY SHOWCASE (ZERO BOXES) ───────── */}
       <div className="max-w-[1450px] mx-auto px-6 sm:px-10 lg:px-16 mb-36 relative">
         
         {/* Ambient background glow sculptures without rigid borders */}
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#003EFF]/10 blur-[140px] pointer-events-none" />
-        <div className="absolute bottom-1/3 right-1/4 w-[600px] h-[600px] rounded-full bg-[#22bbee]/12 blur-[160px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#003EFF]/15 blur-[160px] pointer-events-none" />
+        <div className="absolute bottom-1/3 right-1/4 w-[600px] h-[600px] rounded-full bg-cyan-400/15 blur-[180px] pointer-events-none" />
 
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-24 pb-12 border-b border-[#0B0B0C]/15 relative z-10">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-24 pb-12 border-b border-white/15 relative z-10">
           <div className="space-y-5">
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#003EFF] text-white text-[11px] font-body font-800 tracking-[0.25em] uppercase shadow-[0_4px_20px_rgba(0,62,255,0.4)]">
-              <Award className="w-3.5 h-3.5 shrink-0 animate-pulse" />
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#003EFF] text-white text-[11px] font-body font-800 tracking-[0.25em] uppercase shadow-[0_0_25px_rgba(0,62,255,0.55)] border border-cyan-300/30">
+              <Award className="w-3.5 h-3.5 shrink-0 animate-pulse text-cyan-300" />
               <span>About Us & Championship Faculty</span>
             </div>
             
@@ -246,20 +246,20 @@ export default function CoachesSection() {
               text="ARCHITECTS OF"
               as="h2"
               stagger={0.035}
-              className="font-display-syne font-900 text-[#0B0B0C] leading-none tracking-[-0.04em]"
+              className="font-display-syne font-900 text-white leading-none tracking-[-0.04em]"
               style={{ fontSize: "clamp(3rem, 7vw, 6.5rem)" }}
             />
             
-            <div className="font-editorial text-[#003EFF] leading-none tracking-[-0.02em] text-[2.8rem] sm:text-[5rem] italic font-700 drop-shadow-sm">
+            <div className="font-editorial text-cyan-400 leading-none tracking-[-0.02em] text-[2.8rem] sm:text-[5rem] italic font-700 drop-shadow-[0_0_35px_rgba(0,229,255,0.45)]">
               Pure Fluid Velocity.
             </div>
           </div>
 
           <div className="max-w-md space-y-4 text-left">
-            <p className="font-body font-600 text-[#0B0B0C] text-[18px] leading-relaxed">
+            <p className="font-body font-500 text-white/90 text-[18px] leading-relaxed">
               We eliminated rigid swimming dogmas and outdated athletic training boxes to create Toronto&apos;s premier hydrodynamic sanctuary.
             </p>
-            <p className="font-body font-500 text-[#3A3A3C] text-[15px] leading-relaxed">
+            <p className="font-body font-500 text-white/65 text-[15px] leading-relaxed">
               Every director across our hydro-labs holds National Red Cross accreditation, Olympic meet pedigrees, and advanced degrees in biomechanical movement physics.
             </p>
           </div>
@@ -277,7 +277,7 @@ export default function CoachesSection() {
               className={`flex ${c.layoutDirection} items-center gap-10 sm:gap-16 lg:gap-24 relative group select-none`}
             >
               {/* Giant Background Watermark Typography Floating in Open Air */}
-              <div className={`absolute -top-12 ${i % 2 === 1 ? 'right-0 text-right' : 'left-0 text-left'} text-[58px] sm:text-[94px] lg:text-[135px] font-editorial italic font-800 text-[#003EFF]/10 tracking-tighter select-none pointer-events-none whitespace-nowrap z-0 transition-opacity duration-700 group-hover:opacity-25`}>
+              <div className={`absolute -top-12 ${i % 2 === 1 ? 'right-0 text-right' : 'left-0 text-left'} text-[58px] sm:text-[94px] lg:text-[135px] font-editorial italic font-800 text-cyan-400/10 tracking-tighter select-none pointer-events-none whitespace-nowrap z-0 transition-opacity duration-700 group-hover:opacity-30`}>
                 {c.watermark}
               </div>
 
@@ -300,30 +300,30 @@ export default function CoachesSection() {
               {/* Open-Air Architectural Narrative (Zero Enclosing Walls or Card Borders) */}
               <div className={`flex flex-col ${c.alignItems} ${c.textAlign} max-w-3xl z-10 space-y-6`}>
                 <div>
-                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#003EFF]/10 text-[#003EFF] font-body text-[12px] sm:text-[13px] font-800 tracking-wider uppercase mb-3">
-                    <Trophy className="w-4 h-4 shrink-0 text-[#003EFF]" />
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-400/20 text-cyan-300 border border-cyan-400/30 font-body text-[12px] sm:text-[13px] font-800 tracking-wider uppercase mb-3 shadow-[0_0_15px_rgba(0,229,255,0.25)]">
+                    <Trophy className="w-4 h-4 shrink-0 text-cyan-300" />
                     <span>{c.acclaim}</span>
                   </div>
                   
-                  <h3 className="font-display-syne font-900 text-[32px] sm:text-[44px] lg:text-[52px] text-[#0B0B0C] tracking-tight leading-[1.05]">
+                  <h3 className="font-display-syne font-900 text-[32px] sm:text-[44px] lg:text-[52px] text-white tracking-tight leading-[1.05]">
                     {c.name}
                   </h3>
                   
-                  <div className="font-editorial font-700 italic text-[20px] sm:text-[26px] text-[#003EFF] mt-1.5 drop-shadow-xs">
+                  <div className="font-editorial font-700 italic text-[20px] sm:text-[26px] text-cyan-400 mt-1.5 drop-shadow-[0_0_20px_rgba(0,229,255,0.4)]">
                     {c.role}
                   </div>
                 </div>
 
-                <p className="font-body text-[16px] sm:text-[20px] text-[#3A3A3C] font-500 leading-relaxed max-w-2xl">
+                <p className="font-body text-[16px] sm:text-[20px] text-white/75 font-500 leading-relaxed max-w-2xl">
                   &ldquo;{c.bio}&rdquo;
                 </p>
 
                 <div className={`flex flex-wrap items-center ${i % 2 === 1 ? 'justify-end' : 'justify-start'} gap-4 sm:gap-6 pt-2`}>
-                  <span className="inline-flex items-center gap-2 font-body text-[12px] sm:text-[13px] font-800 tracking-wider uppercase text-[#0B0B0C]">
-                    <ShieldCheck className="w-4.5 h-4.5 text-[#003EFF] shrink-0" />
+                  <span className="inline-flex items-center gap-2 font-body text-[12px] sm:text-[13px] font-800 tracking-wider uppercase text-white/90">
+                    <ShieldCheck className="w-4.5 h-4.5 text-cyan-400 shrink-0" />
                     <span>Red Cross Biomechanical Vetted</span>
                   </span>
-                  <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#001026] text-white font-body text-[11px] sm:text-[12px] font-800 uppercase tracking-widest shadow-md">
+                  <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-body text-[11px] sm:text-[12px] font-800 uppercase tracking-widest shadow-md">
                     <span>{c.exp}</span>
                   </span>
                 </div>
@@ -337,10 +337,10 @@ export default function CoachesSection() {
       {/* ── 3D ROTATING REVIEWS WHEEL DECK SECTION ─────────────── */}
       <div id="testimonials" className="max-w-[1450px] mx-auto px-5 sm:px-10 lg:px-16 pt-8">
         
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-16 sm:mb-20 pb-12 border-b border-[#0B0B0C]/15">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-16 sm:mb-20 pb-12 border-b border-white/15">
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#003EFF] text-white text-[11px] sm:text-[12px] font-body font-800 tracking-[0.22em] uppercase shadow-[0_6px_20px_rgba(0,62,255,0.35)]">
-              <Sparkles className="w-3.5 h-3.5 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#003EFF] text-white text-[11px] sm:text-[12px] font-body font-800 tracking-[0.22em] uppercase shadow-[0_0_25px_rgba(0,62,255,0.5)] border border-white/20">
+              <Sparkles className="w-3.5 h-3.5 animate-pulse text-cyan-300" />
               <span>Verified Podium Logs</span>
             </div>
             
@@ -348,46 +348,47 @@ export default function CoachesSection() {
               text="REAL REVIEWS &"
               as="h2"
               stagger={0.035}
-              className="font-display-syne font-900 text-[#001026] leading-none tracking-[-0.04em]"
+              className="font-display-syne font-900 text-white leading-none tracking-[-0.04em]"
               style={{ fontSize: "clamp(2.8rem, 6.5vw, 5.8rem)" }}
             />
             
-            <div className="font-editorial text-[#003EFF] leading-none tracking-[-0.02em] text-[2.5rem] sm:text-[4.5rem] italic font-700">
+            <div className="font-editorial text-cyan-400 leading-none tracking-[-0.02em] text-[2.5rem] sm:text-[4.5rem] italic font-700 drop-shadow-[0_0_35px_rgba(0,229,255,0.4)]">
               Stories of Aquatic Fluency.
             </div>
           </div>
 
           <div className="max-w-md space-y-3">
-            <div className="flex items-center gap-2 text-[#001026] font-body text-[13px] font-800 uppercase tracking-wider">
-              <CheckCircle className="w-4 h-4 text-[#003EFF]" />
+            <div className="flex items-center gap-2 text-white font-body text-[13px] font-800 uppercase tracking-wider">
+              <CheckCircle className="w-4 h-4 text-cyan-400" />
               <span>100% Authentic Athlete Evaluations</span>
             </div>
-            <p className="font-body font-500 text-[#4B5563] text-[15px] sm:text-[16px] leading-relaxed">
+            <p className="font-body font-500 text-white/70 text-[15px] sm:text-[16px] leading-relaxed">
               Scroll through our rotating feed of athlete reviews from provincial podium qualifiers, Ironman triathletes, and Toronto families.
             </p>
           </div>
         </div>
 
-        {/* Interactive Tilted Wheel Review Feed */}
+        {/* Interactive Tilted Wheel Review Feed + Spring Physics */}
         <div
           ref={wheelContainerRef}
           className="max-w-4xl mx-auto space-y-6 sm:space-y-8 lg:space-y-10 py-6"
         >
           {wheelReviews.map((rev, idx) => (
-            <div
+            <motion.div
               key={idx}
-              ref={(el) => { reviewCardRefs.current[idx] = el; }}
+              ref={(el) => { reviewCardRefs.current[idx] = el as HTMLDivElement; }}
+              whileHover={{ scale: 1.025, transition: { type: "spring", stiffness: 220, damping: 16 } }}
               data-cursor-text="LOG ENTRY"
-              className={`${rev.cardTheme} p-7 sm:p-10 lg:p-11 rounded-[2.2rem] sm:rounded-[2.8rem] transition-all duration-500 relative overflow-hidden group hover:scale-[1.02] hover:z-20`}
+              className={`${rev.cardTheme} p-7 sm:p-10 lg:p-11 rounded-[2.2rem] sm:rounded-[2.8rem] transition-shadow duration-500 relative overflow-hidden group hover:z-20`}
             >
               {/* Top Bar: Athlete Avatar & Star Rating Pill */}
-              <div className="flex flex-wrap items-center justify-between gap-4 mb-6 sm:mb-8 pb-6 border-b border-current/15">
+              <div className="flex flex-wrap items-center justify-between gap-4 mb-6 sm:mb-8 pb-6 border-b border-white/15">
                 <div className="flex items-center gap-4">
                   <div className={`w-13 h-13 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center font-display-syne font-900 text-xl sm:text-2xl tracking-tight shrink-0 select-none ${rev.avatarTheme}`}>
                     {rev.initials}
                   </div>
                   <div>
-                    <h3 className="font-display-syne font-800 text-[20px] sm:text-[23px] tracking-tight leading-tight">
+                    <h3 className="font-display-syne font-800 text-white text-[20px] sm:text-[23px] tracking-tight leading-tight">
                       {rev.name}
                     </h3>
                     <div className={`font-body text-[12px] sm:text-[13px] font-700 mt-1 uppercase tracking-wide flex items-center gap-1.5 ${rev.subColor}`}>
@@ -399,34 +400,34 @@ export default function CoachesSection() {
                 <div className={`px-4 py-2 sm:py-2.5 rounded-full font-body font-800 text-[11px] sm:text-[12px] uppercase tracking-wider flex items-center gap-1.5 shadow-sm ${rev.starBadge}`}>
                   <div className="flex gap-1">
                     {[...Array(rev.stars)].map((_, sIndex) => (
-                      <Star key={sIndex} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current text-amber-400 stroke-0" />
+                      <Star key={sIndex} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current text-amber-300 stroke-0" />
                     ))}
                   </div>
-                  <span className="ml-1 opacity-90 select-none">5.0 Rating</span>
+                  <span className="ml-1 opacity-95 select-none">5.0 Rating</span>
                 </div>
               </div>
 
               {/* Main Testimonial Quote */}
               <div className="relative mb-8 sm:mb-10">
-                <Quote className="w-10 h-10 sm:w-14 sm:h-14 opacity-15 mb-3 select-none" />
-                <p className="font-body text-[16px] sm:text-[19px] font-600 leading-relaxed sm:leading-relaxed tracking-tight -mt-4 sm:-mt-6 pl-1 sm:pl-2">
+                <Quote className="w-10 h-10 sm:w-14 sm:h-14 opacity-20 mb-3 text-cyan-300 select-none" />
+                <p className="font-body text-[16px] sm:text-[19px] font-500 text-white/90 leading-relaxed sm:leading-relaxed tracking-tight -mt-4 sm:-mt-6 pl-1 sm:pl-2">
                   &ldquo;{rev.quote}&rdquo;
                 </p>
               </div>
 
               {/* Footer Bar: Verification & Location Tag */}
               <div className={`pt-6 border-t flex flex-wrap items-center justify-between gap-4 ${rev.dividerColor}`}>
-                <div className="flex items-center gap-2 font-body text-[11px] sm:text-[12px] font-800 uppercase tracking-widest opacity-85">
-                  <CheckCircle className="w-4 h-4 text-[#22bbee]" />
+                <div className="flex items-center gap-2 font-body text-[11px] sm:text-[12px] font-800 uppercase tracking-widest text-white/85">
+                  <CheckCircle className="w-4 h-4 text-cyan-400" />
                   <span>Verified Bluefin Member Log</span>
                 </div>
 
                 <div className={`px-4 py-1.5 rounded-xl text-[11px] sm:text-[12px] font-body font-800 uppercase tracking-wider flex items-center gap-2 shadow-xs ${rev.locBadge}`}>
-                  <MapPin className="w-3.5 h-3.5 shrink-0" />
+                  <MapPin className="w-3.5 h-3.5 shrink-0 text-cyan-400" />
                   <span className="truncate">{rev.loc}</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
