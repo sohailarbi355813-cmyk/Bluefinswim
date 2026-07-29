@@ -12,8 +12,8 @@ export default function Footer() {
           
           <div id="locations" className="grid grid-cols-1 md:grid-cols-4 gap-12 pb-16 border-b border-white/15">
             <div>
-              <div className="font-display-syne font-800 tracking-[-0.03em] text-[26px] mb-3 text-white flex items-center gap-2 select-none">
-                BLUEFIN <span className="text-[#003EFF] font-editorial italic font-600">Aqua</span>
+              <div className="mb-4 flex items-center select-none">
+                <img src="/logo.svg" alt="Bluefin Logo" className="h-14 sm:h-16 lg:h-[72px] w-auto object-contain" />
               </div>
               <p className="font-body text-[13px] text-[#D8D5CF]/80 leading-relaxed font-500">
                 Toronto&rsquo;s most scientifically engineered competitive swimming academy and hydrodynamic training federation since 2019.

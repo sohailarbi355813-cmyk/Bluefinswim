@@ -38,28 +38,7 @@ export default function Navbar() {
           onClick={() => setMobileMenuOpen(false)}
           className="group flex items-center gap-3 no-underline select-none cursor-pointer z-50"
         >
-          <div className="relative flex items-center justify-center w-10 h-10 transition-transform duration-300 group-hover:scale-105">
-            <svg viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-11 h-9 overflow-visible">
-              <path
-                d="M14 16C18 10 26 8 34 16C40 22 46 20 50 14"
-                stroke="white"
-                strokeWidth="4.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <circle cx="42" cy="9" r="4.5" fill="white" />
-              <path
-                d="M8 28C16 36 28 32 38 22C46 14 54 18 60 22"
-                stroke="#22bbee"
-                strokeWidth="4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          <span className="font-display-syne font-800 text-[20px] text-white tracking-tight inline-block">
-            Bluefin
-          </span>
+          <img src="/logo.svg" alt="Bluefin Logo" className="h-14 sm:h-16 lg:h-[72px] w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
         </a>
 
         {/* ── CENTER: STREAMLINED DESKTOP NAV LINKS ────────────────── */}
