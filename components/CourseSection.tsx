@@ -14,10 +14,10 @@ if (typeof window !== "undefined") {
 }
 
 const tracks = [
-  { id: "youth", label: "Youth Foundation", desc: "Ages 4–8 · Zero Water Anxiety & Stroke Fundamentals" },
-  { id: "development", label: "Stroke Velocity", desc: "Ages 7–12 · Multi-Stroke Cadence & Turn Efficiency" },
-  { id: "competitive", label: "Provincial Squad", desc: "Ages 9–18 · Regional Race & Podium Preparation" },
-  { id: "masters", label: "Adult & Masters", desc: "Ages 18+ · Open-Water Endurance & Triathlon Glide" },
+  { id: "youth", label: "Youth & Kids", desc: "Ages 3 mo-12 yrs · Zero Water Anxiety & Swim Fundamentals" },
+  { id: "development", label: "Stroke Velocity", desc: "Adaptive & Competitive Coaching · Technique Optimization" },
+  { id: "masters", label: "Adult & Wellness", desc: "Ages 13+ · Private Lessons, Aqua Fitness & Hydrotherapy" },
+  { id: "family", label: "Private Family", desc: "2-4 Swimmers · Exclusive Group Dynamic Training" },
 ];
 
 const getWhatsAppUrl = (trackName: string) => {
@@ -27,161 +27,202 @@ const getWhatsAppUrl = (trackName: string) => {
 
 const courses = [
   {
-    id: "foundation", num: "01", category: "youth",
-    badgeTitle: "Youth Foundation",
-    tagline: "Optimized for water buoyancy & confidence",
-    title: "Hydro-Foundation Academy",
-    price: "$295", period: "10-wk training block",
-    schedule: "Tue & Thu · 4:30 PM", pool: "Toronto Olympic Chamber",
-    bullets: [
-      "2 sessions / weekly sprint",
-      "Maximum 1:4 instructor ratio",
-      "Underwater safety certification",
-      "Progressive breath mechanics",
-      "Bi-weekly parent telemetry meeting",
-      "Unlimited technique revisions",
-      "Pause or transfer training anytime"
-    ],
-    cardBg: "bg-white/[0.04] backdrop-blur-xl text-white border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] hover:border-cyan-400/60 hover:bg-white/[0.07] hover:shadow-[0_0_70px_rgba(0,229,255,0.25)]",
-    badgeStyle: "bg-white/10 text-cyan-300 border border-white/15 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.3)]",
-    taglineStyle: "text-white/70",
-    dividerStyle: "border-white/15",
-    checkStyle: "text-cyan-400 bg-white/10",
-    buttonStyle: "bg-white/[0.08] hover:bg-cyan-400 text-white hover:text-[#0B0E11] border border-white/20 hover:border-cyan-400 shadow-[0_12px_28px_rgba(0,0,0,0.35)] hover:shadow-[0_0_40px_rgba(0,229,255,0.55)]",
+    id: "infant-swim", num: "01", category: "youth",
+    badgeTitle: "", tagline: "",
+    title: "Infant Swim (3-12m)", price: "$493", period: "8 classes",
+    schedule: "", pool: "", bullets: [],
+    cardBg: "bg-white/[0.04] backdrop-blur-xl text-white border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] hover:border-cyan-400/60 hover:bg-white/[0.07] hover:shadow-[0_0_70px_rgba(0,229,255,0.25)]", badgeStyle: "bg-white/10 text-cyan-300 border border-white/15 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.3)]", taglineStyle: "text-white/70",
+    dividerStyle: "border-white/15", checkStyle: "text-cyan-400 bg-white/10", buttonStyle: "bg-white/[0.08] hover:bg-cyan-400 text-white hover:text-[#0B0E11] border border-white/20 hover:border-cyan-400 shadow-[0_12px_28px_rgba(0,0,0,0.35)] hover:shadow-[0_0_40px_rgba(0,229,255,0.55)]",
     buttonText: "Reserve Your Track",
   },
   {
-    id: "development", num: "02", category: "development",
-    badgeTitle: "Stroke Velocity",
-    tagline: "Optimized for multi-stroke mastery & turns",
-    title: "Stroke Development Lab",
-    price: "$340", period: "10-wk training block",
-    schedule: "Mon & Wed · 5:15 PM", pool: "Downtown Toronto Pool",
-    bullets: [
-      "2 sessions / weekly sprint",
-      "Senior Technical Coach & Analyst",
-      "Streamlined turn & kick propulsion",
-      "Butterfly & bilateral breathing",
-      "Weekly diagnostic telemetry meeting",
-      "Unlimited stroke video feedback",
-      "Pause or transfer training anytime"
-    ],
-    cardBg: "bg-gradient-to-b from-white/[0.09] to-white/[0.03] backdrop-blur-2xl text-white border border-cyan-400/50 shadow-[0_30px_90px_rgba(0,229,255,0.18)] hover:border-cyan-400 hover:shadow-[0_0_95px_rgba(0,229,255,0.4)] relative z-10",
-    badgeStyle: "bg-cyan-400/20 text-cyan-300 border border-cyan-400/50 backdrop-blur-md shadow-[0_0_25px_rgba(0,229,255,0.35)]",
-    taglineStyle: "text-white/90 font-700",
-    dividerStyle: "border-cyan-400/30",
-    checkStyle: "text-cyan-300 bg-cyan-400/20",
-    buttonStyle: "bg-cyan-400 hover:bg-white text-[#0B0E11] font-900 shadow-[0_15px_40px_rgba(0,229,255,0.5)] hover:shadow-[0_0_60px_rgba(255,255,255,0.8)]",
-    buttonText: "Reserve Your Track",
-    popularTag: true,
+    id: "toddler-swim", num: "02", category: "youth",
+    badgeTitle: "", tagline: "",
+    title: "Toddler Swim (1-3y)", price: "$548", period: "8 classes",
+    schedule: "", pool: "", bullets: [],
+    cardBg: "bg-gradient-to-b from-white/[0.09] to-white/[0.03] backdrop-blur-2xl text-white border border-cyan-400/50 shadow-[0_30px_90px_rgba(0,229,255,0.18)] hover:border-cyan-400 hover:shadow-[0_0_95px_rgba(0,229,255,0.4)] relative z-10", badgeStyle: "bg-cyan-400/20 text-cyan-300 border border-cyan-400/50 backdrop-blur-md shadow-[0_0_25px_rgba(0,229,255,0.35)]", taglineStyle: "text-white/90 font-700",
+    dividerStyle: "border-cyan-400/30", checkStyle: "text-cyan-300 bg-cyan-400/20", buttonStyle: "bg-cyan-400 hover:bg-white text-[#0B0E11] font-900 shadow-[0_15px_40px_rgba(0,229,255,0.5)] hover:shadow-[0_0_60px_rgba(255,255,255,0.8)]",
+    buttonText: "Reserve Your Track", popularTag: true,
   },
   {
-    id: "competitive", num: "03", category: "competitive",
-    badgeTitle: "Provincial Squad",
-    tagline: "Optimized for podium qualifiers & speed",
-    title: "Provincial Race Squad",
-    price: "$420", period: "seasonal championship block",
-    schedule: "Daily AM & PM Slots", pool: "Toronto 50m Olympic Facility",
-    bullets: [
-      "Custom intensive training sprints",
-      "2 Dedicated Olympic Directors",
-      "4K 120fps underwater camera feedback",
-      "Dryland explosive mechanics & gym",
-      "Custom race strategy meetings",
-      "Unlimited diagnostic trials & revisions",
-      "Pause or transfer training anytime"
-    ],
-    cardBg: "bg-white/[0.05] backdrop-blur-xl text-white border border-white/15 shadow-[0_30px_85px_rgba(0,0,0,0.6)] hover:border-[#003EFF] hover:shadow-[0_0_85px_rgba(0,62,255,0.4)]",
-    badgeStyle: "bg-[#003EFF]/30 text-white backdrop-blur-md border border-[#003EFF]/50 shadow-[0_6px_20px_rgba(0,62,255,0.35)]",
-    taglineStyle: "text-white/70",
-    dividerStyle: "border-white/15",
-    checkStyle: "text-cyan-300 bg-white/10",
-    buttonStyle: "bg-[#003EFF] hover:bg-cyan-400 text-white hover:text-[#0B0E11] shadow-[0_15px_38px_rgba(0,62,255,0.5)] hover:shadow-[0_0_50px_rgba(0,229,255,0.65)]",
+    id: "preschool-swim", num: "03", category: "youth",
+    badgeTitle: "", tagline: "",
+    title: "Preschool Swim (3-5y)", price: "$548", period: "8 classes",
+    schedule: "", pool: "", bullets: [],
+    cardBg: "bg-white/[0.04] backdrop-blur-xl text-white border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] hover:border-cyan-400/60 hover:bg-white/[0.07] hover:shadow-[0_0_70px_rgba(0,229,255,0.25)]", badgeStyle: "bg-white/10 text-cyan-300 border border-white/15 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.3)]", taglineStyle: "text-white/70",
+    dividerStyle: "border-white/15", checkStyle: "text-cyan-400 bg-white/10", buttonStyle: "bg-white/[0.08] hover:bg-cyan-400 text-white hover:text-[#0B0E11] border border-white/20 hover:border-cyan-400 shadow-[0_12px_28px_rgba(0,0,0,0.35)] hover:shadow-[0_0_40px_rgba(0,229,255,0.55)]",
     buttonText: "Reserve Your Track",
   },
   {
-    id: "masters", num: "04", category: "masters",
-    badgeTitle: "Masters & Tri",
-    tagline: "Optimized for open-water endurance & glide",
-    title: "Endurance & Triathlon Glide",
-    price: "$310", period: "10-wk endurance block",
-    schedule: "Mon, Wed, Fri · 6:00 AM", pool: "Toronto Harbourfront Studio",
-    bullets: [
-      "3 morning sessions / weekly sprint",
-      "Total Immersion glide mechanics",
-      "Open-water sighting & drafting",
-      "Shoulder preservation ergonomics",
-      "Bi-weekly performance review meeting",
-      "Unlimited pacing feedback & revisions",
-      "Pause or transfer training anytime"
-    ],
-    cardBg: "bg-white/[0.04] backdrop-blur-xl text-white border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] hover:border-cyan-400/60 hover:bg-white/[0.07] hover:shadow-[0_0_70px_rgba(0,229,255,0.25)]",
-    badgeStyle: "bg-white/10 text-cyan-300 border border-white/15 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.3)]",
-    taglineStyle: "text-white/70",
-    dividerStyle: "border-white/15",
-    checkStyle: "text-cyan-400 bg-white/10",
-    buttonStyle: "bg-white/[0.08] hover:bg-cyan-400 text-white hover:text-[#0B0E11] border border-white/20 hover:border-cyan-400 shadow-[0_12px_28px_rgba(0,0,0,0.35)] hover:shadow-[0_0_40px_rgba(0,229,255,0.55)]",
+    id: "parent-tot", num: "04", category: "youth",
+    badgeTitle: "", tagline: "",
+    title: "Parent & Tot", price: "$493", period: "8 classes",
+    schedule: "", pool: "", bullets: [],
+    cardBg: "bg-white/[0.04] backdrop-blur-xl text-white border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] hover:border-cyan-400/60 hover:bg-white/[0.07] hover:shadow-[0_0_70px_rgba(0,229,255,0.25)]", badgeStyle: "bg-white/10 text-cyan-300 border border-white/15 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.3)]", taglineStyle: "text-white/70",
+    dividerStyle: "border-white/15", checkStyle: "text-cyan-400 bg-white/10", buttonStyle: "bg-white/[0.08] hover:bg-cyan-400 text-white hover:text-[#0B0E11] border border-white/20 hover:border-cyan-400 shadow-[0_12px_28px_rgba(0,0,0,0.35)] hover:shadow-[0_0_40px_rgba(0,229,255,0.55)]",
+    buttonText: "Reserve Your Track",
+  },
+  {
+    id: "kids-private", num: "05", category: "youth",
+    badgeTitle: "", tagline: "",
+    title: "Kids Private Lessons", price: "$839", period: "12 × 45 min",
+    schedule: "", pool: "", bullets: [],
+    cardBg: "bg-gradient-to-b from-white/[0.09] to-white/[0.03] backdrop-blur-2xl text-white border border-cyan-400/50 shadow-[0_30px_90px_rgba(0,229,255,0.18)] hover:border-cyan-400 hover:shadow-[0_0_95px_rgba(0,229,255,0.4)] relative z-10", badgeStyle: "bg-cyan-400/20 text-cyan-300 border border-cyan-400/50 backdrop-blur-md shadow-[0_0_25px_rgba(0,229,255,0.35)]", taglineStyle: "text-white/90 font-700",
+    dividerStyle: "border-cyan-400/30", checkStyle: "text-cyan-300 bg-cyan-400/20", buttonStyle: "bg-cyan-400 hover:bg-white text-[#0B0E11] font-900 shadow-[0_15px_40px_rgba(0,229,255,0.5)] hover:shadow-[0_0_60px_rgba(255,255,255,0.8)]",
+    buttonText: "Reserve Your Track",
+  },
+  {
+    id: "mermaid-swim", num: "06", category: "youth",
+    badgeTitle: "", tagline: "",
+    title: "Mermaid Experience", price: "$599", period: "8 × 45 min",
+    schedule: "", pool: "", bullets: [],
+    cardBg: "bg-white/[0.04] backdrop-blur-xl text-white border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] hover:border-cyan-400/60 hover:bg-white/[0.07] hover:shadow-[0_0_70px_rgba(0,229,255,0.25)]", badgeStyle: "bg-white/10 text-cyan-300 border border-white/15 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.3)]", taglineStyle: "text-white/70",
+    dividerStyle: "border-white/15", checkStyle: "text-cyan-400 bg-white/10", buttonStyle: "bg-white/[0.08] hover:bg-cyan-400 text-white hover:text-[#0B0E11] border border-white/20 hover:border-cyan-400 shadow-[0_12px_28px_rgba(0,0,0,0.35)] hover:shadow-[0_0_40px_rgba(0,229,255,0.55)]",
+    buttonText: "Reserve Your Track",
+  },
+
+  {
+    id: "stroke-improve", num: "07", category: "development",
+    badgeTitle: "", tagline: "",
+    title: "Stroke Improvement", price: "$548", period: "8 × 45 min",
+    schedule: "", pool: "", bullets: [],
+    cardBg: "bg-white/[0.04] backdrop-blur-xl text-white border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] hover:border-cyan-400/60 hover:bg-white/[0.07] hover:shadow-[0_0_70px_rgba(0,229,255,0.25)]", badgeStyle: "bg-white/10 text-cyan-300 border border-white/15 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.3)]", taglineStyle: "text-white/70",
+    dividerStyle: "border-white/15", checkStyle: "text-cyan-400 bg-white/10", buttonStyle: "bg-white/[0.08] hover:bg-cyan-400 text-white hover:text-[#0B0E11] border border-white/20 hover:border-cyan-400 shadow-[0_12px_28px_rgba(0,0,0,0.35)] hover:shadow-[0_0_40px_rgba(0,229,255,0.55)]",
+    buttonText: "Reserve Your Track",
+  },
+  {
+    id: "competitive-coach", num: "08", category: "development",
+    badgeTitle: "", tagline: "",
+    title: "Competitive Coaching", price: "$699", period: "8 × 60 min",
+    schedule: "", pool: "", bullets: [],
+    cardBg: "bg-gradient-to-b from-white/[0.09] to-white/[0.03] backdrop-blur-2xl text-white border border-cyan-400/50 shadow-[0_30px_90px_rgba(0,229,255,0.18)] hover:border-cyan-400 hover:shadow-[0_0_95px_rgba(0,229,255,0.4)] relative z-10", badgeStyle: "bg-cyan-400/20 text-cyan-300 border border-cyan-400/50 backdrop-blur-md shadow-[0_0_25px_rgba(0,229,255,0.35)]", taglineStyle: "text-white/90 font-700",
+    dividerStyle: "border-cyan-400/30", checkStyle: "text-cyan-300 bg-cyan-400/20", buttonStyle: "bg-cyan-400 hover:bg-white text-[#0B0E11] font-900 shadow-[0_15px_40px_rgba(0,229,255,0.5)] hover:shadow-[0_0_60px_rgba(255,255,255,0.8)]",
+    buttonText: "Reserve Your Track", popularTag: true,
+  },
+  {
+    id: "lifeguard-prep", num: "09", category: "development",
+    badgeTitle: "", tagline: "",
+    title: "Pre-Lifeguard Prep", price: "$699", period: "8 × 60 min",
+    schedule: "", pool: "", bullets: [],
+    cardBg: "bg-white/[0.04] backdrop-blur-xl text-white border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] hover:border-cyan-400/60 hover:bg-white/[0.07] hover:shadow-[0_0_70px_rgba(0,229,255,0.25)]", badgeStyle: "bg-white/10 text-cyan-300 border border-white/15 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.3)]", taglineStyle: "text-white/70",
+    dividerStyle: "border-white/15", checkStyle: "text-cyan-400 bg-white/10", buttonStyle: "bg-white/[0.08] hover:bg-cyan-400 text-white hover:text-[#0B0E11] border border-white/20 hover:border-cyan-400 shadow-[0_12px_28px_rgba(0,0,0,0.35)] hover:shadow-[0_0_40px_rgba(0,229,255,0.55)]",
+    buttonText: "Reserve Your Track",
+  },
+  {
+    id: "special-needs", num: "10", category: "development",
+    badgeTitle: "", tagline: "",
+    title: "Adaptive Swimming", price: "$599", period: "8 × 45 min",
+    schedule: "", pool: "", bullets: [],
+    cardBg: "bg-white/[0.04] backdrop-blur-xl text-white border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] hover:border-cyan-400/60 hover:bg-white/[0.07] hover:shadow-[0_0_70px_rgba(0,229,255,0.25)]", badgeStyle: "bg-white/10 text-cyan-300 border border-white/15 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.3)]", taglineStyle: "text-white/70",
+    dividerStyle: "border-white/15", checkStyle: "text-cyan-400 bg-white/10", buttonStyle: "bg-white/[0.08] hover:bg-cyan-400 text-white hover:text-[#0B0E11] border border-white/20 hover:border-cyan-400 shadow-[0_12px_28px_rgba(0,0,0,0.35)] hover:shadow-[0_0_40px_rgba(0,229,255,0.55)]",
+    buttonText: "Reserve Your Track",
+  },
+
+  {
+    id: "adult-private", num: "11", category: "masters",
+    badgeTitle: "", tagline: "",
+    title: "Adult Private Lessons", price: "$548", period: "8 × 45 min",
+    schedule: "", pool: "", bullets: [],
+    cardBg: "bg-gradient-to-b from-white/[0.09] to-white/[0.03] backdrop-blur-2xl text-white border border-cyan-400/50 shadow-[0_30px_90px_rgba(0,229,255,0.18)] hover:border-cyan-400 hover:shadow-[0_0_95px_rgba(0,229,255,0.4)] relative z-10", badgeStyle: "bg-cyan-400/20 text-cyan-300 border border-cyan-400/50 backdrop-blur-md shadow-[0_0_25px_rgba(0,229,255,0.35)]", taglineStyle: "text-white/90 font-700",
+    dividerStyle: "border-cyan-400/30", checkStyle: "text-cyan-300 bg-cyan-400/20", buttonStyle: "bg-cyan-400 hover:bg-white text-[#0B0E11] font-900 shadow-[0_15px_40px_rgba(0,229,255,0.5)] hover:shadow-[0_0_60px_rgba(255,255,255,0.8)]",
+    buttonText: "Reserve Your Track", popularTag: true,
+  },
+  {
+    id: "teen-private", num: "12", category: "masters",
+    badgeTitle: "", tagline: "",
+    title: "Teen Private Lessons", price: "$548", period: "8 × 45 min",
+    schedule: "", pool: "", bullets: [],
+    cardBg: "bg-white/[0.04] backdrop-blur-xl text-white border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] hover:border-cyan-400/60 hover:bg-white/[0.07] hover:shadow-[0_0_70px_rgba(0,229,255,0.25)]", badgeStyle: "bg-white/10 text-cyan-300 border border-white/15 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.3)]", taglineStyle: "text-white/70",
+    dividerStyle: "border-white/15", checkStyle: "text-cyan-400 bg-white/10", buttonStyle: "bg-white/[0.08] hover:bg-cyan-400 text-white hover:text-[#0B0E11] border border-white/20 hover:border-cyan-400 shadow-[0_12px_28px_rgba(0,0,0,0.35)] hover:shadow-[0_0_40px_rgba(0,229,255,0.55)]",
+    buttonText: "Reserve Your Track",
+  },
+  {
+    id: "adult-beginner", num: "13", category: "masters",
+    badgeTitle: "", tagline: "",
+    title: "Adult Beginner", price: "$548", period: "8 × 45 min",
+    schedule: "", pool: "", bullets: [],
+    cardBg: "bg-white/[0.04] backdrop-blur-xl text-white border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] hover:border-cyan-400/60 hover:bg-white/[0.07] hover:shadow-[0_0_70px_rgba(0,229,255,0.25)]", badgeStyle: "bg-white/10 text-cyan-300 border border-white/15 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.3)]", taglineStyle: "text-white/70",
+    dividerStyle: "border-white/15", checkStyle: "text-cyan-400 bg-white/10", buttonStyle: "bg-white/[0.08] hover:bg-cyan-400 text-white hover:text-[#0B0E11] border border-white/20 hover:border-cyan-400 shadow-[0_12px_28px_rgba(0,0,0,0.35)] hover:shadow-[0_0_40px_rgba(0,229,255,0.55)]",
+    buttonText: "Reserve Your Track",
+  },
+  {
+    id: "senior-wellness", num: "14", category: "masters",
+    badgeTitle: "", tagline: "",
+    title: "Senior Wellness", price: "$548", period: "8 × 45 min",
+    schedule: "", pool: "", bullets: [],
+    cardBg: "bg-white/[0.04] backdrop-blur-xl text-white border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] hover:border-cyan-400/60 hover:bg-white/[0.07] hover:shadow-[0_0_70px_rgba(0,229,255,0.25)]", badgeStyle: "bg-white/10 text-cyan-300 border border-white/15 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.3)]", taglineStyle: "text-white/70",
+    dividerStyle: "border-white/15", checkStyle: "text-cyan-400 bg-white/10", buttonStyle: "bg-white/[0.08] hover:bg-cyan-400 text-white hover:text-[#0B0E11] border border-white/20 hover:border-cyan-400 shadow-[0_12px_28px_rgba(0,0,0,0.35)] hover:shadow-[0_0_40px_rgba(0,229,255,0.55)]",
+    buttonText: "Reserve Your Track",
+  },
+  {
+    id: "aqua-fitness", num: "15", category: "masters",
+    badgeTitle: "", tagline: "",
+    title: "Aqua Fitness", price: "$548", period: "8 × 45 min",
+    schedule: "", pool: "", bullets: [],
+    cardBg: "bg-white/[0.04] backdrop-blur-xl text-white border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] hover:border-cyan-400/60 hover:bg-white/[0.07] hover:shadow-[0_0_70px_rgba(0,229,255,0.25)]", badgeStyle: "bg-white/10 text-cyan-300 border border-white/15 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.3)]", taglineStyle: "text-white/70",
+    dividerStyle: "border-white/15", checkStyle: "text-cyan-400 bg-white/10", buttonStyle: "bg-white/[0.08] hover:bg-cyan-400 text-white hover:text-[#0B0E11] border border-white/20 hover:border-cyan-400 shadow-[0_12px_28px_rgba(0,0,0,0.35)] hover:shadow-[0_0_40px_rgba(0,229,255,0.55)]",
+    buttonText: "Reserve Your Track",
+  },
+  {
+    id: "hydrotherapy", num: "16", category: "masters",
+    badgeTitle: "", tagline: "",
+    title: "Hydrotherapy", price: "$493", period: "10 sessions",
+    schedule: "", pool: "", bullets: [],
+    cardBg: "bg-white/[0.04] backdrop-blur-xl text-white border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] hover:border-cyan-400/60 hover:bg-white/[0.07] hover:shadow-[0_0_70px_rgba(0,229,255,0.25)]", badgeStyle: "bg-white/10 text-cyan-300 border border-white/15 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.3)]", taglineStyle: "text-white/70",
+    dividerStyle: "border-white/15", checkStyle: "text-cyan-400 bg-white/10", buttonStyle: "bg-white/[0.08] hover:bg-cyan-400 text-white hover:text-[#0B0E11] border border-white/20 hover:border-cyan-400 shadow-[0_12px_28px_rgba(0,0,0,0.35)] hover:shadow-[0_0_40px_rgba(0,229,255,0.55)]",
+    buttonText: "Reserve Your Track",
+  },
+
+  {
+    id: "family-2", num: "17", category: "family",
+    badgeTitle: "", tagline: "",
+    title: "Private Family (2)", price: "$1,099", period: "8 × 45 min",
+    schedule: "", pool: "", bullets: [],
+    cardBg: "bg-white/[0.04] backdrop-blur-xl text-white border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] hover:border-cyan-400/60 hover:bg-white/[0.07] hover:shadow-[0_0_70px_rgba(0,229,255,0.25)]", badgeStyle: "bg-white/10 text-cyan-300 border border-white/15 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.3)]", taglineStyle: "text-white/70",
+    dividerStyle: "border-white/15", checkStyle: "text-cyan-400 bg-white/10", buttonStyle: "bg-white/[0.08] hover:bg-cyan-400 text-white hover:text-[#0B0E11] border border-white/20 hover:border-cyan-400 shadow-[0_12px_28px_rgba(0,0,0,0.35)] hover:shadow-[0_0_40px_rgba(0,229,255,0.55)]",
+    buttonText: "Reserve Your Track",
+  },
+  {
+    id: "family-3", num: "18", category: "family",
+    badgeTitle: "", tagline: "",
+    title: "Private Family (3)", price: "$1,499", period: "8 × 60 min",
+    schedule: "", pool: "", bullets: [],
+    cardBg: "bg-gradient-to-b from-white/[0.09] to-white/[0.03] backdrop-blur-2xl text-white border border-cyan-400/50 shadow-[0_30px_90px_rgba(0,229,255,0.18)] hover:border-cyan-400 hover:shadow-[0_0_95px_rgba(0,229,255,0.4)] relative z-10", badgeStyle: "bg-cyan-400/20 text-cyan-300 border border-cyan-400/50 backdrop-blur-md shadow-[0_0_25px_rgba(0,229,255,0.35)]", taglineStyle: "text-white/90 font-700",
+    dividerStyle: "border-cyan-400/30", checkStyle: "text-cyan-300 bg-cyan-400/20", buttonStyle: "bg-cyan-400 hover:bg-white text-[#0B0E11] font-900 shadow-[0_15px_40px_rgba(0,229,255,0.5)] hover:shadow-[0_0_60px_rgba(255,255,255,0.8)]",
+    buttonText: "Reserve Your Track", popularTag: true,
+  },
+  {
+    id: "family-4", num: "19", category: "family",
+    badgeTitle: "", tagline: "",
+    title: "Private Family (4)", price: "$1,799", period: "8 × 60 min",
+    schedule: "", pool: "", bullets: [],
+    cardBg: "bg-white/[0.04] backdrop-blur-xl text-white border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] hover:border-cyan-400/60 hover:bg-white/[0.07] hover:shadow-[0_0_70px_rgba(0,229,255,0.25)]", badgeStyle: "bg-white/10 text-cyan-300 border border-white/15 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.3)]", taglineStyle: "text-white/70",
+    dividerStyle: "border-white/15", checkStyle: "text-cyan-400 bg-white/10", buttonStyle: "bg-white/[0.08] hover:bg-cyan-400 text-white hover:text-[#0B0E11] border border-white/20 hover:border-cyan-400 shadow-[0_12px_28px_rgba(0,0,0,0.35)] hover:shadow-[0_0_40px_rgba(0,229,255,0.55)]",
     buttonText: "Reserve Your Track",
   }
 ];
 
 const diagnosticDeck = [
   {
-    id: "telemetry",
-    badge: "Custom Diagnostic Track",
-    facility: "Toronto Olympic Flume",
-    tagline: "Optimized for 4K 120fps hydro-optic telemetry",
-    title: "Underwater Video Telemetry Lab",
-    desc: "Step inside Toronto's computerized hydro-flume. Synchronized underwater multi-angle camera lenses capture your freestyle cadence, stroke mechanics, and pull efficiency down to the millisecond.",
-    bullets: [
-      "Synchronized 4K multi-angle lenses",
-      "Millisecond pull & kick analysis",
-      "Digital export of raw video footage"
-    ],
+    id: "assessment",
+    badge: "", facility: "", tagline: "",
+    title: "Swim Assessment", desc: "",
+    bullets: [],
     cardStyle: "bg-white/[0.05] backdrop-blur-xl text-white border border-white/15 shadow-[0_30px_90px_rgba(0,0,0,0.6)] hover:border-cyan-400/60 hover:shadow-[0_0_80px_rgba(0,229,255,0.3)]",
     badgeStyle: "bg-white/15 text-white border border-white/25 backdrop-blur-md",
-    taglineStyle: "text-white/70",
-    checkStyle: "bg-white/10 text-cyan-300",
-    dividerStyle: "border-white/15",
+    taglineStyle: "text-white/70", checkStyle: "bg-white/10 text-cyan-300", dividerStyle: "border-white/15",
+    price: "$50", period: "30 min (waived upon registration)", cta: "Reserve Assessment",
+    buttonStyle: "bg-white/[0.08] hover:bg-cyan-400 text-white hover:text-[#0B0E11] font-800 border border-white/20 hover:border-cyan-400 shadow-[0_12px_28px_rgba(0,0,0,0.35)] hover:shadow-[0_0_40px_rgba(0,229,255,0.55)]",
   },
   {
-    id: "drag-lab",
-    badge: "Hydro-Dynamic Drag Lab",
-    facility: "High Velocity Diagnostics",
-    tagline: "Optimized for zero drag & propulsion mastery",
-    title: "Turn & Drag Reduction Sprint",
-    desc: "Identify and eliminate active water friction. Our computerized sensors detect 0.02s latency spikes during your off-the-wall breakouts, flip turns, and bilateral breathing rotation.",
-    bullets: [
-      "0.02s turn & breakout drag detection",
-      "Water turbulence & posture mapping",
-      "Customized drag-coefficient deck"
-    ],
+    id: "addons",
+    badge: "", facility: "", tagline: "",
+    title: "Optional Add-ons", desc: "",
+    bullets: ["Registration Fee: $50", "Home/Condo Travel Fee: Included within the GTA", "Additional Private Lesson: $75 (45 min)", "Gift Certificate: Any amount"],
     cardStyle: "bg-gradient-to-b from-[#003EFF]/80 to-white/[0.05] backdrop-blur-2xl text-white border border-cyan-400/40 shadow-[0_30px_90px_rgba(0,62,255,0.45)] hover:border-cyan-300 hover:shadow-[0_0_95px_rgba(0,229,255,0.5)]",
     badgeStyle: "bg-cyan-400/20 text-cyan-200 border border-cyan-300/40 backdrop-blur-md",
-    taglineStyle: "text-white/90 font-700",
-    checkStyle: "bg-cyan-400/20 text-cyan-200",
-    dividerStyle: "border-white/20",
-  },
-  {
-    id: "consultation",
-    badge: "Private Dispatch",
-    facility: "Immediate Reservation",
-    tagline: "Optimized for tailored athletic roadmapping",
-    title: "Executive Chief Consultation",
-    desc: "Includes a 1-on-1 analytical review meeting with our Chief Biomechanist, customized technique prescriptions, and immediate training timeline scheduling.",
-    bullets: [
-      "1-on-1 analytical review meeting",
-      "Custom drill & technique prescription",
-      "Zero recurring membership needed"
-    ],
-    cardStyle: "bg-gradient-to-br from-white/[0.09] to-white/[0.03] backdrop-blur-2xl text-white border border-cyan-400/50 shadow-[0_30px_90px_rgba(0,0,0,0.6)] hover:border-cyan-300 hover:shadow-[0_0_95px_rgba(0,229,255,0.4)]",
-    badgeStyle: "bg-white/15 text-cyan-300 border border-cyan-400/40 backdrop-blur-md",
-    taglineStyle: "text-white/70",
-    checkStyle: "bg-cyan-400/20 text-cyan-300",
-    dividerStyle: "border-white/15",
-    price: "$480",
-    period: "2-hour diagnostic sprint",
-    cta: "Reserve Your Track",
+    taglineStyle: "text-white/90 font-700", checkStyle: "bg-cyan-400/20 text-cyan-200", dividerStyle: "border-white/20",
+    price: "", period: "", cta: "Inquire Now",
     buttonStyle: "bg-[#003EFF] hover:bg-cyan-400 text-white hover:text-[#0B0E11] font-900 shadow-[0_15px_35px_rgba(0,62,255,0.45)] hover:shadow-[0_0_50px_rgba(0,229,255,0.7)]",
   }
 ];
@@ -642,9 +683,11 @@ export default function CourseSection() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className={`${c.badgeStyle} px-5 py-2 sm:py-2.5 rounded-full font-body font-800 text-[13px] sm:text-[14px] tracking-wide inline-block select-none`}>
-                      {c.badgeTitle}
-                    </span>
+                    {c.badgeTitle && (
+                      <span className={`${c.badgeStyle} px-5 py-2 sm:py-2.5 rounded-full font-body font-800 text-[13px] sm:text-[14px] tracking-wide inline-block select-none`}>
+                        {c.badgeTitle}
+                      </span>
+                    )}
                     {c.popularTag && (
                       <span className="text-[10px] font-body font-800 text-cyan-300 bg-cyan-400/20 px-2.5 py-1 rounded-md uppercase tracking-widest border border-cyan-400/40 shrink-0 shadow-[0_0_15px_rgba(0,229,255,0.3)]">
                         High Velocity
@@ -652,10 +695,12 @@ export default function CourseSection() {
                     )}
                   </div>
 
-                  <div className={`text-[14px] sm:text-[15px] font-body font-600 tracking-tight flex items-center gap-2.5 mb-7 ${c.taglineStyle}`}>
-                    <span className="w-1.5 h-4 bg-cyan-400 rounded-full inline-block shrink-0 animate-pulse" />
-                    <span>{c.tagline}</span>
-                  </div>
+                  {c.tagline && (
+                    <div className={`text-[14px] sm:text-[15px] font-body font-600 tracking-tight flex items-center gap-2.5 mb-7 ${c.taglineStyle}`}>
+                      <span className="w-1.5 h-4 bg-cyan-400 rounded-full inline-block shrink-0 animate-pulse" />
+                      <span>{c.tagline}</span>
+                    </div>
+                  )}
 
                   <div className={`pb-7 mb-8 border-b ${c.dividerStyle}`}>
                     <h3 className="font-display-syne font-800 text-white text-[20px] sm:text-[22px] tracking-tight mb-3 leading-snug">
@@ -669,22 +714,26 @@ export default function CourseSection() {
                         / {c.period}
                       </span>
                     </div>
-                    <div className="mt-3.5 flex items-center gap-2 font-body text-[12px] font-700 text-cyan-300/90">
-                      <MapPin className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                      <span className="truncate">{c.pool} · {c.schedule}</span>
-                    </div>
+                    {(c.pool || c.schedule) && (
+                      <div className="mt-3.5 flex items-center gap-2 font-body text-[12px] font-700 text-cyan-300/90">
+                        <MapPin className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                        <span className="truncate">{c.pool} {c.pool && c.schedule ? '·' : ''} {c.schedule}</span>
+                      </div>
+                    )}
                   </div>
 
-                  <div className="space-y-3.5 mb-10">
-                    {c.bullets.map((b, bi) => (
-                      <div key={bi} className="flex items-start gap-3 text-[14px] sm:text-[15px] font-body font-500 text-white/85 leading-snug">
-                        <span className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${c.checkStyle}`}>
-                          <Check className="w-3 h-3 stroke-[3]" />
-                        </span>
-                        <span>{b}</span>
-                      </div>
-                    ))}
-                  </div>
+                  {c.bullets && c.bullets.length > 0 && (
+                    <div className="space-y-3.5 mb-10 mt-6">
+                      {c.bullets.map((b, bi) => (
+                        <div key={bi} className="flex items-start gap-3 text-[14px] sm:text-[15px] font-body font-500 text-white/85 leading-snug">
+                          <span className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${c.checkStyle}`}>
+                            <Check className="w-3 h-3 stroke-[3]" />
+                          </span>
+                          <span>{b}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 <div>
@@ -756,9 +805,11 @@ export default function CourseSection() {
                     <h3 className="font-display-syne font-800 text-white text-[24px] sm:text-[28px] tracking-tight mb-4 leading-[1.1]">
                       {card.title}
                     </h3>
-                    <p className="font-body text-[15px] sm:text-[16px] leading-relaxed font-500 text-white/75">
-                      {card.desc}
-                    </p>
+                    {card.desc && (
+                      <p className="font-body text-[15px] sm:text-[16px] leading-relaxed font-500 text-white/75">
+                        {card.desc}
+                      </p>
+                    )}
                     
                     {card.price && (
                       <div className="mt-6 pt-6 border-t border-white/15 flex flex-wrap items-baseline gap-2">
@@ -772,16 +823,18 @@ export default function CourseSection() {
                     )}
                   </div>
 
-                  <div className="space-y-4 mb-10">
-                    {card.bullets.map((b, bi) => (
-                      <div key={bi} className="flex items-start gap-3.5 text-[15px] font-body font-500 text-white/85 leading-snug">
-                        <span className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${card.checkStyle}`}>
-                          <Check className="w-3 h-3 stroke-[3]" />
-                        </span>
-                        <span>{b}</span>
-                      </div>
-                    ))}
-                  </div>
+                  {card.bullets && card.bullets.length > 0 && (
+                    <div className="space-y-4 mb-10 mt-6">
+                      {card.bullets.map((b, bi) => (
+                        <div key={bi} className="flex items-start gap-3.5 text-[15px] font-body font-500 text-white/85 leading-snug">
+                          <span className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${card.checkStyle}`}>
+                            <Check className="w-3 h-3 stroke-[3]" />
+                          </span>
+                          <span>{b}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 <div>
